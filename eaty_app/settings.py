@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'GroupSession.apps.GroupsessionConfig',
-    'Product.apps.ProductConfig',
+    'eaty_purchase.apps.EatyPurchaseConfig',
+    'eaty_product.apps.EatyProductConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'EatyApp.urls'
+ROOT_URLCONF = 'eaty_app.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'EatyApp.wsgi.application'
+WSGI_APPLICATION = 'eaty_app.wsgi.application'
 
 
 # Database

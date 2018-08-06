@@ -1,4 +1,4 @@
-"""EatyApp URL Configuration
+"""eaty_app URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -18,6 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Product/', include('Product.urls')),
-    path('GroupSession/', include('GroupSession.urls')),
+    path('Product/', include('eaty_product.urls')),
+    path('GroupSession/', include('eaty_purchase.urls')),
 ]
