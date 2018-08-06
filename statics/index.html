@@ -1,2 +1,12 @@
-<h2>Hello!</h2>
+{% load static %}
+<html>
+<head>
 
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+</head>
+<body>
+<h2>Hello!</h2>
+<img src="{% static "example.jpg" %}" alt="My image"/>
+</body>
+</html>
