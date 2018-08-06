@@ -10,7 +10,7 @@ class Session(models.Model):
 
 class Purchase(models.Model):
     value = models.FloatField()
-    user = models.ForeignKey(User, primary_key=True, on_delete=models.CASCADE, related_name='purchases')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='purchases')
 
     def __str__(self):
-        return 'The debt of %s is %s $' % (self.user, self.value)
+        return 'The debt of {} is {} '.format(self.user, self.value)
