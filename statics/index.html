@@ -41,6 +41,8 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static "css/scrolling-nav.css" %}"rel="stylesheet">
+    <link href="{% static "css/style.css" %}"rel="stylesheet">
+
 
   </head>
 
@@ -56,31 +58,42 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="#home">Home</a>
             </li>
-            <li class="nav-item">
+         
+            <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
+            </li> -->
           </ul>
+          
         </div>
       </div>
     </nav>
 
     <header class="bg-primary text-white">
+        <div id="text">
+            <!-- content generated with JS -->  
+        </div>
+        
       <div class="container text-center">
-        <h1>Welcome to Scrolling Nav</h1>
+          
+        <h1>Scrolling Nav</h1>
         <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
-      </div>
+        
+        
+      
+      </div> 
+      
     </header>
 
-    <section id="about">
+    <section id="home">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>About this page</h2>
+            <h2>Home this page</h2>
             <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
             <ul>
               <li>Clickable nav links that smooth scroll to page sections</li>
@@ -93,7 +106,7 @@
       </div>
     </section>
 
-    <section id="services" class="bg-light">
+    <!-- <section id="services" class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -113,7 +126,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
@@ -132,6 +145,7 @@
 
     <!-- Custom JavaScript for this theme -->
     <script src="{% static "js/scrolling-nav.js"%}"></script>
+    <script src="{% static "js/logo.js"%}"></script>
 
   </body>
 
