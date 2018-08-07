@@ -1,0 +1,15 @@
+html {
+    background: #eee;
+}
+
+.demo {
+    text-align: center;
+}
+
+.demo-header {
+    padding: 20px;
+}
+
+.demo-body ul {
+    list-style: none;
+}

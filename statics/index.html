@@ -1,12 +1,26 @@
-<!-- {% load static %} -->
-<html>
+{% load static %}<!doctype html>
+<html lang="en" ng-app="demoApp">
+
 <head>
-
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
-
+    <meta charset="utf-8">
+    <title>Demo App</title>
+    <meta name="author" content="JulianMaurin">
+    <!---->
+    <link rel="stylesheet" href="{% static "app/demo/demo.style.css" %}">
 </head>
+
 <body>
-<h2>Hello!</h2>
-<img src="{% static "example.jpg" %}" alt="My image"/>
+    <ng-view></ng-view>
+    <!---->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.min.js"></script>
+    <!---->
+    <script src="{% static "app/app.js" %}"></script>
+    <script src="{% static "app/demo/user.service.js" %}"></script>
+    <script src="{% static "app/demo/demo.controller.js" %}"></script>
+
+    <!---->
 </body>
+
 </html>
