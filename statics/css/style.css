@@ -34,7 +34,7 @@ html, body {
     transition: ease 0.3s all;
   }
   #text .wrapper span.letter-2 {
-    color: rgba(0, 0, 255, 0.5);
+    color: rgb(241, 247, 244);
   }
   #text .wrapper span.letter-1 {
     color: rgba(73, 63, 63, 0.356);
