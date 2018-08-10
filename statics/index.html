@@ -25,7 +25,7 @@
 
 
 {% load static %} <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="demoApp">
 
   <head>
 
@@ -37,11 +37,12 @@
     <title>Scrolling Nav - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
+    <link href="{% static "assets/libs/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "app/components/demo/demo.style.css" %}">
 
     <!-- Custom styles for this template -->
-    <link href="{% static "css/scrolling-nav.css" %}"rel="stylesheet">
-    <link href="{% static "css/style.css" %}"rel="stylesheet">
+    <link href="{% static "assets/css/scrolling-nav.css" %}"rel="stylesheet">
+    <link href="{% static "assets/css/style.css" %}"rel="stylesheet">
 
 
   </head>
@@ -123,6 +124,8 @@
       </div>
     </section> -->
 
+    <ng-view></ng-view>
+
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
@@ -132,16 +135,21 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{% static "vendor/jquery/jquery.min.js"%}"></script>
-    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+    <script src="{% static "assets/libs/jquery/jquery.min.js"%}"></script>
+    <script src="{% static "assets/libs/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="{% static "vendor/jquery-easing/jquery.easing.min.js"%}"></script>
+    <script src="{% static "assets/libs/jquery-easing/jquery.easing.min.js"%}"></script>
 
     <!-- Custom JavaScript for this theme -->
-    <script src="{% static "js/scrolling-nav.js"%}"></script>
-    <script src="{% static "js/logo.js"%}"></script>
-
+    <script src="{% static "assets/js/scrolling-nav.js"%}"></script>
+    <script src="{% static "assets/js/logo.js"%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
+    <script src="{% static "app/components/demo/app.js" %}"></script>
+    <script src="{% static "app/components/demo/user.service.js" %}"></script>
+    <script src="{% static "app/components/demo/demo.controller.js" %}"></script>
   </body>
 
 </html>
