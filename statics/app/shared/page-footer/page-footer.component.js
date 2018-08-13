@@ -1,5 +1,5 @@
-// (function() {
-//   'use strict';
+(function() {
+  'use strict';
   
 angular
 .module('demoApp')
@@ -11,8 +11,6 @@ angular
 });
 
 
-//   function run() {
-//       console.log('demo app running...')
-//   }
 
-// })();
+
+})();

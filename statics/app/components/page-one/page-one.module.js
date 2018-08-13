@@ -1,3 +1,6 @@
+(function() {
+    'use strict';
+
 angular.module('pageOne', [
     // 'ngRoute',
     // 'pageTwo',
@@ -5,3 +8,4 @@ angular.module('pageOne', [
     // 'pageOne'
 
 ]);
+})();

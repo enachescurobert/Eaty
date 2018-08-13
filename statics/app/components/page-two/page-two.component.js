@@ -9,8 +9,6 @@ angular.
   
   });
 
-  function run() {
-    console.log('demo app running...')
-}
+
 
 })();

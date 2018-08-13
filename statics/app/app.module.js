@@ -10,8 +10,5 @@ angular.module('demoApp', [
 
   ]);
 
-  function run() {
-    console.log('demo app running...')
-}
 
 })();
