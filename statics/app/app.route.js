@@ -19,6 +19,10 @@ angular.
         when('/page4', {
           template: '<page-four></page-four>'
         }).
+        // when('/produs', {
+        //   templateUrl: 'components/produs/templates/produs.html',
+        //   controller:'ProdusController'
+        // }).
         otherwise('/page1');
     }
   ]);

@@ -1,0 +1,24 @@
+<div ng-controller="ProdusController">
+    Product:
+    <div ng-repeat="product in products">
+        <div style="margin-left: 20px;">
+            quantity: {{ product.quantity }} <br/>
+            cross: {{ product.cross }} <br/>
+            price: {{ product.price }} <br/>
+            product_type: {{ product.product_type }} <br/>
+            <hr/>
+        </div>
+    </div>
+    <br/>
+  
+    ProductType:
+    <div ng-repeat="producttype in producttypes">
+        <div style="margin-left: 20px;">
+            name: {{ producttype.name }} <br/>
+
+            <hr/>
+        </div>
+    </div>
+    <br/>
+  
+</div>

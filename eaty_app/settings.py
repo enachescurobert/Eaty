@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'eaty_purchase.apps.EatyPurchaseConfig',
     'eaty_product.apps.EatyProductConfig',
     'django.contrib.admin',
