@@ -7,8 +7,9 @@ angular.module('demoApp', [
     'pageOne',
     'pageTwo',
     'pageThree',
-
+    'pageFour',
+                    
   ]);
 
 
-})();
+})();                                                                        

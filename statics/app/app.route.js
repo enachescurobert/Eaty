@@ -5,7 +5,7 @@ angular.
   module('demoApp').
   config(['$locationProvider' ,'$routeProvider',
     function config($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
+      $locationProvider.hashPrefix('');
        $routeProvider.
         when('/page1', {
         template: '<page-one></page-one>'
@@ -13,8 +13,11 @@ angular.
         when('/page2', {
           template: '<page-two></page-two>'
         }).
-        when('/page3/', {
+        when('/page3', {
           template: '<page-three></page-three>'
+        }).
+        when('/page4', {
+          template: '<page-four></page-four>'
         }).
         otherwise('/page1');
     }
