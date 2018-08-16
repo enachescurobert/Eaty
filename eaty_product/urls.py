@@ -8,8 +8,8 @@ from django.urls import path,re_path
 from . import views
 
 urlpatterns = [
-    re_path(r'^producttypes/$', views.ProductTypeList.as_view()),
-    re_path(r'^producttypes/(?P<pk>[0-9]+)/$', views.ProductTypeDetail.as_view()),
+    path('producttypes/', views.ProductTypeList.as_view()),
+    path('producttypes/<int:pk>/', views.ProductTypeDetail.as_view()),
 ]
 
 # urlpatterns = format_suffix_patterns(urlpatterns)
