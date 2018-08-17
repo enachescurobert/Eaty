@@ -9,7 +9,8 @@ angular.module('demoApp', [
     'pageTwo',
     'pageThree',
     'pageFour',
-    // 'ngResource',
+    'productType',
+    'ngResource',
     // 'produs'
   ]);
 

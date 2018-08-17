@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
     path('admin/', admin.site.urls),
-    path('', include('eaty_product.urls')),
+    path('Product/', include('eaty_product.urls')),
     path('Purchase/', include('eaty_purchase.urls')),
 ] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
   #manage.py collectstatic => STATIC_ROOT is the folder where static files will be stored after using the command

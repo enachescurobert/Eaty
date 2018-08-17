@@ -1,5 +1,7 @@
-<div ng-controller="ProdusController">
-    Product:
+
+
+<div ng-controller="ProdusCtrl">
+    <!-- Product:
     <div ng-repeat="product in products">
         <div style="margin-left: 20px;">
             quantity: {{ product.quantity }} <br/>
@@ -9,16 +11,17 @@
             <hr/>
         </div>
     </div>
-    <br/>
+    <br/>  -->
   
     ProductType:
     <div ng-repeat="producttype in producttypes">
         <div style="margin-left: 20px;">
-            name: {{ producttype.name }} <br/>
+            name: {% verbatim %} {{ producttype.name }} {% endverbatim %} <br/>
 
-            <hr/>
+            <hr>
         </div>
     </div>
     <br/>
   
 </div>
+{% endverbatim %}

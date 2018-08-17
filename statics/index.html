@@ -44,9 +44,11 @@
     <script src="{% static "app/shared/navbar/navbar.component.js" %}"></script>
     <script src="{% static "app/shared/sidebar/sidebar.component.js" %}"></script>
     <script src="{% static "app/shared/page-footer/page-footer.component.js" %}"></script> 
-    <!-- <script src="{% static "app/components/produs/controllers/produs.control.js" %}"></script>
-    <script src="{% static "app/components/produs/services/product.service.js" %}"></script>
-    <script src="{% static "app/components/produs/services/producttype.service.js" %}"></script> -->
+    <script src="{% static "app/components/produs/controllers/produs.control.js" %}"></script>
+    <!-- <script src="{% static "app/components/produs/services/product.service.js" %}"></script> -->
+    <script src="{% static "app/components/produs/services/producttype.service.js" %}"></script> 
+    <script src="{% static "app/components/product-type/product-type.module.js" %}"></script>
+    <script src="{% static "app/components/product-type/product-type.component.js" %}"></script>
 
 
 
@@ -56,11 +58,28 @@
 <!-- Components : -->
 
     <div class="main-panel">
-
+        
+        
         
 
         <navbar></navbar>
-        <div ng-view></div>
+
+          
+    <!-- <div ng-controller="ProdusCtrl">
+
+        ProductType:
+        <div ng-repeat="producttype in producttypes">
+        <div style="margin-left: 20px;">
+             name: {% verbatim %} {{ producttype.name }} {% endverbatim %} <br/> 
+
+            <hr>
+        </div>
+    </div>
+    </div> -->
+
+    
+        
+    <div ng-view></div>
         <page-footer></page-footer>
     
     </div>

@@ -1,0 +1,11 @@
+{% load static %}
+{% if product_name %}
+   There are {{ product_name|length }} products:
+   <ul>
+   {% for e in product_name %}
+      <li> {{ e.name }} </li>
+   {% endfor %}
+  </ul>
+{% else %}
+   There are no records in the system
+{% endif %}

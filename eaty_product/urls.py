@@ -8,6 +8,7 @@ from django.urls import path,re_path
 from . import views
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('producttypes/', views.ProductTypeList.as_view()),
     path('producttypes/<int:pk>/', views.ProductTypeDetail.as_view()),
 ]

@@ -19,10 +19,13 @@ angular.
         when('/page4', {
           template: '<page-four></page-four>'
         }).
-        // when('/produs', {
-        //   templateUrl: 'components/produs/templates/produs.html',
-        //   controller:'ProdusController'
-        // }).
+        when('/type', {
+          template: '<product-type></product-type>'
+        }).
+        when('/produs', {
+          templateUrl: 'components/produs/templates/produs.html',
+          controller:'ProdusCtrl'
+        }).
         otherwise('/page1');
     }
   ]);
