@@ -23,7 +23,7 @@ angular.
           template: '<product-type></product-type>'
         }).
         when('/produs', {
-          templateUrl: 'components/produs/templates/produs.html',
+          templateUrl: 'static/app/components/produs/templates/produs.html',
           controller:'ProdusCtrl'
         }).
         otherwise('/page1');
