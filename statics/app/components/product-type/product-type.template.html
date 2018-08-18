@@ -1,11 +1,25 @@
-{% load static %}
-{% if product_name %}
-   There are {{ product_name|length }} products:
+<!-- {% load static %}
+{% if product %}
+   There are {{ product|length }} products:
    <ul>
-   {% for e in product_name %}
+   {% for e in product %}
       <li> {{ e.name }} </li>
    {% endfor %}
   </ul>
 {% else %}
    There are no records in the system
+{% endif %} -->
+
+{% if products %}
+   There are {{ products|length }} products:
+<ul>
+  {% for product in products %}
+    <a href="{% url 'update_product' product.id %}">
+
+      <li>{{product.name}}</li>
+    </a>
+    {% endfor %}
+</ul>
 {% endif %}
+
+<a href="{% url 'create_product' %}">New Product</a>
