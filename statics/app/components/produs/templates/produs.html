@@ -12,15 +12,32 @@
         </div>
     </div>
     <br/>  -->
-  
-    ProductType:
-    <div ng-repeat="producttype in producttypes">
+    <h4>Add your products:</h4>
+    <form ng-submit="todoAdd()">
+        <input type="text" ng-model="todoInput" placeholder="add a new product">
+        <button type="submit" 
+        ng-click="saveData()">Submit</button>
+    </form>
+    <br>
+    <hr>
+
+    <h4>All products:</h4>
+    <div ng-repeat="todo in todoList">
+        <input type="checkbox" ng-model="todo.done"/>
+        <span ng-bind="todo.name"></span>
+    </div>
+
+    <p>
+        <button ng-click="remove()">Done</button>
+    </p>
+
+    <!-- <div ng-repeat="producttype in producttypes">
         <div style="margin-left: 20px;">
-            name: {% verbatim %} {{ producttype.name }} {% endverbatim %} <br/>
+            name: {{ producttype.name }} <br/>
 
             <hr>
         </div>
-    </div>
+    </div> -->
     <br/>
   
 </div>

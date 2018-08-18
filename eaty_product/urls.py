@@ -1,10 +1,4 @@
 from django.urls import path
-# from rest_framework.urlpatterns import format_suffix_patterns
-
-# from django.conf.urls import url
-
-# from rest_framework.routers import DefaultRouter
-# from eaty_product.views import ProductViewSet, ProductTypeViewSet
 from . import views
 from .views import list_products, create_product, update_product, delete_product
 
@@ -21,16 +15,6 @@ urlpatterns = [
     path('producttypes/<int:pk>/', views.ProductTypeDetail.as_view()),
 
 ]
-
-# urlpatterns = format_suffix_patterns(urlpatterns)
-
-"""
-urlpatterns = [
-    path('', views.list_product, name='list_product'),
-]
-"""
-# urlpatterns = [
-# ]
 
 
 # router = DefaultRouter()
