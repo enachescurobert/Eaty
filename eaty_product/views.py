@@ -17,7 +17,7 @@ class ProductTypeDetail(generics.RetrieveUpdateDestroyAPIView):
 
 def list_products(request):
     products = ProductType.objects.all()
-    return render(request,"app/components/product-type/product-type.template.html", {'products':products})
+    return render(request,"app/components/Django-ProductType-API/product-type.template.html", {'products':products})
 
 def create_product(request):
     form = ProductTypeForm(request.POST or None)
@@ -26,7 +26,7 @@ def create_product(request):
         form.save()
         return redirect('list_products')
 
-    return render(request,'app/components/product-type/products-form.template.html', {'form':form})
+    return render(request,'app/components/Django-ProductType-API/products-form.template.html', {'form':form})
 
 def update_product(request, id):
     product = ProductType.objects.get(id=id)
@@ -36,7 +36,7 @@ def update_product(request, id):
         form.save()
         return redirect('list_products')
 
-    return render(request, 'app/components/product-type/products-form.template.html', {'form':form, 'product':product})
+    return render(request, 'app/components/Django-ProductType-API/products-form.template.html', {'form':form, 'product':product})
 
 def delete_product(request, id):
     product = ProductType.objects.get(id=id)
@@ -45,4 +45,4 @@ def delete_product(request, id):
         product.delete()
         return redirect('list_products')
 
-    return render(request, 'app/components/product-type/prod-delete-confirm.template.html')
+    return render(request, 'app/components/Django-ProductType-API/prod-delete-confirm.template.html')

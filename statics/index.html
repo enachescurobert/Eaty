@@ -28,9 +28,12 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{% static "assets/css/pe-icon-7-stroke.css" %}" rel="stylesheet" />
  
+    <!-- <script src="{% static "assets/bower_components/angular/angular.js" %}"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script> -->
+    <script src="{% static "assets/bower_components/angular-resource/angular-resource.js" %}"></script>
     <script src="{% static "app/app.module.js" %}"></script>
     <script src="{% static "app/app.route.js" %}"></script>
     <script src="{% static "app/components/page-one/page-one.module.js" %}"></script>
@@ -44,9 +47,9 @@
     <script src="{% static "app/shared/navbar/navbar.component.js" %}"></script>
     <script src="{% static "app/shared/sidebar/sidebar.component.js" %}"></script>
     <script src="{% static "app/shared/page-footer/page-footer.component.js" %}"></script> 
-    <script src="{% static "app/components/produs/controllers/produs.control.js" %}"></script>
+    <script src="{% static "app/components/product-type/produs.control.js" %}"></script>
     <!-- <script src="{% static "app/components/produs/services/product.service.js" %}"></script> -->
-    <script src="{% static "app/components/produs/services/producttype.service.js" %}"></script> 
+    <script src="{% static "app/components/product-type/producttype.service.js" %}"></script> 
     <script src="{% static "app/components/product-type/product-type.module.js" %}"></script>
     <script src="{% static "app/components/product-type/product-type.component.js" %}"></script>
 
@@ -65,17 +68,6 @@
         <navbar></navbar>
 
           
-    <!-- <div ng-controller="ProdusCtrl">
-
-        ProductType:
-        <div ng-repeat="producttype in producttypes">
-        <div style="margin-left: 20px;">
-             name: {% verbatim %} {{ producttype.name }} {% endverbatim %} <br/> 
-
-            <hr>
-        </div>
-    </div>
-    </div> -->
 
     
         

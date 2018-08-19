@@ -4,7 +4,7 @@
 angular.
   module('productType').
   component('productType', {
-    templateUrl: 'static/app/components/product-type/product-type.template.html',
+    templateUrl: 'static/app/components/product-type/produs.html',
    
   
   });

@@ -22,10 +22,10 @@ angular.
         when('/type', {
           template: '<product-type></product-type>'
         }).
-        when('/produs', {
-          templateUrl: 'static/app/components/produs/templates/produs.html',
-          controller:'ProdusCtrl'
-        }).
+        // when('/produs', {
+        //   templateUrl: 'static/app/components/produs/templates/produs.html',
+        //   controller:'ProdusCtrl'
+        // }).
         otherwise('/page1');
     }
   ]);
