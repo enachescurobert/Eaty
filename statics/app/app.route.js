@@ -3,32 +3,42 @@
 
 angular.
   module('demoApp').
-  config(['$locationProvider' ,'$routeProvider',
-    function config($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('');
-       $routeProvider.
-        when('/page1', {
-        template: '<page-one></page-one>'
-        }).
-        when('/page2', {
-          template: '<page-two></page-two>'
-        }).
-        when('/page3', {
-          template: '<page-three></page-three>'
-        }).
-        when('/page4', {
-          template: '<page-four></page-four>'
-        }).
-        when('/type', {
-          template: '<product-type></product-type>'
-        }).
-        // when('/produs', {
+  config(function($stateProvider, $urlRouterProvider) {
+       $stateProvider
+
+       .state('page1',{
+        url:'/page1', 
+        component: 'pageOne'
+        })
+
+        .state('page2',{
+        url:'/page2', 
+        component: 'pageTwo'
+        })
+
+        .state('page3',{
+          url:'/page3', 
+        component: 'pageThree'
+        })
+
+        .state('page4',{
+          url:'/page4', 
+        component: 'pageFour'
+        })
+
+        .state('type',{
+          url:'/type', 
+        component: 'productType'
+        })
+
+        $urlRouterProvider.otherwise('/page1');
+
+        // state('/produs', {
         //   templateUrl: 'static/app/components/produs/templates/produs.html',
         //   controller:'ProdusCtrl'
         // }).
-        otherwise('/page1');
     }
-  ]);
+  );
 
 
 

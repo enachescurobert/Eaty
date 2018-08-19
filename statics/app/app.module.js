@@ -4,7 +4,8 @@
 // var produs = angular.module("produs",[]);
 
 angular.module('demoApp', [
-    'ngRoute',
+    // 'ngRoute',
+    'ui.router',
     'ngResource',
     'pageOne',
     'pageTwo',
