@@ -9,7 +9,7 @@
   <tr ng-repeat="movie in movies">
     <td>{{movie.name}}</td>
     <td>
-      <a class="btn btn-primary" ui-sref="viewMovie({id:movie._id})">Edit</a>
+      <a class="btn btn-primary" ui-sref="viewMovie({id:movie.id})">Edit</a>
       <a class="btn btn-danger"  ng-click="deleteMovie(movie)">Delete</a>
     </td>
   </tr>

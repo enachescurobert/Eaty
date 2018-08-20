@@ -15,7 +15,7 @@ angular.module('demoApp.controllers',[])
   };
 })
 .controller('MovieViewController', function($scope, $stateParams, Movie) {
-  $scope.movie = Movie.get({ id: $stateParams.id }); //Get a single movie.Issues a GET to /api/movies/:id
+  $scope.movie = Movie.get({id:$stateParams.id}); //Get a single movie.Issues a GET to /api/movies/:id
 })
 .controller('MovieCreateController', function($scope, $state, $stateParams, Movie) {
   $scope.movie = new Movie();  //create new movie instance. Properties will be set via ng-model on UI
@@ -34,7 +34,7 @@ angular.module('demoApp.controllers',[])
   };
 
   $scope.loadMovie = function() { //Issues a GET request to /api/movies/:id to get a movie to update
-    $scope.movie = Movie.get({ id: $stateParams.id });
+    $scope.movie = Movie.get({id:$stateParams.id});
   };
 
   $scope.loadMovie(); // Load a movie which can be edited on UI
