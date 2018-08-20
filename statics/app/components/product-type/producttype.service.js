@@ -9,9 +9,17 @@
 //     });
 
 angular.module('demoApp.services', []).factory('Movie', function($resource) {
-    return $resource('http://localhost:8000/Product/producttypes/:id', { id: '@_id' }, {
+    return $resource('/Product/producttypes/:id',{id:'@_id'},{
         update: {
         method: 'PUT'
         }
-    });
+    },{
+
+    
+    stripTrailingSlashes: false
+  });
+}).service('popupService',function($window){
+    this.showPopup=function(message){
+        return $window.confirm(message);
+    }
 });

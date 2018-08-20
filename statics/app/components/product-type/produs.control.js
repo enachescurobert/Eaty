@@ -1,5 +1,5 @@
 angular.module('demoApp.controllers',[])
-       .controller('MovieListController', function ($scope, $state, $window, Movie) 
+       .controller('MovieListController', function ($scope, $state,popupService, $window, Movie) 
 {
   // GET : Take everything
   // $scope.movies = Movie.query();
@@ -13,9 +13,11 @@ angular.module('demoApp.controllers',[])
       });
     }
   };
-}).controller('MovieViewController', function($scope, $stateParams, Movie) {
+})
+.controller('MovieViewController', function($scope, $stateParams, Movie) {
   $scope.movie = Movie.get({ id: $stateParams.id }); //Get a single movie.Issues a GET to /api/movies/:id
-}).controller('MovieCreateController', function($scope, $state, $stateParams, Movie) {
+})
+.controller('MovieCreateController', function($scope, $state, $stateParams, Movie) {
   $scope.movie = new Movie();  //create new movie instance. Properties will be set via ng-model on UI
 
   $scope.addMovie = function() { //create a new movie. Issues a POST to /api/movies
@@ -23,7 +25,8 @@ angular.module('demoApp.controllers',[])
       $state.go('movies'); // on success go back to home i.e. movies state.
     });
   };
-}).controller('MovieEditController', function($scope, $state, $stateParams, Movie) {
+})
+.controller('MovieEditController', function($scope, $state, $stateParams, Movie) {
   $scope.updateMovie = function() { //Update the edited movie. Issues a PUT to /api/movies/:id
     $scope.movie.$update(function() {
       $state.go('movies'); // on success go back to home i.e. movies state.
