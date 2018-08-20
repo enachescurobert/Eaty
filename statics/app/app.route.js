@@ -30,8 +30,30 @@ angular.
           url:'/type', 
         component: 'productType'
         })
+        
+        .state('movies', { // state for showing all movies
+          url: '/movies',
+          templateUrl: 'static/app/components/product-type/templates/movies.html',
+          controller: 'MovieListController'
+        }).state('viewMovie', { //state for showing single movie
+          url: '/movies/:id/view',
+          templateUrl: 'static/app/components/product-type/templates/movie-view.html',
+          controller: 'MovieViewController'
+        }).state('newMovie', { //state for adding a new movie
+          url: '/movies/new',
+          templateUrl: 'static/app/components/product-type/templates/movie-add.html',
+          controller: 'MovieCreateController'
+        }).state('editMovie', { //state for updating a movie
+          url: '/movies/:id/edit',
+          templateUrl: 'static/app/components/product-type/templates/movie-edit.html',
+          controller: 'MovieEditController'
+        });
 
-        $urlRouterProvider.otherwise('/page1');
+        }).run(function($state) {
+        $state.go('movies'); //make a transition to movies state when app starts
+      
+
+        // $urlRouterProvider.otherwise('/page1');
 
         // state('/produs', {
         //   templateUrl: 'static/app/components/produs/templates/produs.html',

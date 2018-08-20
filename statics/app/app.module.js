@@ -1,7 +1,6 @@
 (function() {
   'use strict';
 
-// var produs = angular.module("produs",[]);
 
 angular.module('demoApp', [
     // 'ngRoute',
@@ -12,7 +11,8 @@ angular.module('demoApp', [
     'pageThree',
     'pageFour',
     'productType',
-    // 'produs'
+    'demoApp.services',
+    'demoApp.controllers'
   ]);
 
 
