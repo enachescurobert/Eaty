@@ -10,7 +10,7 @@
 
 angular.module('demoApp.services', [])
 .factory('Movie', function($resource) {
-    return $resource('/Product/producttypes/:id',{id:'@id'},{
+    return $resource('/Product/producttypes/:id/',{id:'@id'},{
         update: {method:'PUT'},
     },{
 
