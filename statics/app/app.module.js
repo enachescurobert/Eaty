@@ -13,6 +13,7 @@ angular.module('demoApp', [
     'productType',
     'demoApp.services',
     'demoApp.controllers',
+    
   ]);
 
 

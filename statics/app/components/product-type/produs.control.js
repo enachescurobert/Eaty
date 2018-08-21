@@ -22,14 +22,14 @@ angular.module('demoApp.controllers',[])
 
   $scope.addProdus = function() { //create a new produs. Issues a POST to /api/produse
     $scope.produs.$save(function() {
-      $state.go('page2'); // on success go back to home i.e. produse state.
+      $state.go('page1'); // on success go back to home i.e. produse state.
     });
   };
 })
 .controller('ProdusEditController', function($scope, $state, $stateParams, Produs) {
   $scope.updateProdus = function() { //Update the edited produs. Issues a PUT to /api/produse/:id
     $scope.produs.$update(function() {
-      $state.go('page2'); // on success go back to home i.e. produse state.
+      $state.go('page1'); // on success go back to home i.e. produse state.
     });
   };
 
