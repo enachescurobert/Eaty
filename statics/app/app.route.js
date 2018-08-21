@@ -7,7 +7,7 @@ angular.module('demoApp')
         $stateProvider
        .state('page1',{
         url:'/page1', 
-        component: 'pageOne'
+        templateUrl: 'static/app/components/page-one/page-one.html'
         })
         .state('page2',{
         url:'/page2', 
@@ -48,7 +48,7 @@ angular.module('demoApp')
         });
 
         }).run(function($state) {
-        $state.go('page2'); //make a transition to produse state when app starts
+        $state.go('page1'); //make a transition to produse state when app starts
       
 
         // $urlRouterProvider.otherwise('/page1');

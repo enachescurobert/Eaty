@@ -12,7 +12,7 @@ angular.module('demoApp', [
     'pageFour',
     'productType',
     'demoApp.services',
-    'demoApp.controllers'
+    'demoApp.controllers',
   ]);
 
 

@@ -2,10 +2,10 @@
     'use strict';
 
 angular.module('pageOne', [
-    // 'ngRoute',
-    // 'pageTwo',
-    // 'pageThree',
-    // 'pageOne'
+    // 'produsList',
+    // 'produsView',
+    // 'produsCreate',
+    // 'produsEdit'
 
 ]);
 })();
