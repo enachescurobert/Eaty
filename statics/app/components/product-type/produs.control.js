@@ -1,42 +1,42 @@
 angular.module('demoApp.controllers',[])
-       .controller('MovieListController', function ($scope, $state,popupService, $window, Movie) 
+       .controller('ProdusListController', function ($scope, $state,popupService, $window, Produs) 
 {
   // GET : Take everything
-  // $scope.movies = Movie.query();
-  $scope.movies = Movie.query();
+  // $scope.produse = Produs.query();
+  $scope.produse = Produs.query();
 
 
-  $scope.deleteMovie = function(movie) { // Delete a movie. Issues a DELETE to /api/movies/:id
+  $scope.deleteProdus = function(produs) { // Delete a produs. Issues a DELETE to /api/produse/:id
     if (popupService.showPopup('Really delete this?')) {
-      movie.$delete(function() {
+      produs.$delete(function() {
         $window.location.href = ''; //redirect to home
       });
     }
   };
 })
-.controller('MovieViewController', function($scope, $stateParams, Movie) {
-  $scope.movie = Movie.get({id:$stateParams.id}); //Get a single movie.Issues a GET to /api/movies/:id
+.controller('ProdusViewController', function($scope, $stateParams, Produs) {
+  $scope.produs = Produs.get({id:$stateParams.id}); //Get a single produs.Issues a GET to /api/produse/:id
 })
-.controller('MovieCreateController', function($scope, $state, $stateParams, Movie) {
-  $scope.movie = new Movie();  //create new movie instance. Properties will be set via ng-model on UI
+.controller('ProdusCreateController', function($scope, $state, $stateParams, Produs) {
+  $scope.produs = new Produs();  //create new produs instance. Properties will be set via ng-model on UI
 
-  $scope.addMovie = function() { //create a new movie. Issues a POST to /api/movies
-    $scope.movie.$save(function() {
-      $state.go('movies'); // on success go back to home i.e. movies state.
+  $scope.addProdus = function() { //create a new produs. Issues a POST to /api/produse
+    $scope.produs.$save(function() {
+      $state.go('produse'); // on success go back to home i.e. produse state.
     });
   };
 })
-.controller('MovieEditController', function($scope, $state, $stateParams, Movie) {
-  $scope.updateMovie = function() { //Update the edited movie. Issues a PUT to /api/movies/:id
-    $scope.movie.$update(function() {
-      $state.go('movies'); // on success go back to home i.e. movies state.
+.controller('ProdusEditController', function($scope, $state, $stateParams, Produs) {
+  $scope.updateProdus = function() { //Update the edited produs. Issues a PUT to /api/produse/:id
+    $scope.produs.$update(function() {
+      $state.go('produse'); // on success go back to home i.e. produse state.
     });
   };
 
-  $scope.loadMovie = function() { //Issues a GET request to /api/movies/:id to get a movie to update
-    $scope.movie = Movie.get({id:$stateParams.id});
+  $scope.loadProdus = function() { //Issues a GET request to /api/produse/:id to get a produs to update
+    $scope.produs = Produs.get({id:$stateParams.id});
   };
 
-  $scope.loadMovie(); // Load a movie which can be edited on UI
+  $scope.loadProdus(); // Load a produs which can be edited on UI
 
 });

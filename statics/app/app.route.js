@@ -26,29 +26,29 @@ angular.module('demoApp')
         component: 'productType'
         })
         
-        .state('movies', { // state for showing all movies
-          url: '/movies',
-          templateUrl: 'static/app/components/product-type/templates/movies.html',
-          controller: 'MovieListController'
+        .state('produse', { // state for showing all produse
+          url: '/produse',
+          templateUrl: 'static/app/components/product-type/templates/produse.html',
+          controller: 'ProdusListController'
         })
-        .state('viewMovie', { //state for showing single movie
-          url: '/movies/:id/view',
-          templateUrl: 'static/app/components/product-type/templates/movie-view.html',
-          controller: 'MovieViewController'
+        .state('viewProdus', { //state for showing single produs
+          url: '/produse/:id/view',
+          templateUrl: 'static/app/components/product-type/templates/produs-view.html',
+          controller: 'ProdusViewController'
         })
-        .state('newMovie', { //state for adding a new movie
-          url: '/movies/new',
-          templateUrl: 'static/app/components/product-type/templates/movie-add.html',
-          controller: 'MovieCreateController'
+        .state('newProdus', { //state for adding a new produs
+          url: '/produse/new',
+          templateUrl: 'static/app/components/product-type/templates/produs-add.html',
+          controller: 'ProdusCreateController'
         })
-        .state('editMovie', { //state for updating a movie
-          url: '/movies/:id/edit',
-          templateUrl: 'static/app/components/product-type/templates/movie-edit.html',
-          controller: 'MovieEditController'
+        .state('editProdus', { //state for updating a produs
+          url: '/produse/:id/edit',
+          templateUrl: 'static/app/components/product-type/templates/produs-edit.html',
+          controller: 'ProdusEditController'
         });
 
         }).run(function($state) {
-        $state.go('movies'); //make a transition to movies state when app starts
+        $state.go('produse'); //make a transition to produse state when app starts
       
 
         // $urlRouterProvider.otherwise('/page1');

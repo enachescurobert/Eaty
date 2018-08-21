@@ -1,5 +1,5 @@
 // angular.module('demoApp.services',[])
-//        .factory('Movie', function($resource)
+//        .factory('Produs', function($resource)
 //     {
 //     var restAPIUrl = "http://localhost:8000";
 //     return $resource(restAPIUrl + '/Product/producttypes/:id',
@@ -9,7 +9,7 @@
 //     });
 
 angular.module('demoApp.services', [])
-.factory('Movie', function($resource) {
+.factory('Produs', function($resource) {
     return $resource('/Product/producttypes/:id/',{id:'@id'},{
         update: {method:'PUT'},
     },{
