@@ -27,34 +27,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{% static "assets/css/pe-icon-7-stroke.css" %}" rel="stylesheet" />
- 
-    <!-- <script src="{% static "assets/bower_components/angular/angular.js" %}"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script> -->
-    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script> -->
-    <script src="{% static "assets/bower_components/angular-resource/angular-resource.js" %}"></script>
-    <script src="{% static "app/app.module.js" %}"></script>
-    <script src="{% static "app/app.route.js" %}"></script>
-    <script src="{% static "app/components/page-one/page-one.module.js" %}"></script>
-    <script src="{% static "app/components/page-one/page-one.component.js" %}"></script>
-    <script src="{% static "app/components/wishlist/wishlist.module.js" %}"></script>
-    <script src="{% static "app/components/wishlist/wishlist.component.js" %}"></script>
-    <script src="{% static "app/components/wishlist/wishlist.service.js" %}"></script>
-    <script src="{% static "app/components/page-three/page-three.module.js" %}"></script>
-    <script src="{% static "app/components/page-three/page-three.component.js" %}"></script>
-    <script src="{% static "app/components/page-four/page-four.module.js" %}"></script>
-    <script src="{% static "app/components/page-four/page-four.component.js" %}"></script>
-    <script src="{% static "app/shared/navbar/navbar.component.js" %}"></script>
-    <script src="{% static "app/shared/sidebar/sidebar.component.js" %}"></script>
-    <script src="{% static "app/shared/page-footer/page-footer.component.js" %}"></script> 
-    <script src="{% static "app/components/product-type/produs.control.js" %}"></script>
-    <!-- <script src="{% static "app/components/produs/services/product.service.js" %}"></script> -->
- 
-
-
-
 
 </head>
 <body>
@@ -76,19 +48,42 @@
 
 <!-- End of componets -->
 
+<!-- <script src="{% static "assets/bower_components/angular/angular.js" %}"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
 
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script> -->
+<script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
+<!-- <script src="{% static "assets/bower_components/angular-resource/angular-resource.js" %}"></script> -->
+
+<!-- Main -->
+<script src="{% static "app/app.module.js" %}"></script>
+<script src="{% static "app/app.route.js" %}"></script>
+
+<!-- All 4 pages : Session, Wishlist, Pay, Users -->
+<!-- Session Page -->
+<script src="{% static "app/components/page-one/page-one.module.js" %}"></script>
+<script src="{% static "app/components/page-one/page-one.component.js" %}"></script>
+<!-- Wishlist page -->
+<script src="{% static "app/components/wishlist/wishlist.module.js" %}"></script>
+<script src="{% static "app/components/wishlist/wishlist.component.js" %}"></script>
+<script src="{% static "app/components/wishlist/wishlist.service.js" %}"></script>
+<!-- Pay page -->
+<script src="{% static "app/components/page-three/page-three.module.js" %}"></script>
+<script src="{% static "app/components/page-three/page-three.component.js" %}"></script>
+<!-- Users page -->
+<script src="{% static "app/components/page-four/page-four.module.js" %}"></script>
+<script src="{% static "app/components/page-four/page-four.component.js" %}"></script>
+
+<!-- Shared components -->
+<script src="{% static "app/shared/navbar/navbar.component.js" %}"></script>
+<script src="{% static "app/shared/sidebar/sidebar.component.js" %}"></script>
+<script src="{% static "app/shared/page-footer/page-footer.component.js" %}"></script>
 
 <!--   Core JS Files   -->
 <script src="{% static "assets/js/jquery.3.2.1.min.js" type="text/javascript" %}"></script>
 <script src="{% static "assets/js/bootstrap.min.js" type="text/javascript" %}"></script>
-
-<!--  Charts Plugin - Later usage-->
-<script src="{% static "assets/js/chartist.min.js" %}"></script>
-
-<!--  Notifications Plugin  - Later usage  -->
-<script src="{% static "assets/js/bootstrap-notify.js" %}"></script>
-
-  <!-- Bootsrap -->
+<!-- Bootsrap Dashboard-->
 <script src="{% static "assets/js/light-bootstrap-dashboard.js" %}"></script>
 
 
