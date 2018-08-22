@@ -10,7 +10,6 @@ angular.module('demoApp', [
     'pay',
     'users',
     'wishList.services',
-
   ]);
 
 
