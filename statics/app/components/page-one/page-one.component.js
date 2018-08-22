@@ -2,7 +2,7 @@
 //   'use strict';
   
   angular
-  .module('pageOne')
+  .module('pageOne',[])
 
   .directive('produsList', function(){
     return{
@@ -22,7 +22,7 @@
         }
       };
     },
-    controllerAs: 'ProdusListController'
+    // controllerAs: 'ProdusListController'
   };
 })
 
@@ -32,7 +32,7 @@
   controller: function($scope, $stateParams, Produs) {
   $scope.produs = Produs.get({id:$stateParams.id}); //Get a single produs.Issues a GET to /api/produse/:id
 },
-  controllerAs: 'ProdusViewController'
+  // controllerAs: 'ProdusViewController'
 }}
 )
 
@@ -48,7 +48,7 @@
     });
   };
 },
-  controllerAs: 'ProdusCreateController'
+  // controllerAs: 'ProdusCreateController'
 }}
 )
 
@@ -69,7 +69,7 @@
   $scope.loadProdus(); // Load a produs which can be edited on UI
 
 },
-  controllerAs: 'ProdusEditController'
+  // controllerAs: 'ProdusEditController'
 }}
 )
   
