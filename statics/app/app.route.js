@@ -7,11 +7,11 @@ angular.module('demoApp')
         $stateProvider
        .state('page1',{
         url:'/page1', 
-        templateUrl: 'static/app/components/page-one/page-one.html'
+        component: 'pageOne'
         })
         .state('page2',{
         url:'/page2', 
-        component: 'pageTwo'
+        templateUrl: 'static/app/components/page-two/page-two.template.html'
         })
         .state('page3',{
           url:'/page3', 
@@ -31,15 +31,15 @@ angular.module('demoApp')
           component: 'produsList',
         })
         .state('viewProdus', { //state for showing single produs
-          url: '/page1/produse/:id/view',
+          url: '/page2/produse/:id/view',
           component: 'produsView',
         })
         .state('newProdus', { //state for adding a new produs
-          url: '/page1/produse/new',
+          url: '/page2/produse/new',
           component: 'produsCreate',
         })
         .state('editProdus', { //state for updating a produs
-          url: '/page1/produse/:id/edit',
+          url: '/page2/produse/:id/edit',
           component: 'produsEdit',
         });
         
