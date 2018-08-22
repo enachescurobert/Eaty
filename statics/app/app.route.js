@@ -2,7 +2,7 @@
   'use strict';
 
 angular.module('demoApp')
-       .config(function($stateProvider,$httpProvider) {
+       .config(function($stateProvider) {
        
         $stateProvider
        .state('session',{

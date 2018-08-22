@@ -10,7 +10,7 @@
 
 angular.module('wishList.services', [])
        .factory('Produs', function($resource) {
-    return $resource('/Product/producttypes/:id/',{id:'@id'},{
+    return $resource('/Product/types/:id/',{id:'@id'},{
         update: {method:'PUT'},
     },{
 

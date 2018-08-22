@@ -11,4 +11,5 @@ class ProductSerializer(serializers.ModelSerializer):
     """ Serializer to represent the Product model """
     class Meta:
         model = Product
-        fields = ("product_type","quantity","cross","price")
+        fields = '__all__'
+        # fields = ("product_type","quantity","cross","price")

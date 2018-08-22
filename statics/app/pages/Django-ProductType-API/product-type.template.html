@@ -10,16 +10,16 @@
    There are no records in the system
 {% endif %} -->
 
-{% if products %}
-   There are {{ products|length }} products:
+{% if producttypes %}
+   There are {{ producttypes|length }} product types:
 <ul>
-  {% for product in products %}
-    <a href="{% url 'update_product' product.id %}">
+  {% for producttype in producttypes %}
+    <a href="{% url 'update_producttype' producttype.id %}">
 
-      <li>{{product.name}}</li>
+      <li>{{producttype.name}}</li>
     </a>
     {% endfor %}
 </ul>
 {% endif %}
 
-<a href="{% url 'create_product' %}">New Product</a>
+<a href="{% url 'create_producttype' %}">New Product Type</a>

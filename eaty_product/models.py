@@ -5,7 +5,7 @@ class ProductType(models.Model):
     name = models.CharField(max_length=80)
     def __str__(self):
         #return "%s is the type of product" % self.type_text
-        return 'The name of product is: {}'.format(self.name)
+        return '{}'.format(self.name)
        
 
 class Product(models.Model):
