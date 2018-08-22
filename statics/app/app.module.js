@@ -6,10 +6,12 @@ angular.module('demoApp', [
     'ui.router',
     'ngResource',
     'session',
-    'WishList',
     'pay',
     'users',
+    'WishList',
     'wishList.services',
+    'BaleGa',
+    'baleGa.services'
   ]);
 
 
