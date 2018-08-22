@@ -5,21 +5,21 @@ angular.module('demoApp')
        .config(function($stateProvider,$httpProvider) {
        
         $stateProvider
-       .state('page1',{
-        url:'/page1', 
-        component: 'pageOne'
+       .state('session',{
+        url:'/session', 
+        component: 'session'
         })
         .state('wishlist',{
         url:'/wishlist', 
-        templateUrl: 'static/app/components/wishlist/wishlist.template.html'
+        templateUrl: 'static/app/pages/wishlist/wishlist.template.html'
         })
-        .state('page3',{
-          url:'/page3', 
-        component: 'pageThree'
+        .state('pay',{
+          url:'/pay', 
+        component: 'pay'
         })
-        .state('page4',{
-          url:'/page4', 
-        component: 'pageFour'
+        .state('users',{
+          url:'/users', 
+        component: 'users'
         })
         
         .state('produse', { // state for showing all produse
@@ -41,7 +41,7 @@ angular.module('demoApp')
         
 
         }).run(function($state) {
-        $state.go('page1'); //make a transition to page1 state when app starts
+        $state.go('session'); //make a transition to session state when app starts
 
     }
   );

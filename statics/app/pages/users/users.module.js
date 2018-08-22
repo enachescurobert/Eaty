@@ -1,11 +1,11 @@
 (function() {
     'use strict';
 
-angular.module('pageThree', [
+angular.module('users', [
     // 'ngRoute',
-    // 'pageThree',
+    // 'pay',
     // 'WishList',
-    // 'pageOne'
+    // 'session'
     
 ]);
 })();

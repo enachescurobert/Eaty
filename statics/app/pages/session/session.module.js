@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-angular.module('pageOne', [
+angular.module('session', [
     // 'produsList',
     // 'produsView',
     // 'produsCreate',

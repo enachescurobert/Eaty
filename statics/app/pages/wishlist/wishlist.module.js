@@ -1,11 +1,10 @@
 (function() {
     'use strict';
 
-angular.module('pageFour', [
+angular.module('WishList', [
     // 'ngRoute',
-    // 'pageThree',
     // 'WishList',
-    // 'pageOne'
-    
+    // 'pay',
+    // 'session'
 ]);
 })();
