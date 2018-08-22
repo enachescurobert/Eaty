@@ -9,7 +9,7 @@
 //     });
 
 angular.module('wishList.services', [])
-.factory('Produs', function($resource) {
+       .factory('Produs', function($resource) {
     return $resource('/Product/producttypes/:id/',{id:'@id'},{
         update: {method:'PUT'},
     },{
@@ -18,7 +18,7 @@ angular.module('wishList.services', [])
     stripTrailingSlashes: false
   });
 })
-.service('popupService',function($window){
+       .service('popupService',function($window){
     this.showPopup=function(message){
         return $window.confirm(message);
     }

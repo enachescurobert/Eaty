@@ -3,7 +3,6 @@
 
 
 angular.module('demoApp', [
-    // 'ngRoute',
     'ui.router',
     'ngResource',
     'session',
@@ -11,10 +10,7 @@ angular.module('demoApp', [
     'pay',
     'users',
     'wishList.services',
-    // 'produsList',
-    // 'produsView',
-    // 'produsCreate',
-    // 'produsEdit'
+
   ]);
 
 
