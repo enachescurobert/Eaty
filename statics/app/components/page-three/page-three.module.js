@@ -4,7 +4,7 @@
 angular.module('pageThree', [
     // 'ngRoute',
     // 'pageThree',
-    // 'pageTwo',
+    // 'WishList',
     // 'pageOne'
     
 ]);

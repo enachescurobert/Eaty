@@ -9,9 +9,9 @@ angular.module('demoApp')
         url:'/page1', 
         component: 'pageOne'
         })
-        .state('page2',{
-        url:'/page2', 
-        templateUrl: 'static/app/components/page-two/page-two.template.html'
+        .state('wishlist',{
+        url:'/wishlist', 
+        templateUrl: 'static/app/components/wishlist/wishlist.template.html'
         })
         .state('page3',{
           url:'/page3', 
@@ -21,25 +21,21 @@ angular.module('demoApp')
           url:'/page4', 
         component: 'pageFour'
         })
-        .state('type',{
-          url:'/type', 
-        component: 'productType'
-        })
-
+        
         .state('produse', { // state for showing all produse
           url: '/produse',
           component: 'produsList',
         })
         .state('viewProdus', { //state for showing single produs
-          url: '/page2/produse/:id/view',
+          url: '/wishlist/produse/:id/view',
           component: 'produsView',
         })
         .state('newProdus', { //state for adding a new produs
-          url: '/page2/produse/new',
+          url: '/wishlist/produse/new',
           component: 'produsCreate',
         })
         .state('editProdus', { //state for updating a produs
-          url: '/page2/produse/:id/edit',
+          url: '/wishlist/produse/:id/edit',
           component: 'produsEdit',
         });
         

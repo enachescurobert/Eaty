@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-angular.module('pageTwo', [
+angular.module('WishList', [
     // 'ngRoute',
-    // 'pageTwo',
+    // 'WishList',
     // 'pageThree',
     // 'pageOne'
 ]);

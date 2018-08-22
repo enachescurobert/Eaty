@@ -2,11 +2,11 @@
 //   'use strict';
   
 angular
-.module('pageTwo',[])
+.module('WishList',[])
 
 .directive('produsList', function(){
   return{
-  templateUrl: 'static/app/components/product-type/templates/produse.html',
+  templateUrl: 'static/app/components/wishlist/templates/produse.html',
   controller: function ($scope, $state,popupService, $window, Produs) 
   {
     // GET : Take everything
@@ -29,7 +29,7 @@ angular
 
 .directive('produsView', function(){
 return{
-templateUrl: 'static/app/components/product-type/templates/produs-view.html',
+templateUrl: 'static/app/components/wishlist/templates/produs-view.html',
 controller: function($scope, $stateParams, Produs) {
 $scope.produs = Produs.get({id:$stateParams.id}); //Get a single produs.Issues a GET to /api/produse/:id
 },
@@ -39,13 +39,13 @@ $scope.produs = Produs.get({id:$stateParams.id}); //Get a single produs.Issues a
 
 .directive('produsCreate', function(){
 return{
-templateUrl: 'static/app/components/product-type/templates/produs-add.html',
+templateUrl: 'static/app/components/wishlist/templates/produs-add.html',
 controller: function($scope, $state, $stateParams, Produs) {
 $scope.produs = new Produs();  //create new produs instance. Properties will be set via ng-model on UI
 
 $scope.addProdus = function() { //create a new produs. Issues a POST to /api/produse
   $scope.produs.$save(function() {
-    $state.go('page2'); // on success go back to home i.e. produse state.
+    $state.go('wishlist'); // on success go back to home i.e. produse state.
   });
 };
 },
@@ -55,11 +55,11 @@ $scope.addProdus = function() { //create a new produs. Issues a POST to /api/pro
 
 .directive('produsEdit', function(){
 return{
-templateUrl: 'static/app/components/product-type/templates/produs-edit.html',
+templateUrl: 'static/app/components/wishlist/templates/produs-edit.html',
 controller: function($scope, $state, $stateParams, Produs) {
 $scope.updateProdus = function() { //Update the edited produs. Issues a PUT to /api/produse/:id
   $scope.produs.$update(function() {
-    $state.go('page2'); // on success go back to home i.e. produse state.
+    $state.go('wishlist'); // on success go back to home i.e. produse state.
   });
 };
 
