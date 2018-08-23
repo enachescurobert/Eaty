@@ -30,6 +30,12 @@
                                         <p>Wishlist</p>
                                     </a>
                                 </li>
+                                <li ng-class="{ active: isActive('/productmanagement') }">
+                                    <a href="#!productmanagement" class="{{ condition ? 'active' : '' }}">
+                                        <i class="pe-7s-note2"></i>
+                                        <p>Product Management</p>
+                                    </a>
+                                </li>
                                 <li ng-class="{ active: isActive('/pay') }">
                                     <a href="#!pay" class="{{ condition ? 'active' : '' }}">
                                         <i class="pe-7s-wallet"></i>

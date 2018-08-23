@@ -13,9 +13,9 @@ angular.module('demoApp')
         url:'/wishlist', 
         templateUrl: 'static/app/pages/wishlist/wishlist.template.html'
         })
-        .state('balega',{
-          url:'/balega', 
-          templateUrl: 'static/app/pages/balega/balega.template.html'
+        .state('productmanagement',{
+          url:'/productmanagement', 
+          templateUrl: 'static/app/pages/productmanagement/productmanagement.template.html'
           })
         .state('pay',{
           url:'/pay', 
@@ -49,15 +49,15 @@ angular.module('demoApp')
           component: 'produdusList',
         })
         .state('viewProdudus', { //state for showing single produdus
-          url: '/balega/produduse/:id/view',
+          url: '/productmanagement/produduse/:id/view',
           component: 'produdusView',
         })
         .state('newProdudus', { //state for adding a new produdus
-          url: '/balega/produduse/new',
+          url: '/productmanagement/produduse/new',
           component: 'produdusCreate',
         })
         .state('editProdudus', { //state for updating a produdus
-          url: '/balega/produduse/:id/edit',
+          url: '/productmanagement/produduse/:id/edit',
           component: 'produdusEdit',
         })
 

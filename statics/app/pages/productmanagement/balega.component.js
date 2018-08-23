@@ -5,7 +5,7 @@ angular
 .module('BaleGa')
 
 .component('produdusList', {
-    templateUrl: 'static/app/pages/balega/templates/produduse.html',
+    templateUrl: 'static/app/pages/productmanagement/templates/produduse.html',
     controller: function($scope,popupService, $window, Produdus) 
     {
     // GET : Take everything
@@ -26,7 +26,7 @@ angular
 })
 
  .component('produdusView',{
-    templateUrl: 'static/app/pages/balega/templates/produdus-view.html',
+    templateUrl: 'static/app/pages/productmanagement/templates/produdus-view.html',
     controller: function($scope,$stateParams, Produdus) {
       $scope.produdus = Produdus.get({id:$stateParams.id}); //Get a single produdus.Issues a GET to /api/produduse/:id
     }
@@ -36,13 +36,13 @@ angular
 
 
   .component('produdusCreate',{
-    templateUrl: 'static/app/pages/balega/templates/produdus-add.html',
+    templateUrl: 'static/app/pages/productmanagement/templates/produdus-add.html',
     controller: function($scope, $state, $stateParams, Produdus) {
       $scope.produdus = new Produdus();  //create new produdus instance. Properties will be set via ng-model on UI
       
       $scope.addProdudus = function() { //create a new produdus. Issues a POST to /api/produduse
         $scope.produdus.$save(function() {
-          $state.go('balega'); // on success go back to home i.e. produduse state.
+          $state.go('productmanagement'); // on success go back to home i.e. produduse state.
         });
       };
       
@@ -52,12 +52,12 @@ angular
 
   
   .component('produdusEdit',{
-    templateUrl: 'static/app/pages/balega/templates/produdus-edit.html',  
+    templateUrl: 'static/app/pages/productmanagement/templates/produdus-edit.html',  
     controller: function($scope, $state, $stateParams, Produdus) {
    
      $scope.updateProdudus = function() { //Update the edited produdus. Issues a PUT to /api/produduse/:id
      $scope.produdus.$update(function() {
-     $state.go('balega'); // on success go back to home i.e. produduse state.
+     $state.go('productmanagement'); // on success go back to home i.e. produduse state.
      });
    };
    
@@ -106,7 +106,7 @@ angular
 
 // $scope.addProdudus = function() { //create a new produdus. Issues a POST to /api/produduse
 //   $scope.produdus.$save(function() {
-//     $state.go('balega'); // on success go back to home i.e. produduse state.
+//     $state.go('productmanagement'); // on success go back to home i.e. produduse state.
 //   });
 // };
 
@@ -120,7 +120,7 @@ angular
 
 //   $scope.updateProdudus = function() { //Update the edited produdus. Issues a PUT to /api/produduse/:id
 //   $scope.produdus.$update(function() {
-//   $state.go('balega'); // on success go back to home i.e. produduse state.
+//   $state.go('productmanagement'); // on success go back to home i.e. produduse state.
 //   });
 // };
 
