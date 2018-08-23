@@ -7,7 +7,6 @@ angular.module('demoApp', [
     'ngResource',
     'session',
     'pay',
-    // 'users',
     'WishList',
     'wishList.services',
     'ProductManagement',

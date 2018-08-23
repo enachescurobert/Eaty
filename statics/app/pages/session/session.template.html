@@ -1,19 +1,22 @@
-<strong>Users:</strong>
-<hr>
 <div ng-controller="UserListController">
-    <ul ng-repeat="user in users">
-        <li>{{user.username}}</li>
-    </ul>
-</div>
+    <div ng-controller="ProdusListController">
 
-<hr><hr>
-
-<strong>Products:</strong>
+        <table class="table usertable">        
+        <tr>
+            <td><h3>All Users:</h3></td>
+        </tr>  
+        <tr ng-repeat="user in users">
+            <td>{{user.username}}</td>
+        </tr>
 <hr>
-
-<div ng-controller="ProdusListController">
-    <ul ng-repeat="produs in produse">
-        <li>{{produs.name}}</li>
-    </ul>
+        <tr>
+            <td><h3>All Products:</h3></td>
+        </tr> 
+        <tr ng-repeat="produs in produse">
+            <td>{{produs.name}}</td>
+        </tr>
+        </table>
+    </div>
 </div>
+
 
