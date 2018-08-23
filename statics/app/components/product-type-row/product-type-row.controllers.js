@@ -8,7 +8,7 @@ angular.module('productControllers', [])
     stripTrailingSlashes: false
   });
 })
-       .service('popupService',function($window){
+       .service('popupService', function($window){
     this.showPopup=function(message){
         return $window.confirm(message);
     }

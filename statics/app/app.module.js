@@ -13,8 +13,10 @@ angular.module('demoApp', [
     'ProductManagement.services',
     'InTendant',
     'inTendant.services',
-    // 'productControllers',
-    // 'userControllers'
+    'productmanagementControllers' //not used
+    // 'productControllers', //not used here 
+    // 'userControllers' //not used here //injected in InTendant module
+
   ]);
 
 

@@ -3,7 +3,8 @@
 
 angular.module('session', [
     'productControllers',
-    'userControllers'
+    'userControllers',
+    'productmanagementControllers'
 
 
 ]);

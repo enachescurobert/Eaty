@@ -1,5 +1,7 @@
 <div ng-controller="UserListController">
     <div ng-controller="ProdusListController">
+        <div ng-controller="ProdudusListController">
+
 
         <table class="table usertable">        
         <tr>
@@ -15,7 +17,16 @@
         <tr ng-repeat="produs in produse">
             <td>{{produs.name}}</td>
         </tr>
+<hr>
+        <tr>
+            <td><h3>Some prices:</h3></td>
+        </tr> 
+        <tr ng-repeat="produdus in produduse">
+            <td>{{produdus.price}}</td>
+        </tr>
         </table>
+
+        </div>
     </div>
 </div>
 
