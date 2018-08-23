@@ -27,10 +27,11 @@ angular.module('demoApp')
         })
 
         // Wishlist
-        .state('produse', { // state for showing all produse
-          url: '/produse',
-          component: 'produsList',
-        })
+
+        // .state('produse', { // state for showing all produse
+        //   url: '/produse',
+        //   component: 'produsList',
+        // })
         .state('viewProdus', { //state for showing single produs
           url: '/wishlist/produse/:id/view',
           component: 'produsView',
@@ -42,12 +43,14 @@ angular.module('demoApp')
         .state('editProdus', { //state for updating a produs
           url: '/wishlist/produse/:id/edit',
           component: 'produsEdit',
-
-        // Balega
-        }).state('produduse', { // state for showing all produse
-          url: '/produduse',
-          component: 'produdusList',
         })
+
+        // Product Management
+        
+        // .state('produduse', { // state for showing all produse
+        //   url: '/produduse',
+        //   component: 'produdusList',
+        // })
         .state('viewProdudus', { //state for showing single produdus
           url: '/productmanagement/produduse/:id/view',
           component: 'produdusView',

@@ -2,14 +2,19 @@
 <a ui-sref="newProdudus" class="btn-primary btn-lg nodecoration">Add New Product</a>
 
 <table class="table produdustable">
+  
   <tr>
     <td><h3>Product management:</h3></td>
     <td></td>
   </tr>
-  <td>ID of the product</td>
-  <td>Quantity</td>
-  <td>Crosses</td>
-  <td>Price</td>
+
+  <tr>
+    <td><strong>ID of the product</strong></td>
+    <td><strong>Quantity</strong></td>
+    <td><strong>Crosses</strong></td>
+    <td><strong>Price</strong></td>
+  </tr>
+
   <tr ng-repeat="produdus in produduse">
     <td>{{produdus.product_type}}</td>
     <td>{{produdus.quantity}}</td>
