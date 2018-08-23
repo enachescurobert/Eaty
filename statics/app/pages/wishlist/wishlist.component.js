@@ -6,7 +6,7 @@ angular
 
 .component('produsList', {
     templateUrl: 'static/app/pages/wishlist/templates/produse.html',
-    controller: function($scope,popupService, $window, Produs) 
+    controller: function ProdusListController($scope,popupService, $window, Produs) 
     {
     // GET : Take everything
 
@@ -27,7 +27,7 @@ angular
 
  .component('produsView',{
     templateUrl: 'static/app/pages/wishlist/templates/produs-view.html',
-    controller: function($scope,$stateParams, Produs) {
+    controller: function ProdusViewController($scope,$stateParams, Produs) {
       $scope.produs = Produs.get({id:$stateParams.id}); //Get a single produs.Issues a GET to /api/produse/:id
     }
     // controllerAs: 'ProdusViewController'
@@ -37,7 +37,7 @@ angular
 
   .component('produsCreate',{
     templateUrl: 'static/app/pages/wishlist/templates/produs-add.html',
-    controller: function($scope, $state, $stateParams, Produs) {
+    controller: function ProdusCreateController($scope, $state, $stateParams, Produs) {
       $scope.produs = new Produs();  //create new produs instance. Properties will be set via ng-model on UI
       
       $scope.addProdus = function() { //create a new produs. Issues a POST to /api/produse
@@ -53,7 +53,7 @@ angular
   
   .component('produsEdit',{
     templateUrl: 'static/app/pages/wishlist/templates/produs-edit.html',  
-    controller: function($scope, $state, $stateParams, Produs) {
+    controller: function ProdusEditController($scope, $state, $stateParams, Produs) {
    
      $scope.updateProdus = function() { //Update the edited produs. Issues a PUT to /api/produse/:id
      $scope.produs.$update(function() {
