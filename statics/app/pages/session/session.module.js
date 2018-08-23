@@ -2,10 +2,9 @@
     'use strict';
 
 angular.module('session', [
-    // 'produsList',
-    // 'produsView',
-    // 'produsCreate',
-    // 'produsEdit'
+    'productControllers',
+    'userControllers'
+
 
 ]);
 })();

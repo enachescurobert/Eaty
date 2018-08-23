@@ -14,6 +14,8 @@ angular.module('demoApp', [
     'ProductManagement.services',
     'InTendant',
     'inTendant.services',
+    // 'productControllers',
+    // 'userControllers'
   ]);
 
 

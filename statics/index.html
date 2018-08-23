@@ -30,7 +30,7 @@
 </head>
 <body>
 
-<!-- Components : -->
+<!-- Shared Components : -->
 
     <div class="main-panel">
 
@@ -45,16 +45,21 @@
 <!-- End of componets -->
 
 
-    <!-- AngularJS -->
+                                        <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
 
-    <!-- Main -->
+
+
+                            <!-- Main -->
     <script src="{% static "app/app.module.js" %}"></script>
     <script src="{% static "app/app.route.js" %}"></script>
 
-            <!-- All 4 pages : Session, Wishlist, Pay, Users -->
+
+
+
+            <!-- All 5 pages : Session, Wishlist, Product Management, Pay, Users -->
         <!-- Session Page -->
     <script src="{% static "app/pages/session/session.module.js" %}"></script>
     <script src="{% static "app/pages/session/session.component.js" %}"></script>
@@ -73,6 +78,12 @@
     <script src="{% static "app/pages/intendant/intendant.module.js" %}"></script>
     <script src="{% static "app/pages/intendant/intendant.component.js" %}"></script>
     <script src="{% static "app/pages/intendant/intendant.service.js" %}"></script>
+
+            <!-- COMPONENTS -->
+    <!-- Product Type Row -->
+    <script src="{% static "app/components/product-type-row/product-type-row.controllers.js" %}"></script>
+    <script src="{% static "app/components/user-row/user-row.controllers.js" %}"></script>
+
 
         <!-- Shared pages -->
     <script src="{% static "app/shared/navbar/navbar.component.js" %}"></script>
