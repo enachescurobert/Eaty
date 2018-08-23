@@ -8,7 +8,7 @@
     
 //     });
 
-angular.module('baleGa.services', [])
+angular.module('ProductManagement.services', [])
        .factory('Produdus', function($resource) {
     return $resource('/Product/products/:id/',{id:'@id'},{
         update: {method:'PUT'},

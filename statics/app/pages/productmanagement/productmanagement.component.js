@@ -2,7 +2,7 @@
 //   'use strict';
   
 angular
-.module('BaleGa')
+.module('ProductManagement')
 
 .component('produdusList', {
     templateUrl: 'static/app/pages/productmanagement/templates/produduse.html',

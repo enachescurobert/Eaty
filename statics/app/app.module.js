@@ -10,8 +10,8 @@ angular.module('demoApp', [
     // 'users',
     'WishList',
     'wishList.services',
-    'BaleGa',
-    'baleGa.services',
+    'ProductManagement',
+    'ProductManagement.services',
     'InTendant',
     'inTendant.services',
   ]);

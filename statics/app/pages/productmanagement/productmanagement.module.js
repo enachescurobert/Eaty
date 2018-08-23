@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-angular.module('BaleGa', [
+angular.module('ProductManagement', [
     // 'produsList',
     // 'produsView',
     // 'produsCreate',
