@@ -7,11 +7,13 @@ angular.module('demoApp', [
     'ngResource',
     'session',
     'pay',
-    'users',
+    // 'users',
     'WishList',
     'wishList.services',
     'BaleGa',
-    'baleGa.services'
+    'baleGa.services',
+    'InTendant',
+    'inTendant.services',
   ]);
 
 

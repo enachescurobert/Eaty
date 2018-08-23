@@ -21,9 +21,9 @@ angular.module('demoApp')
           url:'/pay', 
         component: 'pay'
         })
-        .state('users',{
-          url:'/users', 
-        component: 'users'
+        .state('intendant',{
+          url:'/intendant', 
+          templateUrl: 'static/app/pages/intendant/intendant.template.html'
         })
 
         // Wishlist
@@ -59,6 +59,25 @@ angular.module('demoApp')
         .state('editProdudus', { //state for updating a produdus
           url: '/balega/produduse/:id/edit',
           component: 'produdusEdit',
+        })
+
+        // Intendant
+
+        // .state('produse', { // state for showing all produse
+        //   url: '/produse',
+        //   component: 'produsList',
+        // })
+        .state('viewUser', { //state for showing single user
+          url: '/intendant/users/:id/view',
+          component: 'userView',
+        })
+        .state('newUser', { //state for adding a new user
+          url: '/intendant/users/new',
+          component: 'userCreate',
+        })
+        .state('editUser', { //state for updating a user
+          url: '/intendant/users/:id/edit',
+          component: 'userEdit',
         });
         
 
