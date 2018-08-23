@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import list_users, create_user, update_user, delete_user, list_groups, create_group, update_group, delete_group
+from .views import list_users, create_user, update_user, delete_user, list_groups, create_group, update_group, delete_group, list_profiles, create_profile, update_profile, delete_profile
 
 urlpatterns = [
     # CRUD - User API
@@ -13,6 +13,11 @@ urlpatterns = [
     path('newgroup', create_group, name='create_group'),
     path('updategroup/<int:id>/', update_group, name='update_group'),
     path('deletegroup/<int:id>/', delete_group, name='delete_group'),
+    # CRUD - Profile API
+    path('profile', list_profiles, name='list_profiles'),
+    path('newprofile', create_profile, name='create_profile'),
+    path('updateprofile/<int:id>/', update_profile, name='update_profile'),
+    path('deleteprofile/<int:id>/', delete_profile, name='delete_profile'),
 
 
     # REST API User
@@ -24,6 +29,11 @@ urlpatterns = [
     path('groups/', views.GroupList.as_view()),
     # path('groups/<int:pk>/', views.GroupDetail.as_view()),
     path('groups/<int:pk>/', views.GroupDetail.as_view()),
+    
+    # REST API Profile
+    path('profiles/', views.ProfileList.as_view()),
+    # path('profiles/<int:pk>/', views.ProfileDetail.as_view()),
+    path('profiles/<int:pk>/', views.ProfileDetail.as_view()),
 
 ]
 

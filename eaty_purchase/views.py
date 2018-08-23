@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from rest_framework import generics
-from eaty_purchase.serializers import UserSerializer, GroupSerializer
-from eaty_purchase.forms import UserForm, GroupForm
+from eaty_purchase.serializers import UserSerializer, GroupSerializer, ProfileSerializer
+from eaty_purchase.forms import UserForm, GroupForm, ProfileForm
+from .models import Profile
 
 # Rest API
 class UserList(generics.ListCreateAPIView):
@@ -22,6 +23,15 @@ class GroupList(generics.ListCreateAPIView):
 class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class ProfileList(generics.ListCreateAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+
+
+class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
 
 
 # User API
@@ -90,3 +100,38 @@ def delete_group(request, id):
         return redirect('list_groups')
 
     return render(request, 'app/pages/Django-Group-API/group-delete-confirm.template.html')
+
+
+# Profile API
+def list_profiles(request):
+    profiles = Profile.objects.all()
+    return render(request,"app/pages/Django-Profile-API/profile-template.html", {'profiles':profiles})
+
+def create_profile(request):
+    form = ProfileForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_profiles')
+
+    return render(request,'app/pages/Django-Profile-API/profiles-form.template.html', {'form':form})
+
+def update_profile(request, id):
+    profile = Profile.objects.get(id=id)
+    form = ProfileForm(request.POST or None, instance=profile)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_profiles')
+
+    return render(request, 'app/pages/Django-Profile-API/profiles-form.template.html', {'form':form, 'profile':profile})
+
+def delete_profile(request, id):
+    profile = Profile.objects.get(id=id)
+
+    if request.method == 'POST':
+        profile.delete()
+        return redirect('list_profiles')
+
+    return render(request, 'app/pages/Django-Profile-API/profile-delete-confirm.template.html')
+
