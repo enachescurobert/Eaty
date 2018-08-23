@@ -89,4 +89,4 @@ def delete_product(request, id):
         product.delete()
         return redirect('list_products')
 
-    return render(request, 'app/pages/Django-Product-API/prod-delete-confirm.template.html')
+    return render(request, 'app/pages/Django-Product-API/product-delete-confirm.template.html')
