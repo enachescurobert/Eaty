@@ -20,13 +20,11 @@ class Purchase(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     coffe = models.FloatField(null=True)
     cake = models.FloatField(null=True)
+
     coffetotal = models.FloatField(null=True)
     caketotal = models.FloatField(null=True)
-    total = models.FloatField(null=True)
-
     
-Profile.objects.aggregate(coffetotal=('coffe') * Value(10))['coffetotal']
-Profile.objects.aggregate(caketotal=('cake') * Value(10))['caketotal']
-Profile.objects.aggregate(total=F('coffetotal')+F('caketotal'))['total']
+    total = models.FloatField(null=True)

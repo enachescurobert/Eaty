@@ -1,13 +1,15 @@
-{% if users %}
-   There are {{ users|length }} users:
+{% if profiles %}
+   There are {{ profiles|length }} profiles:
 <ul>
-  {% for user in users %}
-    <a href="{% url 'update_user' user.id %}">
+  {% for profile in profiles %}
+    <a href="{% url 'update_profile' profile.id %}">
 
-      <!-- <li>User url: {{user.url}}</li> -->
-      <li>Username: {{user.username}}</li>
-      <li>Email: {{user.email}}</li>
-      <li>Group: {{user.group}}</li>
+      <!-- <li>User url: {{profile.url}}</li> -->
+      <li>Username: {{profile.user}}</li>
+      <li>Coffe: {{profile.coffe}}</li>
+      <li>Cake: {{profile.cake}}</li>
+      <li>Coffe: {{profile.coffetotal}}</li>
+      <li>Cake: {{profile.caketotal}}</li>
       <hr>
 
     </a>
@@ -15,4 +17,4 @@
 </ul>
 {% endif %}
 
-<a href="{% url 'create_user' %}">New User</a>
+<a href="{% url 'create_profile' %}">New Profile</a>

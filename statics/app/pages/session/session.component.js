@@ -4,9 +4,7 @@
 angular.
   module('session').
   component('session', {
-    templateUrl: 'static/app/pages/session/session.template.html',
-   
-  
+    templateUrl: 'static/app/pages/session/session.template.html', 
   });
 
 
