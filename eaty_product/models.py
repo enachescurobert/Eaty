@@ -14,7 +14,9 @@ class Product(models.Model):
     quantity = models.IntegerField(default=0)
     product_type = models.ForeignKey(ProductType, on_delete=models.CASCADE)
 
-   
+    def product_total(self):
+        return self.quantity * self.cross *0.5
+
     def __str__(self):
         #return 'Product: %s, Price: %s, Number of crosses: %s, Quantity: %s' % (self.product_type, self.price, self.cross, self.quantity)
         return 'Product: {}, Price: {}€, Number of crosses: {}, Quantity: {}'.format(self.product_type, self.price, self.cross, self.quantity) 
