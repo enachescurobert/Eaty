@@ -46,7 +46,7 @@ function($scope, $state, $stateParams, Purchase) {
     
     $scope.addPurchase = function() { //create a new purchase. Issues a POST to /api/purchases
       $scope.purchase.$save(function() {
-        $state.go('intendant'); // on success go back to home i.e. purchases state.
+        $state.go('session'); // on success go back to home i.e. purchases state.
       });
     };
     
@@ -59,7 +59,7 @@ function($scope, $state, $stateParams, Purchase) {
    
     $scope.updatePurchase = function() { //Update the edited purchase. Issues a PUT to /api/purchases/:id
     $scope.purchase.$update(function() {
-    $state.go('intendant'); // on success go back to home i.e. purchases state.
+    $state.go('session'); // on success go back to home i.e. purchases state.
     });
   };
   
