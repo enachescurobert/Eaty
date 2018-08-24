@@ -1,6 +1,9 @@
-<div ng-controller="PurchaseListController">
-   
-    <table class="table usertable">    
+<div ng-controller="PurchaseViewController">
+<div ng-controller="PurchaseEditController">
+<div ng-controller="PurchaseListController">    
+
+
+    <table class="table purchasetable">    
     <tr>
         <td><strong>User ID</strong></td>
         <td><strong>X's on Coffe</strong></td>
@@ -9,17 +12,26 @@
         <td><strong>Coffe Total (€)</strong></td>
         <td><strong>Total Debt (€)</strong></td>
 
-
+    
     </tr>    
     <tr ng-repeat="purchase in purchases">
         <td>{{purchase.user}}</td>
-        <td>{{purchase.coffe}}</td>
-        <td>{{purchase.cake}}</td>
+        <td>
+            {{purchase.coffe}}
+        </td>
+        <td>
+            {{purchase.cake}}
+        </td>
         <td>{{purchase.cake * 0.5}} (€)</td>
         <td>{{purchase.coffe * 0.1}} (€)</td>
         <td>{{purchase.cake * 0.5 + purchase.coffe * 0.1}} (€)</td>
+        <td><a class="btn btn-primary" ui-sref="viewPurchase({id:purchase.id})">Edit</a></td>
+
     </tr>
     </table>
+
+            </div>
+        </div>
 </div>
 
 

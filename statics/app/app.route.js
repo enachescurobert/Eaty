@@ -81,6 +81,29 @@ angular.module('demoApp')
         .state('editUser', { //state for updating a user
           url: '/intendant/users/:id/edit',
           component: 'userEdit',
+        })
+
+                // session
+
+        // .state('produse', { // state for showing all produse
+        //   url: '/produse',
+        //   component: 'produsList',
+        // })
+        .state('viewPurchase', { //state for showing single user
+          url: '/session/purchases/:id/view',
+          templateUrl: 'static/app/components/purchase-row/templates/purchase-view.html',
+          // component: 'purchaseView',
+          controller: 'PurchaseViewController'
+        })
+        // .state('newPurchase', { //state for adding a new purchase
+        //   url: '/session/purchases/new',
+        //   component: 'purchaseCreate',
+        // })
+        .state('editPurchase', { //state for updating a purchase
+          url: '/session/purchases/:id/edit',
+          templateUrl: 'static/app/components/purchase-row/templates/purchase-edit.html',
+          // component: 'purchaseEdit',
+          controller: 'PurchaseEditController'
         });
         
 
