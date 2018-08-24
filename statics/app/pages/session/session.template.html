@@ -1,25 +1,58 @@
+<div ng-controller="PurchaseListController">
+   
+    <table class="table usertable">    
+    <tr>
+        <td><strong>User ID</strong></td>
+        <td><strong>X's on Coffe</strong></td>
+        <td><strong>X's on Cake</strong></td>
+        <td><strong>Cake Total (€)</strong></td>
+        <td><strong>Coffe Total (€)</strong></td>
+        <td><strong>Total Debt (€)</strong></td>
+
+
+    </tr>    
+    <tr ng-repeat="purchase in purchases">
+        <td>{{purchase.user}}</td>
+        <td>{{purchase.coffe}}</td>
+        <td>{{purchase.cake}}</td>
+        <td>{{purchase.cake * 0.5}} (€)</td>
+        <td>{{purchase.coffe * 0.1}} (€)</td>
+        <td>{{purchase.cake * 0.5 + purchase.coffe * 0.1}} (€)</td>
+    </tr>
+    </table>
+</div>
+
+
+
 <div ng-controller="UserListController">
-    <div ng-controller="ProdusListController">
-        <div ng-controller="ProdudusListController">
+    <!-- <div ng-controller="ProdusListController">
+        <div ng-controller="ProdudusListController"> -->
 
-
-        <table class="table usertable">        
+        
+        <table class="table usertable">  
         <tr>
             <td><h3>All Users:</h3></td>
+        </tr>      
+        <tr>
+            <td><h4>User</h4></td>
+            <td><h4>User ID:</h4></td>
+
         </tr>  
         <tr ng-repeat="user in users">
             <td>{{user.username}}</td>
+            <td>{{user.id}}</td>
+
         </tr>
 <hr>
-        <tr>
-            <td><h3>All Products:</h3></td>
+        <!-- <tr>
+            <td><h4>All Products:</h4></td>
         </tr> 
         <tr ng-repeat="produs in produse">
             <td>{{produs.name}}</td>
         </tr>
 <hr>
         <tr>
-            <td><h3>Some prices:</h3></td>
+            <td><h4>Some prices:</h4></td>
         </tr> 
         <tr ng-repeat="produdus in produduse">
             <td>{{produdus.price}} (€)</td>
@@ -27,7 +60,7 @@
         </table>
 
         </div>
-    </div>
+    </div> -->
 </div>
 
 

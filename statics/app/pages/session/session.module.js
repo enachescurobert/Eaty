@@ -2,9 +2,10 @@
     'use strict';
 
 angular.module('session', [
-    'productControllers',
-    'userControllers',
-    'productmanagementControllers'
+    'productControllers', //not used
+    'userControllers', //not used
+    'productmanagementControllers', //not used
+    'purchaseControllers'
 
 
 ]);

@@ -13,9 +13,11 @@ angular.module('demoApp', [
     'ProductManagement.services',
     'InTendant',
     'inTendant.services',
-    'productmanagementControllers' //not used
-    // 'productControllers', //not used here 
-    // 'userControllers' //not used here //injected in InTendant module
+    'productmanagementControllers', //not used
+    // 'productControllers', //not used  
+    // 'userControllers' //not used
+    'purchaseControllers' //injected in Session component  
+
 
   ]);
 
