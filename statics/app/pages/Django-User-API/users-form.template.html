@@ -6,6 +6,6 @@
     <button type="submit">Save</button>
 </form>
 
-{% if user %}
+{% if users %}
     <a href="{% url 'delete_user' user.id %}">Delete</a>
 {% endif %}
