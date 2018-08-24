@@ -85,7 +85,7 @@ angular.module('demoApp')
         
 
         }).run(function($state) {
-        $state.go('wishlist'); //make a transition to wishlist state when app starts
+        $state.go('session'); //make a transition to session state when app starts
 
     }
   );
