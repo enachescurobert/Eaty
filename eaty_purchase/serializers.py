@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from eaty_purchase.models import Profile
+from eaty_purchase.models import Purchase
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -14,7 +14,7 @@ class GroupSerializer(serializers.ModelSerializer):
         model = Group
         fields = "__all__"
 
-class ProfileSerializer(serializers.ModelSerializer):
+class PurchaseSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Profile
+        model = Purchase
         fields = "__all__"

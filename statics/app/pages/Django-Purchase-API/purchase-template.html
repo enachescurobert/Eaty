@@ -1,0 +1,23 @@
+{% if purchases %}
+   There are {{ purchases|length }} purchases:
+<ul>
+  {% for purchase in purchases %}
+    <a href="{% url 'update_purchase' purchase.id %}">
+
+      <!-- <li>User url: {{purchase.url}}</li> -->
+      <li>Username: {{purchase.user}}</li>
+      <li>Coffe X number: {{purchase.coffe}}</li>
+      <li>Cake X number: {{purchase.cake}}</li>
+      <!-- <li>Coffe: {{purchase.coffetotal}}</li> -->
+      <!-- <li>Cake: {{purchase.caketotal}}</li> -->
+      <!-- <li>Total: {{purchase.caketotal}}</li> -->
+      <li>Coffe Total Debt: {{purchase.coffe_total}} (€)</li>
+      <li>Cake Total Debt: {{purchase.cake_total}} (€)</li>
+      <hr>
+
+    </a>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<a href="{% url 'create_purchase' %}">New Purchase</a>

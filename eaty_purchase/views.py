@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from rest_framework import generics
-from eaty_purchase.serializers import UserSerializer, GroupSerializer, ProfileSerializer
-from eaty_purchase.forms import UserForm, GroupForm, ProfileForm
-from .models import Profile
+from eaty_purchase.serializers import UserSerializer, GroupSerializer, PurchaseSerializer
+from eaty_purchase.forms import UserForm, GroupForm, PurchaseForm
+from .models import Purchase
 
 # Rest API
 class UserList(generics.ListCreateAPIView):
@@ -24,14 +24,14 @@ class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
-class ProfileList(generics.ListCreateAPIView):
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
+class PurchaseList(generics.ListCreateAPIView):
+    queryset = Purchase.objects.all()
+    serializer_class = PurchaseSerializer
 
 
-class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
+class PurchaseDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Purchase.objects.all()
+    serializer_class = PurchaseSerializer
 
 
 # User API
@@ -102,36 +102,36 @@ def delete_group(request, id):
     return render(request, 'app/pages/Django-Group-API/group-delete-confirm.template.html')
 
 
-# Profile API
-def list_profiles(request):
-    profiles = Profile.objects.all()
-    return render(request,"app/pages/Django-Profile-API/profile-template.html", {'profiles':profiles})
+# Purchase API
+def list_purchases(request):
+    purchases = Purchase.objects.all()
+    return render(request,"app/pages/Django-Purchase-API/purchase-template.html", {'purchases':purchases})
 
-def create_profile(request):
-    form = ProfileForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect('list_profiles')
-
-    return render(request,'app/pages/Django-Profile-API/profiles-form.template.html', {'form':form})
-
-def update_profile(request, id):
-    profile = Profile.objects.get(id=id)
-    form = ProfileForm(request.POST or None, instance=profile)
+def create_purchase(request):
+    form = PurchaseForm(request.POST or None)
 
     if form.is_valid():
         form.save()
-        return redirect('list_profiles')
+        return redirect('list_purchases')
 
-    return render(request, 'app/pages/Django-Profile-API/profiles-form.template.html', {'form':form, 'profile':profile})
+    return render(request,'app/pages/Django-Purchase-API/purchases-form.template.html', {'form':form})
 
-def delete_profile(request, id):
-    profile = Profile.objects.get(id=id)
+def update_purchase(request, id):
+    purchase = Purchase.objects.get(id=id)
+    form = PurchaseForm(request.POST or None, instance=purchase)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_purchases')
+
+    return render(request, 'app/pages/Django-Purchase-API/purchases-form.template.html', {'form':form, 'purchase':purchase})
+
+def delete_purchase(request, id):
+    purchase = Purchase.objects.get(id=id)
 
     if request.method == 'POST':
-        profile.delete()
-        return redirect('list_profiles')
+        purchase.delete()
+        return redirect('list_purchases')
 
-    return render(request, 'app/pages/Django-Profile-API/profile-delete-confirm.template.html')
+    return render(request, 'app/pages/Django-Purchase-API/purchase-delete-confirm.template.html')
 

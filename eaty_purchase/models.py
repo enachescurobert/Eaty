@@ -12,19 +12,30 @@ class Session(models.Model):
         return self.start_date
 
 class Purchase(models.Model):
-    value = models.FloatField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='purchases')
+
+    coffe = models.FloatField(default=0)
+    cake = models.FloatField(default=0)
+
+    coffetotal = models.FloatField(null=True, blank=True)
+    caketotal = models.FloatField(null=True, blank=True)
+    
+    value = models.FloatField(null=True, blank=True)
+
+    def coffe_total(self):
+        return self.coffe * 0.1
+
+    def cake_total(self):
+        return self.cake * 0.5
+    
+    def value_total(self):
+        return self.coffetotal * self.caketotal
 
     def __str__(self):
         return 'The debt of {} is {} '.format(self.user, self.value)
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    coffe = models.FloatField(null=True)
-    cake = models.FloatField(null=True)
 
-    coffetotal = models.FloatField(null=True)
-    caketotal = models.FloatField(null=True)
-    
-    total = models.FloatField(null=True)
+
+
+
