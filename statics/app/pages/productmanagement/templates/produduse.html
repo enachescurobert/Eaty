@@ -13,6 +13,7 @@
     <td><strong>Quantity</strong></td>
     <td><strong>Crosses</strong></td>
     <td><strong>Price</strong></td>
+    <td><strong>The real price hahaha</strong></td>
   </tr>
 
   <tr ng-repeat="produdus in produduse">
@@ -20,6 +21,9 @@
     <td>{{produdus.quantity}}</td>
     <td>{{produdus.cross}} x</td>
     <td>{{produdus.price}} (€)</td>
+    <td>{{produdus.quantity * produdus.cross * 0.5}} (€)</td>
+
+
 
     <td>
       <a class="btn btn-primary" ui-sref="viewProdudus({id:produdus.id})">Edit</a>
