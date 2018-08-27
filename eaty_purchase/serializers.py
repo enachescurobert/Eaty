@@ -15,6 +15,7 @@ class GroupSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class SessionSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
     class Meta:
         model = Session
-        fields = "__all__"
+        fields = ('id','coffe','cake','user')
