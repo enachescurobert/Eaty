@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User, Group
-from .models import Purchase
+from .models import Session
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -12,7 +12,7 @@ class GroupForm(forms.ModelForm):
         model = Group
         fields = '__all__'
 
-class PurchaseForm(forms.ModelForm):
+class SessionForm(forms.ModelForm):
     class Meta:
-        model = Purchase
+        model = Session
         fields = '__all__'

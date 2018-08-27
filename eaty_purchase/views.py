@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from rest_framework import generics
-from eaty_purchase.serializers import UserSerializer, GroupSerializer, PurchaseSerializer
-from eaty_purchase.forms import UserForm, GroupForm, PurchaseForm
-from .models import Purchase
+from eaty_purchase.serializers import UserSerializer, GroupSerializer, SessionSerializer
+from eaty_purchase.forms import UserForm, GroupForm, SessionForm
+from .models import Session
 
 # Rest API
 class UserList(generics.ListCreateAPIView):
@@ -24,14 +24,14 @@ class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
-class PurchaseList(generics.ListCreateAPIView):
-    queryset = Purchase.objects.all()
-    serializer_class = PurchaseSerializer
+class SessionList(generics.ListCreateAPIView):
+    queryset = Session.objects.all()
+    serializer_class = SessionSerializer
 
 
-class PurchaseDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Purchase.objects.all()
-    serializer_class = PurchaseSerializer
+class SessionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Session.objects.all()
+    serializer_class = SessionSerializer
 
 
 # User API
@@ -102,36 +102,36 @@ def delete_group(request, id):
     return render(request, 'app/pages/Django-Group-API/group-delete-confirm.template.html')
 
 
-# Purchase API
-def list_purchases(request):
-    purchases = Purchase.objects.all()
-    return render(request,"app/pages/Django-Purchase-API/purchase-template.html", {'purchases':purchases})
+# Session API
+def list_sessions(request):
+    sessions = Session.objects.all()
+    return render(request,"app/pages/Django-Session-API/session-template.html", {'sessions':sessions})
 
-def create_purchase(request):
-    form = PurchaseForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect('list_purchases')
-
-    return render(request,'app/pages/Django-Purchase-API/purchases-form.template.html', {'form':form})
-
-def update_purchase(request, id):
-    purchase = Purchase.objects.get(id=id)
-    form = PurchaseForm(request.POST or None, instance=purchase)
+def create_session(request):
+    form = SessionForm(request.POST or None)
 
     if form.is_valid():
         form.save()
-        return redirect('list_purchases')
+        return redirect('list_sessions')
 
-    return render(request, 'app/pages/Django-Purchase-API/purchases-form.template.html', {'form':form, 'purchase':purchase})
+    return render(request,'app/pages/Django-Session-API/sessions-form.template.html', {'form':form})
 
-def delete_purchase(request, id):
-    purchase = Purchase.objects.get(id=id)
+def update_session(request, id):
+    session = Session.objects.get(id=id)
+    form = SessionForm(request.POST or None, instance=session)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_sessions')
+
+    return render(request, 'app/pages/Django-Session-API/sessions-form.template.html', {'form':form, 'session':session})
+
+def delete_session(request, id):
+    session = Session.objects.get(id=id)
 
     if request.method == 'POST':
-        purchase.delete()
-        return redirect('list_purchases')
+        session.delete()
+        return redirect('list_sessions')
 
-    return render(request, 'app/pages/Django-Purchase-API/purchase-delete-confirm.template.html')
+    return render(request, 'app/pages/Django-Session-API/session-delete-confirm.template.html')
 

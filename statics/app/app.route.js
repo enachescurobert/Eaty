@@ -89,25 +89,25 @@ angular.module('demoApp')
         //   url: '/produse',
         //   component: 'produsList',
         // })
-        .state('viewPurchase', { //state for showing single user
-          url: '/session/purchases/:id/view',
-          templateUrl: 'static/app/components/purchase-row/templates/purchase-view.html',
-          // component: 'purchaseView',
-          controller: 'PurchaseViewController'
+        .state('viewSession', { //state for showing single user
+          url: '/session/sessions/:id/view',
+          templateUrl: 'static/app/components/session-row/templates/session-view.html',
+          // component: 'sessionView',
+          controller: 'SessionViewController'
         })
-        .state('newPurchase', { //state for adding a new purchase
-          url: '/session/purchases/new',
-          templateUrl: 'static/app/components/purchase-row/templates/purchase-add.html',
+        .state('newSession', { //state for adding a new session
+          url: '/session/sessions/new',
+          templateUrl: 'static/app/components/session-row/templates/session-add.html',
 
-          // component: 'purchaseCreate',
-          controller: 'PurchaseCreateController'
+          // component: 'sessionCreate',
+          controller: 'SessionCreateController'
 
         })
-        .state('editPurchase', { //state for updating a purchase
-          url: '/session/purchases/:id/edit',
-          templateUrl: 'static/app/components/purchase-row/templates/purchase-edit.html',
-          // component: 'purchaseEdit',
-          controller: 'PurchaseEditController'
+        .state('editSession', { //state for updating a session
+          url: '/session/sessions/:id/edit',
+          templateUrl: 'static/app/components/session-row/templates/session-edit.html',
+          // component: 'sessionEdit',
+          controller: 'SessionEditController'
         });
         
 

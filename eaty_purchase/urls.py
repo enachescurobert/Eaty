@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import list_users, create_user, update_user, delete_user, list_groups, create_group, update_group, delete_group, list_purchases, create_purchase, update_purchase, delete_purchase
+from .views import list_users, create_user, update_user, delete_user, list_groups, create_group, update_group, delete_group, list_sessions, create_session, update_session, delete_session
 
 urlpatterns = [
     # CRUD - User API
@@ -14,11 +14,11 @@ urlpatterns = [
     path('updategroup/<int:id>/', update_group, name='update_group'),
     path('deletegroup/<int:id>/', delete_group, name='delete_group'),
 
-    # CRUD - Purchase API
-    path('purchase', list_purchases, name='list_purchases'),
-    path('newpurchase', create_purchase, name='create_purchase'),
-    path('updatepurchase/<int:id>/', update_purchase, name='update_purchase'),
-    path('deletepurchase/<int:id>/', delete_purchase, name='delete_purchase'),
+    # CRUD - Session API
+    path('session', list_sessions, name='list_sessions'),
+    path('newsession', create_session, name='create_session'),
+    path('updatesession/<int:id>/', update_session, name='update_session'),
+    path('deletesession/<int:id>/', delete_session, name='delete_session'),
 
 
     # REST API User
@@ -31,10 +31,10 @@ urlpatterns = [
     # path('groups/<int:pk>/', views.GroupDetail.as_view()),
     path('groups/<int:pk>/', views.GroupDetail.as_view()),
     
-    # REST API Purchase
-    path('purchases/', views.PurchaseList.as_view()),
-    # path('purchases/<int:pk>/', views.PurchaseDetail.as_view()),
-    path('purchases/<int:pk>/', views.PurchaseDetail.as_view()),
+    # REST API Session
+    path('sessions/', views.SessionList.as_view()),
+    # path('sessions/<int:pk>/', views.SessionDetail.as_view()),
+    path('sessions/<int:pk>/', views.SessionDetail.as_view()),
 
 ]
 

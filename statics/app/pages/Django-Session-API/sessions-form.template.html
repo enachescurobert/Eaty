@@ -1,4 +1,4 @@
-<h1>New/Update purchase</h1>
+<h1>New/Update session</h1>
 
 <form method="POST">
     {% csrf_token %}
@@ -6,6 +6,6 @@
     <button type="submit">Save</button>
 </form>
 
-{% if purchase %}
-    <a href="{% url 'delete_purchase' purchase.id %}">Delete</a>
+{% if session %}
+    <a href="{% url 'delete_session' session.id %}">Delete</a>
 {% endif %}
