@@ -24,7 +24,7 @@ class Session(models.Model):
         return self.cake * 0.5
     
     def value_total(self):
-        return self.coffetotal * self.caketotal
+        return self.coffe*0.1 + self.cake*0.5
 
 class Purchase(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='purchases')   
