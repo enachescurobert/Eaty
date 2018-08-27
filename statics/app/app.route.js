@@ -95,10 +95,14 @@ angular.module('demoApp')
           // component: 'purchaseView',
           controller: 'PurchaseViewController'
         })
-        // .state('newPurchase', { //state for adding a new purchase
-        //   url: '/session/purchases/new',
-        //   component: 'purchaseCreate',
-        // })
+        .state('newPurchase', { //state for adding a new purchase
+          url: '/session/purchases/new',
+          templateUrl: 'static/app/components/purchase-row/templates/purchase-add.html',
+
+          // component: 'purchaseCreate',
+          controller: 'PurchaseCreateController'
+
+        })
         .state('editPurchase', { //state for updating a purchase
           url: '/session/purchases/:id/edit',
           templateUrl: 'static/app/components/purchase-row/templates/purchase-edit.html',

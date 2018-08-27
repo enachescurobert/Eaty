@@ -1,6 +1,7 @@
 <div ng-controller="PurchaseViewController">
-<div ng-controller="PurchaseEditController">
-<div ng-controller="PurchaseListController">    
+    <div ng-controller="PurchaseEditController">
+        <div ng-controller="PurchaseListController">
+            <div ng-controller="PurchaseCreateController">
 
 
     <table class="table purchasetable">    
@@ -26,12 +27,18 @@
         <td>{{purchase.coffe * 0.1}} (€)</td>
         <td>{{purchase.cake * 0.5 + purchase.coffe * 0.1}} (€)</td>
         <td><a class="btn btn-primary" ui-sref="viewPurchase({id:purchase.id})">Edit</a></td>
-
+        <td><a class="btn btn-danger"  ng-click="deletePurchase(purchase)">Delete</a></td>
+    </tr>
+    <tr>
+        <td>
+            <a ui-sref="newPurchase" class="btn-primary btn-lg nodecoration">Add User to Session</a>
+        </td>
     </tr>
     </table>
 
-            </div>
+            </div>  
         </div>
+    </div>
 </div>
 
 
