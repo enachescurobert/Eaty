@@ -4,39 +4,44 @@
             <div ng-controller="SessionCreateController">
 
 
-    <table class="table sessiontable">    
-    <tr>
-        <td><strong>Name</strong></td>
-        <td><strong>X's on Coffe</strong></td>
-        <td><strong>X's on Cake</strong></td>
-        <td><strong>Cake Total (€)</strong></td>
-        <td><strong>Coffe Total (€)</strong></td>
-        <td><strong>Total Debt (€)</strong></td>
-
+    <table class="table table-hover">    
+    <!-- <thead> -->
     
-    </tr>    
+   
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">X's on Coffe</th>
+      <th scope="col">X's on Cake</th>
+      <th scope="col">Cake Total (€)</th>
+      <th scope="col">Coffe Total (€)</th>
+      <th scope="col">Total Debt (€)</th>
+    </tr>
+    
+    <!-- </thead>   -->
+    <tbody>  
     <tr ng-repeat="session in sessions">
         <!-- <td>{{session.user.username}}</td> -->
 
-        <td>{{session.user.first_name}} {{session.user.last_name}}</td>
-        <td>
+        <td scope="row">{{session.user.first_name}} {{session.user.last_name}}</td>
+        <td scope="row">
             {{session.coffe}}
         </td>
-        <td>
+        <td scope="row">
             {{session.cake}}
         </td>
-        <td>{{session.cake * 0.5}} (€)</td>
-        <td>{{session.coffe * 0.1}} (€)</td>
-        <td>{{session.cake * 0.5 + session.coffe * 0.1}} (€)</td>
-        <td><a class="btn btn-primary" ui-sref="editSession({id:session.id})">Edit</a></td>
-        <td><a class="btn btn-danger"  ng-click="deleteSession(session)">Delete</a></td>
+        <td scope="row">{{session.cake * 0.5}} (€)</td>
+        <td scope="row">{{session.coffe * 0.1}} (€)</td>
+        <td scope="row">{{session.cake * 0.5 + session.coffe * 0.1}} (€)</td>
+        <td scope="row"><a class="btn btn-primary" ui-sref="editSession({id:session.id})">Edit</a></td>
+        <td scope="row"><a class="btn btn-danger"  ng-click="deleteSession(session)">Delete</a></td>
     </tr>
     <tr>
         <td>
             <a class="btn btn-dark" ui-sref="newSession">Add User to Session</a>
         </td>
     </tr>
-    </table>
+</tbody>
+</table>
 
             </div>  
         </div>
