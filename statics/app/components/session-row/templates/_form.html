@@ -9,11 +9,11 @@
     <div class="col-sm-10">
       <input type="text" ng-model="session.coffe" class="form-control" id="coffe" placeholder="How many X's on Coffe?"/>
       
-      <button ng-click="session.coffe = session.coffe + 1">
+      <button ng-click="session.coffe = session.coffe + 0.5" class="btn btn-secondary">
           Increment
       </button>
       Coffe X number: {{session.coffe}}
-      <button ng-click="session.coffe = session.coffe - 1">
+      <button ng-click="session.coffe = session.coffe - 0.5" class="btn btn-secondary">
           Decrement
       </button>     
 
@@ -25,11 +25,11 @@
     <div class="col-sm-10">
       <input type="text" ng-model="session.cake" class="form-control" id="cake" placeholder="How many X's on Cake?"/>
       
-      <button ng-click="session.cake = session.cake + 1">
+      <button ng-click="session.cake = session.cake + 0.5" class="btn btn-secondary">
           Increment
       </button>
       Cake X number: {{session.cake}}
-      <button ng-click="session.cake = session.cake - 1">
+      <button ng-click="session.cake = session.cake - 0.5" class="btn btn-secondary">
           Decrement
       </button>
 
