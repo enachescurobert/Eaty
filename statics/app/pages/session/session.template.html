@@ -6,7 +6,7 @@
 
     <table class="table sessiontable">    
     <tr>
-        <td><strong>User ID</strong></td>
+        <td><strong>Name</strong></td>
         <td><strong>X's on Coffe</strong></td>
         <td><strong>X's on Cake</strong></td>
         <td><strong>Cake Total (€)</strong></td>
@@ -18,7 +18,7 @@
     <tr ng-repeat="session in sessions">
         <!-- <td>{{session.user.username}}</td> -->
 
-        <td>{{session.user}}</td>
+        <td>{{session.user.first_name}} {{session.user.last_name}}</td>
         <td>
             {{session.coffe}}
         </td>
@@ -45,9 +45,7 @@
 
 
 
-<div ng-controller="UserListController">
-    <!-- <div ng-controller="ProdusListController">
-        <div ng-controller="ProdudusListController"> -->
+<!-- <div ng-controller="UserListController">
 
         
         <table class="table usertable">  
@@ -65,23 +63,7 @@
 
         </tr>
 <hr>
-        <!-- <tr>
-            <td><h4>All Products:</h4></td>
-        </tr> 
-        <tr ng-repeat="produs in produse">
-            <td>{{produs.name}}</td>
-        </tr>
-<hr>
-        <tr>
-            <td><h4>Some prices:</h4></td>
-        </tr> 
-        <tr ng-repeat="produdus in produduse">
-            <td>{{produdus.price}} (€)</td>
-        </tr>
-        </table>
 
-        </div>
-    </div> -->
-</div>
+</div> -->
 
 

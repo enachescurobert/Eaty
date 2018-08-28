@@ -6,7 +6,7 @@ from eaty_purchase.models import Session
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'groups')
+        fields = ('id','first_name','last_name', 'username', 'email','groups')
 
 
 class GroupSerializer(serializers.ModelSerializer):
@@ -16,6 +16,7 @@ class GroupSerializer(serializers.ModelSerializer):
 
 class SessionSerializer(serializers.ModelSerializer):
     # user = UserSerializer(required=True)
+    user = UserSerializer(read_only=True)
     class Meta:
         model = Session
         fields = ('id','coffe','cake','user')
