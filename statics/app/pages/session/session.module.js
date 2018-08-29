@@ -1,12 +1,11 @@
-(function() {
+(function () {
     'use strict';
 
-angular.module('session', [
-    'productControllers', //not used
-    'userControllers', //not used
-    'productmanagementControllers', //not used
-    'sessionControllers'
+    angular.module('session', [
+        'productControllers', //not used
+        'userControllers', //not used
+        'productmanagementControllers', //not used
+        'sessionControllers'
 
-
-]);
+    ]);
 })();

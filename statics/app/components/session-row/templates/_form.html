@@ -1,49 +1,62 @@
-<div class="form-group">
-    <label for="user" class="col-sm-2 control-label">Name: </label>
-    <div class="col-sm-10">
-      <h5>{{session.user.first_name}} {{session.user.last_name}}</h5>
-      <!-- <input type="text" ng-model="session.user" class="form-control" id="user" placeholder="User ID"/> -->
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="coffe" class="col-sm-2 control-label">Coffe X=</label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="session.coffe" class="form-control" id="coffe" placeholder="How many X's on Coffe?"/>
-      
-      <!-- <button ng-click="session.coffe = session.coffe + 0.5" class="btn btn-secondary">
-          Increment
-      </button>
-      Coffe X number: {{session.coffe}}
-      <button ng-click="session.coffe = session.coffe - 0.5" class="btn btn-secondary">
-          Decrement
-      </button>      -->
+<br>
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+              <h4 class="title">Add USER to session</h4>
+          </div>
+          <div class="content">
+            <form>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="user" class="col-sm-2 control-label">Name:</label>
+                    <div class="col-sm-10">
+                      <h5 class="form-control">{{session.user.first_name}} {{session.user.last_name}}</h5>
+                      <!-- <input type="text" ng-model="session.user" class="form-control" id="user" placeholder="User ID"/> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-
+              <div class="form-group">
+                <label for="coffe" class="col-sm-2 control-label">Coffe X=</label>
+                <div class="col-sm-10">
+                  <input type="text" ng-model="session.coffe" class="form-control" id="coffe" placeholder="How many X's on Coffe?" />
+                  <!-- <button ng-click="session.coffe = session.coffe + 0.5" class="btn btn-secondary">Increment</button>
+                        Coffe X number: {{session.coffe}}
+                        <button ng-click="session.coffe = session.coffe - 0.5" class="btn btn-secondary">Decrement</button>      
+                      -->
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cake" class="col-sm-2 control-label">Cake X=</label>
+                <div class="col-sm-10">
+                  <input type="text" ng-model="session.cake" class="form-control" id="cake" placeholder="How many X's on Cake?" />
+                  <!-- <button ng-click="session.cake = session.cake + 0.5" class="btn btn-secondary">Increment</button>
+                        Cake X number: {{session.cake}}
+                        <button ng-click="session.cake = session.cake - 0.5" class="btn btn-secondary">Decrement</button> 
+                      -->
+                </div>
+              </div>
+              <!-- <div class="form-group">
+                        <label for="plot" class="col-sm-2 control-label">Session Genre</label>
+                        <div class="col-sm-10">
+                          <input type="text" ng-model="session.genre" class="form-control" id="plot" placeholder="Session genre here"/>
+                        </div>
+                      </div>  
+                  -->
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <input type="submit" class="btn btn-primary" value="Save" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="form-group">
-    <label for="cake" class="col-sm-2 control-label">Cake X=</label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="session.cake" class="form-control" id="cake" placeholder="How many X's on Cake?"/>
-      
-      <!-- <button ng-click="session.cake = session.cake + 0.5" class="btn btn-secondary">
-          Increment
-      </button>
-      Cake X number: {{session.cake}}
-      <button ng-click="session.cake = session.cake - 0.5" class="btn btn-secondary">
-          Decrement
-      </button> -->
-
-    </div>
-  </div>
-  <!-- <div class="form-group">
-    <label for="plot" class="col-sm-2 control-label">Session Genre</label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="session.genre" class="form-control" id="plot" placeholder="Session genre here"/>
-    </div>
-  </div>  -->
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" class="btn btn-primary" value="Save"/>
-    </div>
-  </div>
+</div>

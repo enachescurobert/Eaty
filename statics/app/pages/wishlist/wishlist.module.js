@@ -1,11 +1,11 @@
-(function() {
+(function () {
     'use strict';
 
-angular.module('WishList', [
-    // 'produsList',
-    // 'produsView',
-    // 'produsCreate',
-    // 'produsEdit'
-]);
+    angular.module('WishList', [
+        // 'produsList',
+        // 'produsView',
+        // 'produsCreate',
+        // 'produsEdit'
+    ]);
 
 })();

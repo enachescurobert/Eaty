@@ -5,21 +5,25 @@
 //     return $resource(restAPIUrl + '/Product/producttypes/:id',
 //     { id: '@id'},
 //     { update: {method:'PUT'}} );
-    
+
 //     });
 
 angular.module('wishList.services', [])
-       .factory('Produs', function($resource) {
-    return $resource('/Product/types/:id/',{id:'@id'},{
-        update: {method:'PUT'},
-    },{
+    .factory('Produs', function ($resource) {
+        return $resource('/Product/types/:id/', {
+            id: '@id'
+        }, {
+            update: {
+                method: 'PUT'
+            },
+        }, {
 
-    
-    stripTrailingSlashes: false
-  });
-})
-       .service('popupService',function($window){
-    this.showPopup=function(message){
-        return $window.confirm(message);
-    }
-});
+
+            stripTrailingSlashes: false
+        });
+    })
+    .service('popupService', function ($window) {
+        this.showPopup = function (message) {
+            return $window.confirm(message);
+        }
+    });
