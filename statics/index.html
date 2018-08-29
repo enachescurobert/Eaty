@@ -29,19 +29,25 @@
 
 </head>
 <body>
+    
+<!-- Components -->
 
-<!-- Shared Components : -->
 
-    <div class="main-panel">
-            
-        <navbar></navbar>
-        <!-- <h5>Logged in as: {{ user }}</h5> -->
+    <div class="sidebar" data-color="black" data-image="{% static "assets/img/sidebar-6.jpg" %}">
 
-        <div ui-view></div>
-        <page-footer></page-footer>  
+        <side-bar></side-bar>
 
     </div>
-        <side-bar></side-bar>
+
+    <div class="main-panel">
+
+        <navbar></navbar>
+
+        <div ui-view></div>
+
+        <page-footer></page-footer>
+
+    </div>
 
 
 <!-- End of componets -->
@@ -99,14 +105,14 @@
     <script src="{% static "app/shared/sidebar/sidebar.component.js" %}"></script>
     <script src="{% static "app/shared/page-footer/page-footer.component.js" %}"></script>
 
-        <!--   Core JS Files   -->
+           <!--   Core JS Files   -->
     <script src="{% static "assets/js/jquery.3.2.1.min.js" type="text/javascript" %}"></script>
     <script src="{% static "assets/js/bootstrap.min.js" type="text/javascript" %}"></script>
         <!-- Bootsrap Dashboard-->
     <script src="{% static "assets/js/light-bootstrap-dashboard.js" %}"></script>
 
 
-
   
+    
 </body>
 </html>

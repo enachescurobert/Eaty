@@ -1,3 +1,4 @@
+<br>
 <div ng-controller="SessionViewController">
     <div ng-controller="SessionEditController">
         <div ng-controller="SessionListController">
@@ -23,8 +24,8 @@
       <th scope="col">Name</th>
       <th scope="col">X's on Coffe</th>
       <th scope="col">X's on Cake</th>
-      <th scope="col">Cake Total (€)</th>
       <th scope="col">Coffe Total (€)</th>
+      <th scope="col">Cake Total (€)</th>
       <th scope="col">Total Debt (€)</th>
     </tr>
     
@@ -40,15 +41,15 @@
         <td scope="row">
             {{session.cake}}
         </td>
-        <td scope="row">{{session.cake * 0.5}} (€)</td>
         <td scope="row">{{session.coffe * 0.1}} (€)</td>
+        <td scope="row">{{session.cake * 0.5}} (€)</td>
         <td scope="row">{{session.cake * 0.5 + session.coffe * 0.1}} (€)</td>
         <td scope="row"><a class="btn btn-primary" ui-sref="editSession({id:session.id})">Edit</a></td>
         <td scope="row"><a class="btn btn-danger"  ng-click="deleteSession(session)">Delete</a></td>
     </tr>
     <tr>
         <td>
-            <a class="btn btn-dark" ui-sref="newSession">Add User to Session</a>
+            <a class="btn btn-success" ui-sref="newSession">Add User to Session</a>
         </td>
     </tr>
 </tbody>
