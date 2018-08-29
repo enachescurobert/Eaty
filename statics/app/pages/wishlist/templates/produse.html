@@ -15,11 +15,12 @@
   <table class="table table-hover table-striped">    
   <tr>
     <td><h3>All Products:</h3></td>
-    <td><h3>ID of the product:</h3></td>
+    <td></td>
+    <!-- <td><h3>ID of the product:</h3></td> -->
   </tr>
   <tr ng-repeat="produs in produse">
     <td>{{produs.name}}</td>
-    <td>{{produs.id}}</td>
+    <!-- <td>{{produs.id}}</td> -->
 
     <td>
       <a class="btn btn-primary" ui-sref="viewProdus({id:produs.id})">Edit</a>

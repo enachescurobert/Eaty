@@ -13,6 +13,7 @@ angular.module('demoApp', [
     'ProductManagement.services',
     'InTendant',
     'inTendant.services',
+    'groupControllers',
     'productmanagementControllers', //not used
     // 'productControllers', //not used  
     // 'userControllers' //not used

@@ -89,12 +89,12 @@ angular.module('demoApp')
         //   url: '/produse',
         //   component: 'produsList',
         // })
-        .state('viewSession', { //state for showing single user
-          url: '/session/sessions/:id/view',
-          templateUrl: 'static/app/components/session-row/templates/session-view.html',
-          // component: 'sessionView',
-          controller: 'SessionViewController'
-        })
+        // .state('viewSession', { //state for showing single user
+        //   url: '/session/sessions/:id/view',
+        //   templateUrl: 'static/app/components/session-row/templates/session-view.html',
+        //   // component: 'sessionView',
+        //   controller: 'SessionViewController'
+        // })
         .state('newSession', { //state for adding a new session
           url: '/session/sessions/new',
           templateUrl: 'static/app/components/session-row/templates/session-add.html',
@@ -108,6 +108,21 @@ angular.module('demoApp')
           templateUrl: 'static/app/components/session-row/templates/session-edit.html',
           // component: 'sessionEdit',
           controller: 'SessionEditController'
+        })
+
+        .state('newGroup', { //state for adding a new session
+          url: '/session/groups/new',
+          templateUrl: 'static/app/pages/intendant/group/templates/group-add.html',
+
+          // component: 'sessionCreate',
+          controller: 'GroupCreateController'
+
+        })
+        .state('editGroup', { //state for updating a session
+          url: '/session/sessions/:id/edit',
+          templateUrl: 'static/app/pages/intendant/group/templates/group-edit.html',
+          // component: 'sessionEdit',
+          controller: 'GroupEditController'
         });
         
 

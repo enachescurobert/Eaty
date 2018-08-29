@@ -13,10 +13,7 @@
                 <div class="content table-responsive table-full-width">
     <table class="table table-hover table-striped">    
   
-  <tr>
-    <td><h3>Product management:</h3></td>
-    <td></td>
-  </tr>
+
 
   <tr>
     <td><strong>ID of the product</strong></td>
@@ -24,10 +21,11 @@
     <td><strong>Crosses</strong></td>
     <td><strong>Shop Price</strong></td>
     <td><strong>Total</strong></td>
+    <td></td>
   </tr>
 
   <tr ng-repeat="produdus in produduse">
-    <td>{{produdus.product_type}}</td>
+    <td>{{produdus.product_type.name}}</td>
     <td>{{produdus.quantity}}</td>
     <td>{{produdus.cross}} x</td>
     <!-- <td>{{produdus.price}} (€)</td> -->
