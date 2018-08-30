@@ -12,19 +12,42 @@
             <div class="col-md-3">
               <button ui-sref="newProdudus" class="btn btn-success">Add New Product</button>
             </div>
-            
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
-              <tr>
-                <td><strong>ID of the product</strong></td>
-                <td><strong>Quantity</strong></td>
-                <td><strong>Crosses</strong></td>
-                <td><strong>Shop Price</strong></td>
-                <td colspan="2"><strong>Total</strong></td>
-              </tr>
-
-              <tr ng-repeat="produdus in produduse">
+              <thead>
+                <tr>
+                  <td><strong>ID of the product</strong></td>
+                  <td><strong>Quantity</strong></td>
+                  <td><strong>Crosses</strong></td>
+                  <td><strong>Shop Price</strong></td>
+                  <td colspan="2"><strong>Total</strong></td>
+                </tr>
+              </thead>
+              <tbody ng-repeat="_ in [ [ search, produduse ] ]" ng-init="total = 0">
+                <tr ng-repeat="produdus in produduse">
+                  <td>{{produdus.product_type.name}}</td>
+                  <td>{{produdus.price}} (€)</td>
+                  <td>{{produdus.price * 2}} x</td>
+                  <td>{{produdus.quantity}}</td>
+                  <!-- <td>{{produdus.price}} (€)</td> -->
+                  <!-- <td>{{produdus.quantity * produdus.cross * 0.5}} (€)</td> -->
+                  <td ng-init="$parent.total = $parent.total + (produdus.price * produdus.quantity)">{{ produdus.price * produdus.quantity}} (€)</td>
+                  <td>
+                    <a class="btn btn-primary" ui-sref="editProdudus({id:produdus.id})">Edit</a>
+                    <!-- <a class="btn btn-danger"  ng-click="deleteProdudus(produdus)">Delete</a> -->
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4"><b>Total</b></td>
+                  <td><b>{{ total }} (€)</b></td>
+                </tr>
+                <!-- <tr>
+                  <td><a href="http://localhost:8000/Product/newproduct" class="btn btn-dark">Add New Product</a>
+                  </td>
+                </tr> -->
+              </tbody>
+              <!-- <tr ng-repeat="produdus in produduse">
                 <td>{{produdus.product_type}}</td>
                 <td>{{produdus.quantity}}</td>
                 <td>{{produdus.cross}} x</td>
@@ -34,7 +57,7 @@
                   <a class="btn btn-primary" ui-sref="editProdudus({id:produdus.id})">Edit</a>
                   <a class="btn btn-danger" ng-click="deleteProdudus(produdus)">Delete</a>
                 </td>
-              </tr>
+              </tr> -->
             </table>
           </div>
         </div>

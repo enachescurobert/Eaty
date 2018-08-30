@@ -9,4 +9,4 @@ class ProductTypeForm(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ('product_type', 'price', 'quantity')

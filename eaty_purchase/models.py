@@ -35,9 +35,3 @@ class Purchase(models.Model):
 
     def __str__(self):
         return 'The debt of {} is {} '.format(self.user, self.value)
-
-
-
-
-
-

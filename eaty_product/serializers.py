@@ -9,6 +9,8 @@ class ProductTypeSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     """ Serializer to represent the Product model """
+    product_type=ProductTypeSerializer(read_only=True)
+    
     class Meta:
         model = Product
         fields = '__all__'
