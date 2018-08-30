@@ -15,4 +15,4 @@ class GroupForm(forms.ModelForm):
 class SessionForm(forms.ModelForm):
     class Meta:
         model = Session
-        fields = '__all__'
+        fields = ('user','coffe','cake')
