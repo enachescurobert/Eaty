@@ -1,8 +1,8 @@
-(function() {
+(function () {
     'use strict';
 
-angular.module('InTendant', [
+    angular.module('InTendant', [
 
-]);
+    ]);
 
 })();
