@@ -39,7 +39,7 @@
 
     <td>
       <a class="btn btn-primary" ui-sref="editProdudus({id:produdus.id})">Edit</a>
-      <!-- <a class="btn btn-danger"  ng-click="deleteProdudus(produdus)">Delete</a> -->
+      <a class="btn btn-danger"  ng-click="deleteProdudus(produdus)">Delete</a>
     </td>
   </tr>
   <tr>
@@ -52,7 +52,7 @@
     </tr>
 
 
-  <tr><td><a href="http://localhost:8000/Product/newproduct" class="btn btn-dark">Add New Product</a>
+  <tr><td><a ui-sref="newProdudus" class="btn btn-dark">Add New Product</a>
   </td></tr>
 </tbody>
 </table>

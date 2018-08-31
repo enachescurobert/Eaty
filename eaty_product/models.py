@@ -12,7 +12,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     cross = models.FloatField(null=True, blank=True)
     quantity = models.IntegerField(default=0)
-    product_type = models.ForeignKey(ProductType, on_delete=models.CASCADE)
+    product_type = models.OneToOneField(ProductType, on_delete=models.CASCADE)
 
     def product_total(self):
         return self.quantity * self.price

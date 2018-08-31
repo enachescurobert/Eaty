@@ -43,11 +43,11 @@
         <td scope="row">
             {{session.cake}}
         </td>
-        <td scope="row">{{session.coffe * 0.1}} (€)</td>
-        <td scope="row">{{session.cake * 0.5}} (€)</td>
+        <td scope="row">{{session.coffe / 10}} (€)</td>
+        <td scope="row">{{session.cake / 2}} (€)</td>
         <td scope="row">{{session.cake * 0.5 + session.coffe * 0.1}} (€)</td>
         <td scope="row"><a class="btn btn-primary" ui-sref="editSession({id:session.id})">Edit</a></td>
-        <!-- <td scope="row"><a class="btn btn-danger"  ng-click="deleteSession(session)">Delete</a></td> -->
+        <td scope="row"><a class="btn btn-danger"  ng-click="deleteSession(session)">Delete</a></td>
     </tr>
     <!-- <tr>
         <td>
@@ -56,7 +56,7 @@
     </tr> -->
     <tr>
             <td>
-                <a class="btn btn-dark" href="http://localhost:8000/Purchase/newsession">Add User to Session</a>
+                <a class="btn btn-dark" ui-sref="newSession">Add User to Session</a>
             </td>
         </tr>
 
