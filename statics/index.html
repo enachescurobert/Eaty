@@ -27,12 +27,16 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{% static "assets/css/pe-icon-7-stroke.css" %}" rel="stylesheet" />
 
+
+
+
+
 </head>
 <body>
     
 <!-- Components -->
 
-
+    <div class="wrapper">
     <div class="sidebar" data-color="black" data-image="{% static "assets/img/sidebar-6.jpg" %}">
 
         <side-bar></side-bar>
@@ -45,9 +49,10 @@
 
         <div ui-view></div>
 
-        <!-- <page-footer></page-footer> -->
+        <page-footer></page-footer>
 
     </div>
+</div>
 
 
 <!-- End of componets -->
@@ -113,6 +118,35 @@
         <!-- Bootsrap Dashboard-->
     <script src="{% static "assets/js/light-bootstrap-dashboard.js" %}"></script>
 
+
+    <!--  Notifications Plugin    -->
+    <script src="{% static "assets/js/bootstrap-notify.js" %}"></script>
+
+    	<!--  Charts Plugin -->
+	<script src="{% static "assets/js/chartist.min.js" %}"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="{% static "assets/js/bootstrap-notify.js" %}"></script>
+    
+    	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="{% static "assets/js/demo.js" %}"></script>
+    
+    <script type="text/javascript">
+    	$(document).ready(function(){
+
+        	demo.initChartist();
+
+        	$.notify({
+            	icon: 'pe-7s-gift',
+            	message: "Welcome to <b>Eaty</b> - the app that makes everything simple."
+
+            },{
+                type: 'info',
+                timer: 4000
+            });
+
+    	});
+	</script>
 
   
     
