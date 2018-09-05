@@ -38,14 +38,14 @@ class ProductSerializer(serializers.ModelSerializer):
 
         product_type = validated_data.get('product_type')
 
-        for produs in product_type:
-            produs_id = produs.get('id', None)
-            if produs_id:
-                inv_produs = Product.objects.get(id=produs_id, invoice=instance)
-                inv_produs.quantity = produs.get('quantity', inv_produs.quantity)
-                inv_produs.price = produs.get('price', inv_produs.price)
-                inv_produs.save()
-            else:
-                Product.objects.create(account=instance, **produs)
+        # for produs in product_type:
+        #     produs_id = produs.get('id', None)
+        #     if produs_id:
+        #         inv_produs = Product.objects.get(id=produs_id, invoice=instance)
+        #         inv_produs.quantity = produs.get('quantity', inv_produs.quantity)
+        #         inv_produs.price = produs.get('price', inv_produs.price)
+        #         inv_produs.save()
+        #     else:
+        #         Product.objects.create(account=instance, **produs)
 
         return instance

@@ -78,14 +78,14 @@ class SessionSerializer(serializers.ModelSerializer):
 
         sessions = validated_data.get('sessions')
 
-        for session in sessions:
-            session_id = session.get('id', None)
-            if session_id:
-                inv_session = Session.objects.get(id=session_id, invoice=instance)
-                inv_session.coffe = session.get('coffe', inv_session.coffe)
-                inv_session.cake = session.get('cake', inv_session.cake)
-                inv_session.save()
-            else:
-                Session.objects.create(account=instance, **session)
+        # for session in sessions:
+        #     session_id = session.get('id', None)
+        #     if session_id:
+        #         inv_session = Session.objects.get(id=session_id, invoice=instance)
+        #         inv_session.coffe = session.get('coffe', inv_session.coffe)
+        #         inv_session.cake = session.get('cake', inv_session.cake)
+        #         inv_session.save()
+        #     else:
+        #         Session.objects.create(account=instance, **session)
 
         return instance
