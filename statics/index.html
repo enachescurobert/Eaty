@@ -37,23 +37,22 @@
 <!-- Components -->
 
     <div class="wrapper">
-    <div class="sidebar" data-color="black" data-image="{% static "assets/img/sidebar-6.jpg" %}">
-
-        <side-bar></side-bar>
-
+        <div class="sidebar" data-color="black" data-image="{% static "assets/img/sidebar-6.jpg" %}">
+    
+            <side-bar></side-bar>
+    
+        </div>
+    
+        <div class="main-panel">
+    
+            <navbar></navbar>
+    
+            <div ui-view></div>
+    
+            <!-- <page-footer></page-footer> -->
+    
+        </div>
     </div>
-
-    <div class="main-panel">
-
-        <navbar></navbar>
-
-        <div ui-view></div>
-
-        <!-- <page-footer></page-footer> -->
-
-    </div>
-</div>
-
 
 <!-- End of componets -->
 
