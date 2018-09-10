@@ -1,4 +1,5 @@
-<h1>New/Update user</h1>
+<h1>Hello, {{ user }}!</h1>
+<h1>From here you can Create/Update a user</h1>
 
 <form method="POST">
     {% csrf_token %}
@@ -6,6 +7,6 @@
     <button type="submit">Save</button>
 </form>
 
-{% if user %}
+{% if users %}
     <a href="{% url 'delete_user' user.id %}">Delete</a>
 {% endif %}

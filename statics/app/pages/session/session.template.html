@@ -1,10 +1,92 @@
-<section id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <h2>Session</h2>
-        <p class="lead">Coming soon.</p>
-      </div>
+<br>
+<div ng-controller="SessionViewController">
+    <div ng-controller="SessionEditController">
+        <div ng-controller="SessionListController">
+            <div ng-controller="SessionCreateController">
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <div class="col-md-9">                                                                           
+                                            <h4 class="title">Current Session</h4>
+                                            <p class="category">
+                                                Managing everyone's session
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3">
+
+                                                <button class="btn btn-success" ui-sref="newSession">Add User to Session</button>
+
+                                        </div>
+                                    </div>
+                                    <div class="content table-responsive table-full-width">
+                                        <table class="table table-hover table-striped">
+                                            <!-- <thead> -->
+
+
+                                            <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">X's on Coffe</th>
+                                                <th scope="col">X's on Cake</th>
+                                                <th scope="col">Coffe Total (€)</th>
+                                                <th scope="col">Cake Total (€)</th>
+                                                <th scope="col">Total Debt (€)</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+
+                                            <!-- </thead>   -->
+                                            <tbody>
+                                                <tr ng-repeat="session in sessions">
+                                                    <!-- <td>{{session.user.username}}</td> -->
+
+                                                    <td scope="row">{{session.user.first_name}} {{session.user.last_name}}</td>
+                                                    <td scope="row">
+                                                        {{session.coffe}}
+                                                    </td>
+                                                    <td scope="row">
+                                                        {{session.cake}}
+                                                    </td>
+                                                    <td scope="row">{{session.coffe / 10}} (€)</td>
+                                                    <td scope="row">{{session.cake / 2}} (€)</td>
+                                                    <td scope="row">{{session.cake * 0.5 + session.coffe * 0.1}} (€)</td>
+                                                    <td scope="row">
+                                                        <a class="btn btn-primary" ui-sref="editSession({id:session.id})">Edit</a>
+                                                    </td>
+                                                    <td scope="row">
+                                                        <a class="btn btn-danger" ng-click="deleteSession(session)">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                
+
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
+</div>
+<!-- <div ng-controller="UserListController">
+        <table class="table usertable">  
+        <tr>
+            <td><h3>All Users:</h3></td>
+        </tr>      
+        <tr>
+            <td><h4>User</h4></td>
+            <td><h4>User ID:</h4></td>
+        </tr>  
+        <tr ng-repeat="user in users">
+            <td>{{user.username}}</td>
+            <td>{{user.id}}</td>
+        </tr>
+<hr>
+</div> -->

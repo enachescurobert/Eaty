@@ -1,16 +1,39 @@
-<hr>
-<a ui-sref="newProdus" class="btn-primary btn-lg nodecoration">Add New Product</a>
+<br>
 
-<table class="table produstable">
-  <tr>
-    <td><h3>All Products:</h3></td>
-    <td></td>
-  </tr>
-  <tr ng-repeat="produs in produse">
-    <td>{{produs.name}}</td>
-    <td>
-      <a class="btn btn-primary" ui-sref="viewProdus({id:produs.id})">Edit</a>
-      <a class="btn btn-danger"  ng-click="deleteProdus(produs)">Delete</a>
-    </td>
-  </tr>
-</table>
+
+
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <div class="col-md-9">
+              <h4 class="title">Current Wishlist</h4>
+              <p class="category">What you would like us to take for you?</p>
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-success" ui-sref="newProdus">Add New Product</button>
+            </div>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped" style="text-align: center">
+              <!-- <tr>
+                  <th colspan="2" style="text-align: center">All Products:</th>
+              </tr> -->
+              <tr ng-repeat="produs in produse">
+                <td>{{produs.name}}</td>
+                
+                <!-- <td>{{produs.id}}</td> -->
+                <td>
+                  <a class="btn btn-primary" ui-sref="editProdus({id:produs.id})">Edit</a>
+                  <a class="btn btn-danger" ng-click="deleteProdus(produs)">Delete</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

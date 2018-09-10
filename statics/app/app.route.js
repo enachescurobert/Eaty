@@ -27,10 +27,11 @@ angular.module('demoApp')
         })
 
         // Wishlist
-        .state('produse', { // state for showing all produse
-          url: '/produse',
-          component: 'produsList',
-        })
+
+        // .state('produse', { // state for showing all produse
+        //   url: '/produse',
+        //   component: 'produsList',
+        // })
         .state('viewProdus', { //state for showing single produs
           url: '/wishlist/produse/:id/view',
           component: 'produsView',
@@ -42,12 +43,14 @@ angular.module('demoApp')
         .state('editProdus', { //state for updating a produs
           url: '/wishlist/produse/:id/edit',
           component: 'produsEdit',
-
-        // Balega
-        }).state('produduse', { // state for showing all produse
-          url: '/produduse',
-          component: 'produdusList',
         })
+
+        // Product Management
+        
+        // .state('produduse', { // state for showing all produse
+        //   url: '/produduse',
+        //   component: 'produdusList',
+        // })
         .state('viewProdudus', { //state for showing single produdus
           url: '/productmanagement/produduse/:id/view',
           component: 'produdusView',
@@ -78,11 +81,53 @@ angular.module('demoApp')
         .state('editUser', { //state for updating a user
           url: '/intendant/users/:id/edit',
           component: 'userEdit',
+        })
+
+                // session
+
+        // .state('produse', { // state for showing all produse
+        //   url: '/produse',
+        //   component: 'produsList',
+        // })
+        // .state('viewSession', { //state for showing single user
+        //   url: '/session/sessions/:id/view',
+        //   templateUrl: 'static/app/components/session-row/templates/session-view.html',
+        //   // component: 'sessionView',
+        //   controller: 'SessionViewController'
+        // })
+        .state('newSession', { //state for adding a new session
+          url: '/session/sessions/new',
+          templateUrl: 'static/app/components/session-row/templates/session-add.html',
+
+          // component: 'sessionCreate',
+          controller: 'SessionCreateController'
+
+        })
+        .state('editSession', { //state for updating a session
+          url: '/session/sessions/:id/edit',
+          templateUrl: 'static/app/components/session-row/templates/session-edit.html',
+          // component: 'sessionEdit',
+          controller: 'SessionEditController'
+        })
+
+        .state('newGroup', { //state for adding a new session
+          url: '/session/groups/new',
+          templateUrl: 'static/app/pages/intendant/group/templates/group-add.html',
+
+          // component: 'sessionCreate',
+          controller: 'GroupCreateController'
+
+        })
+        .state('editGroup', { //state for updating a session
+          url: '/session/sessions/:id/edit',
+          templateUrl: 'static/app/pages/intendant/group/templates/group-edit.html',
+          // component: 'sessionEdit',
+          controller: 'GroupEditController'
         });
         
 
         }).run(function($state) {
-        $state.go('wishlist'); //make a transition to wishlist state when app starts
+        $state.go('session'); //make a transition to session state when app starts
 
     }
   );

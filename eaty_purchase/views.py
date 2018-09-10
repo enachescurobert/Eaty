@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from rest_framework import generics
-from eaty_purchase.serializers import UserSerializer, GroupSerializer
-from eaty_purchase.forms import UserForm, GroupForm
+from eaty_purchase.serializers import UserSerializer, GroupSerializer, SessionSerializer
+from eaty_purchase.forms import UserForm, GroupForm, SessionForm
+from .models import Session
 
 # Rest API
 class UserList(generics.ListCreateAPIView):
@@ -22,6 +23,15 @@ class GroupList(generics.ListCreateAPIView):
 class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class SessionList(generics.ListCreateAPIView):
+    queryset = Session.objects.all()
+    serializer_class = SessionSerializer
+
+
+class SessionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Session.objects.all()
+    serializer_class = SessionSerializer
 
 
 # User API
@@ -90,3 +100,38 @@ def delete_group(request, id):
         return redirect('list_groups')
 
     return render(request, 'app/pages/Django-Group-API/group-delete-confirm.template.html')
+
+
+# Session API
+def list_sessions(request):
+    sessions = Session.objects.all()
+    return render(request,"app/pages/Django-Session-API/session-template.html", {'sessions':sessions})
+
+def create_session(request):
+    form = SessionForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_sessions')
+
+    return render(request,'app/pages/Django-Session-API/sessions-form.template.html', {'form':form})
+
+def update_session(request, id):
+    session = Session.objects.get(id=id)
+    form = SessionForm(request.POST or None, instance=session)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_sessions')
+
+    return render(request, 'app/pages/Django-Session-API/sessions-form.template.html', {'form':form, 'session':session})
+
+def delete_session(request, id):
+    session = Session.objects.get(id=id)
+
+    if request.method == 'POST':
+        session.delete()
+        return redirect('list_sessions')
+
+    return render(request, 'app/pages/Django-Session-API/session-delete-confirm.template.html')
+

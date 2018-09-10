@@ -1,23 +1,103 @@
-<hr>
-<a ui-sref="newUser" class="btn-primary btn-lg nodecoration">Add New Product</a>
+<br>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <div class="col-md-9">
+              <h4 class="title">Intendant Restricted Page </h4>
+              <p class="category">Users Management</p>
+            </div>
+            <div class="col-md-3">
+              <button ui-sref="newUser" class="btn btn-success">Add New User</button>
+            </div>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <tr>
+                <td>
+                  <strong>Username</strong>
+                </td>
+                <td>
+                  <strong>First Name</strong>
+                </td>
+                <td>
+                  <strong>Last Name</strong>
+                </td>
+                <td>
+                  <strong>Email</strong>
+                </td>
+                <td colspan="2">
+                  <strong>Group ID</strong>
+                </td>
+              </tr>
+              <tr ng-repeat="user in users">
+                <td>{{user.username}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <!-- <td>{{user.groups.name}}</td> -->
+                <td>{{user.groups}}</td>
+                <td>
+                  <a class="btn btn-primary" ui-sref="editUser({id:user.id})">Edit</a>
+                  <a class="btn btn-danger" ng-click="deleteUser(user)">Delete</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<table class="table usertable">
-  <tr>
-    <td><h3>All Users:</h3></td>
-    <td></td>
-  </tr>  
-  <td><strong>Username</strong></td>
-  <td><strong>Email</strong></td>
-  <td><strong>Group ID</strong></td>
 
-  <tr ng-repeat="user in users">
-    <td>{{user.username}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.groups}}</td>
-
-    <td>
-      <a class="btn btn-primary" ui-sref="viewUser({id:user.id})">Edit</a>
-      <a class="btn btn-danger"  ng-click="deleteUser(user)">Delete</a>
-    </td>
-  </tr>
-</table>
+<br>
+<div ng-controller="GroupViewController">
+  <div ng-controller="GroupEditController">
+    <div ng-controller="GroupListController">
+      <div ng-controller="GroupCreateController">
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="header">
+                    <div class="col-md-9">
+                      <h4 class="title">Groups:</h4>
+                      <p class="category"></p>
+                    </div>
+                    <div class="col-md-3">
+                      <button ui-sref="newGroup" class="btn btn-success">Add New Group</button>
+                    </div>
+                  </div>
+                  <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                      <tr>
+                        <td>
+                          <strong>Group</strong>
+                        </td>
+                        <td colspan="2">
+                          <strong>Id</strong>
+                        </td>
+                      </tr>
+                      <tr ng-repeat="group in groups">
+                        <td>{{group.name}}</td>
+                        <td>{{group.id}}</td>
+                        <td>
+                          <a class="btn btn-primary" ui-sref="editGroup({id:group.id})">Edit</a>
+                          <a class="btn btn-danger" ng-click="deleteGroup(group)">Delete</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

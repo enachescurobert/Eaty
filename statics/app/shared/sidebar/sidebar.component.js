@@ -7,7 +7,7 @@
 
         .directive('sideBar', function () {
             return {
-                restrict: 'E',
+                // restrict: 'E',
                 templateUrl:'static/app/shared/sidebar/sidebarField.html',
                 controller: function($scope, $location) {
                     $scope.isActive = function(path){

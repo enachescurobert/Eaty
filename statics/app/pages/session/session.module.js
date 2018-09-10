@@ -2,10 +2,11 @@
     'use strict';
 
 angular.module('session', [
-    // 'produsList',
-    // 'produsView',
-    // 'produsCreate',
-    // 'produsEdit'
+    'productControllers', //not used
+    'userControllers', //not used
+    'productmanagementControllers', //not used
+    'sessionControllers'
+
 
 ]);
 })();

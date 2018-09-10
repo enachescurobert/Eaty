@@ -60,7 +60,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(CORE_PATH, 'statics')
+            './templates',
+            os.path.join(CORE_PATH, 'statics',
+            )
 
         ],
         'APP_DIRS': True,
@@ -135,3 +137,8 @@ STATICFILES_DIRS = [
 """
 STATIC_ROOT = os.path.join(CORE_PATH, 'statics')
 """
+
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
