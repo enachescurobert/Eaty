@@ -9,40 +9,40 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="header">
-                                        <div class="col-md-9">                                                                           
+                                        <div class="col-md-6">
                                             <h4 class="title">Current Session</h4>
                                             <p class="category">
                                                 Managing everyone's session
                                             </p>
                                         </div>
+                                        <div class="col-md-3" style="text-align: center;">
+                                            <input class="form-control col-md-3" ng-model="search" type="text" placeholder="Search your name to be more EASY" aria-label="Search">
+                                        </div>
                                         <div class="col-md-3">
-
-                                                <button class="btn btn-success" ui-sref="newSession">Add User to Session</button>
-
+                                            <button class="btn btn-success" ui-sref="newSession">Add User to Session</button>
                                         </div>
                                     </div>
+
+                                    <br>
                                     <div class="content table-responsive table-full-width">
-                                        <table class="table table-hover table-striped">
+                                        <table ng-table="vm.tableParams" class="table table-hover table-striped"
+                                            show-filter="true">
                                             <!-- <thead> -->
-
-
                                             <tr>
                                                 <th scope="col">Name</th>
                                                 <th scope="col">X's on Coffe</th>
                                                 <th scope="col">X's on Cake</th>
                                                 <th scope="col">Coffe Total (€)</th>
                                                 <th scope="col">Cake Total (€)</th>
-                                                <th scope="col">Total Debt (€)</th>
-                                                <th></th>
-                                                <th></th>
+                                                <th colspan="3" scope="col">Total Debt (€)</th>
                                             </tr>
-
-                                            <!-- </thead>   -->
+                                            <!-- </thead> -->
+                                            <br>
                                             <tbody>
-                                                <tr ng-repeat="session in sessions">
+                                                <tr ng-repeat="session in sessions | filter: search">
                                                     <!-- <td>{{session.user.username}}</td> -->
-
-                                                    <td scope="row">{{session.user.first_name}} {{session.user.last_name}}</td>
+                                                    <td scope="row">{{session.user.first_name}}
+                                                        {{session.user.last_name}}</td>
                                                     <td scope="row">
                                                         {{session.coffe}}
                                                     </td>
@@ -59,9 +59,6 @@
                                                         <a class="btn btn-danger" ng-click="deleteSession(session)">Delete</a>
                                                     </td>
                                                 </tr>
-                                                
-
-
                                             </tbody>
                                         </table>
 
@@ -74,8 +71,7 @@
             </div>
         </div>
     </div>
-</div>
-<!-- <div ng-controller="UserListController">
+    <!-- <div ng-controller="UserListController">
         <table class="table usertable">  
         <tr>
             <td><h3>All Users:</h3></td>
