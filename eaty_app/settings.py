@@ -25,7 +25,7 @@ SECRET_KEY = 'u0)gc+dh+f_u5_a_i*e2qdw9gw--t45d%v_-5q6lej8u#emuaw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eaty.ovh', 'www.eaty.ovh']
 
 
 # Application definition
@@ -130,13 +130,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #dirs
+"""
 STATICFILES_DIRS = [
     os.path.join(CORE_PATH, "statics")
 ]
+"""
 
-"""
-STATIC_ROOT = os.path.join(CORE_PATH, 'statics')
-"""
+STATIC_ROOT = os.path.join(CORE_PATH, 'statics/')
+
 
 LOGIN_REDIRECT_URL = '/'
 
