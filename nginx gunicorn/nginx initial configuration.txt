@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name eaty.ovh www.eaty.ovh;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        alias /home/production/artal/Eaty/statics/;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/production/artal/Eaty/eaty_app.sock;
+    }
+}
