@@ -6,6 +6,7 @@ angular.module('WishList', [
     // 'produsView',
     // 'produsCreate',
     // 'produsEdit'
+    'ngTable'
 ]);
 
 })();

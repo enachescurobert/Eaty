@@ -1,16 +1,17 @@
 <br>
-
-
-
 <div class="content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <div class="col-md-9">
+            <div class="col-md-6">
               <h4 class="title">Current Wishlist</h4>
               <p class="category">What you would like us to take for you?</p>
+            </div>
+            <div class="col-md-3" style="text-align: center;">
+              <input class="form-control col-md-3" ng-model="search" type="text" placeholder="Search product name"
+                aria-label="Search">
             </div>
             <div class="col-md-3">
               <button class="btn btn-success" ui-sref="newProdus">Add New Product</button>
@@ -21,9 +22,8 @@
               <!-- <tr>
                   <th colspan="2" style="text-align: center">All Products:</th>
               </tr> -->
-              <tr ng-repeat="produs in produse">
+              <tr ng-repeat="produs in produse| filter: search">
                 <td>{{produs.name}}</td>
-                
                 <!-- <td>{{produs.id}}</td> -->
                 <td>
                   <a class="btn btn-primary" ui-sref="editProdus({id:produs.id})">Edit</a>

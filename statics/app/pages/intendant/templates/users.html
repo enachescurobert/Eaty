@@ -5,9 +5,12 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <div class="col-md-9">
+            <div class="col-md-6">
               <h4 class="title">Intendant Restricted Page </h4>
               <p class="category">Users Management</p>
+            </div>
+            <div class="col-md-3" style="text-align: center;">
+              <input class="form-control col-md-3" ng-model="search" type="text" placeholder="Search USER" aria-label="Search">
             </div>
             <div class="col-md-3">
               <button ui-sref="newUser" class="btn btn-success">Add New User</button>
@@ -28,11 +31,12 @@
                 <td>
                   <strong>Email</strong>
                 </td>
-                <td colspan="2">
+                <td >
                   <strong>Group ID</strong>
                 </td>
+                <td colspan="2"></td>
               </tr>
-              <tr ng-repeat="user in users">
+              <tr ng-repeat="user in users| filter: search">
                 <td>{{user.username}}</td>
                 <td>{{user.first_name}}</td>
                 <td>{{user.last_name}}</td>
@@ -64,14 +68,18 @@
               <div class="col-md-12">
                 <div class="card">
                   <div class="header">
-                    <div class="col-md-9">
+                    <div class="col-md-6">
                       <h4 class="title">Groups:</h4>
-                      <p class="category"></p>
+                      <p class="category">All departments of the ARTAL</p>
+                    </div>
+                    <div class="col-md-3" style="text-align: center;">
+                      <input class="form-control col-md-3" ng-model="searchG" type="text" placeholder="Search USER" aria-label="Search">
                     </div>
                     <div class="col-md-3">
                       <button ui-sref="newGroup" class="btn btn-success">Add New Group</button>
                     </div>
                   </div>
+                  <br>
                   <div class="content table-responsive table-full-width">
                     <table class="table table-hover table-striped">
                       <tr>
@@ -82,7 +90,7 @@
                           <strong>Id</strong>
                         </td>
                       </tr>
-                      <tr ng-repeat="group in groups">
+                      <tr ng-repeat="group in groups| filter: searchG">
                         <td>{{group.name}}</td>
                         <td>{{group.id}}</td>
                         <td>

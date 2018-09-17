@@ -69,3 +69,4 @@ angular.module('sessionControllers', [])
       $scope.loadSession(); // Load a session which can be edited on UI
     }
   )
+  
