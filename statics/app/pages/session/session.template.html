@@ -50,7 +50,7 @@
                                                         </div>
                                                         <div class="col-md-6">
 
-                                                            <button type="submit" class="btn btn-warning btn-number"
+                                                            <button type="submit" class="btn btn-info btn-number btn-fill"
                                                                 data-type="plus" ng-click="session.coffe = session.coffe + 1;session.$update()">
                                                                 <i class="glyphicon glyphicon-plus"></i>
                                                             </button>
@@ -62,7 +62,7 @@
                                                             {{session.cake}}
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <button type="button" class="btn btn-warning btn-number"
+                                                            <button type="button" class="btn btn-info btn-number  btn-fill"
                                                                 data-type="plus" ng-click="session.cake = session.cake + 0.5; session.$update()">
                                                                 <i class="glyphicon glyphicon-plus"></i>
                                                             </button>
@@ -76,11 +76,12 @@
                                                         <a class="btn btn-primary" ui-sref="editSession({id:session.id})">Edit</a>
                                                     </td>
                                                     <td scope="row">
+                                                        <button class="btn btn-warning" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
+                                                    </td>
+                                                    <td scope="row">
                                                         <a class="btn btn-danger" ng-click="deleteSession(session)">Delete</a>
                                                     </td>
-                                                    <!-- <td scope="row">
-                                                        <button class="btn btn-info" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
-                                                    </td> -->
+                                                    
                                                 </tr>
                                             </tbody>
                                         </table>
