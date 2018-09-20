@@ -1982,13 +1982,10 @@ fieldset[disabled] .btn-neutral.active {
 .footer {
     background-color: #FFFFFF;
     line-height: 20px;
-    position: absolute;
     bottom: 0;
-    /* left:0; */
-    /* width: calc(100% - $sidebar-width); */
     left:auto;
-    width:83%;
-    position:fixed;
+    width:100%;
+    /* position: sticky; */
 }
 
 .footer nav > ul {
