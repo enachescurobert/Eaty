@@ -73,13 +73,13 @@
                                                     <td scope="row">{{session.cake * 0.5 + session.coffe * 0.1 |
                                                         currency :"€"}}</td>
                                                     <td scope="row">
-                                                        <a class="btn btn-primary" ui-sref="editSession({id:session.id})">Edit</a>
+                                                        <a class="btn btn-primary" ng-if="2+2==4" ui-sref="editSession({id:session.id})">Edit</a>
                                                     </td>
                                                     <td scope="row">
-                                                        <button class="btn btn-warning" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
+                                                        <button class="btn btn-warning" ng-if="" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
                                                     </td>
                                                     <td scope="row">
-                                                        <a class="btn btn-danger" ng-click="deleteSession(session)">Delete</a>
+                                                        <a class="btn btn-danger" ng-if="" ng-click="deleteSession(session)">Delete</a>
                                                     </td>
                                                     
                                                 </tr>

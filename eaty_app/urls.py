@@ -16,16 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
-"""
-from django.conf import settings
-from django.conf.urls.static import static
-"""
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
+
+
+
 urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
     path('admin/', admin.site.urls),
     path('Product/', include('eaty_product.urls')),
     path('Purchase/', include('eaty_purchase.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-
-] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-  #manage.py collectstatic => STATIC_ROOT is the folder where static files will be stored after using the command
+    path('accounts/', include('django.contrib.auth.urls')), 
+    path(r'api-token-auth/', obtain_jwt_token),
+    path(r'api-token-refresh/', refresh_jwt_token),
+]
