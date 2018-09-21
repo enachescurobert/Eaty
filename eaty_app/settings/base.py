@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
 ]
 """
 
-STATIC_ROOT = os.path.join(CORE_PATH, 'statics/')
+# STATIC_ROOT = os.path.join(CORE_PATH, 'statics/')
 
 
 LOGIN_REDIRECT_URL = '/'
