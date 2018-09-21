@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 import datetime
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CORE_PATH = (os.path.dirname(os.path.dirname(__file__)))
@@ -20,13 +21,12 @@ CORE_PATH = (os.path.dirname(os.path.dirname(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u0)gc+dh+f_u5_a_i*e2qdw9gw--t45d%v_-5q6lej8u#emuaw'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eaty.ovh', 'www.eaty.ovh']
 
 
 # Application definition
@@ -62,7 +62,9 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             './templates',
-            os.path.join(CORE_PATH, 'statics',)
+            os.path.join(CORE_PATH, 'statics',
+            )
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -81,13 +83,15 @@ WSGI_APPLICATION = 'eaty_app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+"""
+
 
 
 # Password validation
@@ -129,13 +133,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #dirs
+"""
 STATICFILES_DIRS = [
     os.path.join(CORE_PATH, "statics")
 ]
+"""
 
-"""
-STATIC_ROOT = os.path.join(CORE_PATH, 'statics')
-"""
+# STATIC_ROOT = os.path.join(CORE_PATH, 'statics/')
+
 
 LOGIN_REDIRECT_URL = '/'
 

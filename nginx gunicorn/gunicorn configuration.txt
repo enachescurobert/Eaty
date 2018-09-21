@@ -1,0 +1,23 @@
+[Unit]
+
+Description=gunicorn 
+daemon
+After=network.target
+
+
+
+[Service]
+
+User=production
+
+Group=www-data
+
+Working Directory=/home/production/artal/Eaty
+
+ExecStart=/home/production/.pyenv/versions/eaty/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/production/artal/Eaty/eaty_app.sock eaty_app.wsgi:application
+
+
+
+[Install]
+
+WantedBy=multi-user.target
