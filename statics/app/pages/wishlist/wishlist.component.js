@@ -33,12 +33,12 @@
     // GET : Take everything
     
     $scope.produse = Produs.query();
-    var self = this;
-    var data = [{name:"produse.name", like: "produse.like", dislike:"produse.dislike"}]
-    self.tableParams = new NgTableParams({
-      page: 1,            // show first page
-      count: 10
-    }, { dataset: data});
+    // var self = this;
+    // var data = [{name:"produse.name", like: "produse.like", dislike:"produse.dislike"}]
+    // self.tableParams = new NgTableParams({
+    //   page: 1,            // show first page
+    //   count: 10
+    // }, { dataset: data});
 
     $scope.deleteProdus = function (produs) { // Delete a produs. Issues a DELETE to /api/produse/:id
       if (popupService.showPopup('Really delete this?')) {
@@ -49,6 +49,22 @@
       }
     };
     // controllerAs: 'ProdusListController'
+
+    $scope.Export = function () {
+      html2canvas(document.getElementById('tblWishlist'), {
+          onrendered: function (canvas) {
+              var data = canvas.toDataURL();
+              var docDefinition = {
+                  content: [{
+                      image: data,
+                      width: 500
+                  }]
+              };
+              pdfMake.createPdf(docDefinition).download("Wishlist.pdf");
+          }
+      });
+  }
+
   }
 
   function ProdusViewController($scope, $stateParams, Produs) {

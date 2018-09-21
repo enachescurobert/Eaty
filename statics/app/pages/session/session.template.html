@@ -9,7 +9,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="header">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <h4 class="title">Current Session</h4>
                                             <p class="category">
                                                 Managing everyone's session
@@ -23,11 +23,16 @@
                                             <button class="btn btn-success" ui-sref="newSession">Add User to
                                                 Session</button>
                                         </div>
+
+                                        <div class="col-md-2">
+                                            <button class="btn btn-info btn-fill" ng-click="Export()">Export to PDF</button>
+                                            <!-- <input type="button" value="Export" ng-click="Export()" /> -->
+                                      </div>
                                     </div>
 
                                     <br>
                                     <div class="content table-responsive table-full-width">
-                                        <table class="table table-hover table-striped" show-filter="true">
+                                        <table class="table table-hover table-striped" id="tblSession" show-filter="true">
                                             <!-- <thead> -->
                                             <tr>
                                                 <th scope="col">Name</th>

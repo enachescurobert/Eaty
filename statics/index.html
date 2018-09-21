@@ -51,6 +51,45 @@
 
 <!-- End of componets -->
 
+<div id="paypal-button"></div>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+  paypal.Button.render({
+    // Configure environment
+    env: 'sandbox',
+    client: {
+      sandbox: 'demo_sandbox_client_id',
+      production: 'demo_production_client_id'
+    },
+    // Customize button (optional)
+    locale: 'en_US',
+    style: {
+      size: 'small',
+      color: 'gold',
+      shape: 'pill',
+    },
+    // Set up a payment
+    payment: function(data, actions) {
+      return actions.payment.create({
+        transactions: [{
+          amount: {
+            total: '0.01',
+            currency: 'USD'
+          }
+        }]
+      });
+    },
+    // Execute the payment
+    onAuthorize: function(data, actions) {
+      return actions.payment.execute().then(function() {
+        // Show a confirmation message to the buyer
+        window.alert('Thank you for your purchase!');
+      });
+    }
+  }, '#paypal-button');
+
+</script>
+
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
@@ -115,6 +154,10 @@
     <script src="{% static "assets/js/demo.js" %}"></script>
     
     <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+
+    <!-- PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     
     <script type="text/javascript">
     	$(document).ready(function(){
