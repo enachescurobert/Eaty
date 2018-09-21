@@ -22,6 +22,27 @@ PROD_PATH = (os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 ALLOWED_HOSTS = ['eaty.ovh', 'www.eaty.ovh']
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            './templates',
+            os.path.join(PROD_PATH, 'statics',
+            )
+
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 
 DATABASES = {
     'default': {
