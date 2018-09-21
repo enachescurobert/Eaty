@@ -19,8 +19,7 @@ CORE_PATH = (os.path.dirname(os.path.dirname(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u0)gc+dh+f_u5_a_i*e2qdw9gw--t45d%v_-5q6lej8u#emuaw'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -90,16 +89,7 @@ DATABASES = {
     }
 }
 """
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '0.0.0.0',
-        'PORT': '5432',
-    }
-} 
+
 
 
 # Password validation
@@ -153,4 +143,5 @@ STATIC_ROOT = os.path.join(CORE_PATH, 'statics/')
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
