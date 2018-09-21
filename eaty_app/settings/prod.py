@@ -18,6 +18,7 @@ from eaty_app.settings.base import *
 
 #Override base.py settings here
 
+PROD_PATH = (os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 ALLOWED_HOSTS = ['eaty.ovh', 'www.eaty.ovh']
 
@@ -33,7 +34,7 @@ DATABASES = {
     }
 } 
 
-STATIC_ROOT = os.path.join(CORE_PATH, 'statics/')
+STATIC_ROOT = os.path.join(PROD_PATH, 'statics/')
 
 
 try:
