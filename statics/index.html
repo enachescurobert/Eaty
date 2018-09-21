@@ -44,6 +44,7 @@
             <navbar></navbar>
     
             <div ui-view></div>
+            <div id="paypal-button"  style="text-align:center"></div>
     
             <page-footer></page-footer>
         </div>
@@ -51,44 +52,9 @@
 
 <!-- End of componets -->
 
-<div id="paypal-button"></div>
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
-<script>
-  paypal.Button.render({
-    // Configure environment
-    env: 'sandbox',
-    client: {
-      sandbox: 'demo_sandbox_client_id',
-      production: 'demo_production_client_id'
-    },
-    // Customize button (optional)
-    locale: 'en_US',
-    style: {
-      size: 'small',
-      color: 'gold',
-      shape: 'pill',
-    },
-    // Set up a payment
-    payment: function(data, actions) {
-      return actions.payment.create({
-        transactions: [{
-          amount: {
-            total: '0.01',
-            currency: 'USD'
-          }
-        }]
-      });
-    },
-    // Execute the payment
-    onAuthorize: function(data, actions) {
-      return actions.payment.execute().then(function() {
-        // Show a confirmation message to the buyer
-        window.alert('Thank you for your purchase!');
-      });
-    }
-  }, '#paypal-button');
 
-</script>
+    <!-- PayPal Button -->
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
@@ -166,22 +132,10 @@
     <!-- PDF export -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js" ></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    
-    <script type="text/javascript">
-    	$(document).ready(function(){
+    <script src="{% static "assets/js/notification.js" %}"></script>
+    <script src="{% static "assets/js/paypall.js" %}"></script>
 
-        	demo.initChartist();
 
-        	$.notify({
-            	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Eaty</b> - the app that makes everything simple."
 
-            },{
-                type: 'info',
-                timer: 4000
-            });
-
-    	});
-    </script> 
 </body>
 </html>
