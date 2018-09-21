@@ -3,6 +3,8 @@
     <div ng-controller="SessionEditController">
         <div ng-controller="SessionListController">
             <div ng-controller="SessionCreateController">
+                <div ng-controller="userInformations">
+
                 <div class="content">
                     <div class="container-fluid">
                         <div class="row">
@@ -20,7 +22,7 @@
                                                 placeholder="Search your name to be more EASY" aria-label="Search">
                                         </div>
                                         <div class="col-md-3">
-                                            <button class="btn btn-success" ui-sref="newSession">Add User to
+                                            <button class="btn btn-success" ng-if="myVar == 'isAuthenticated'" ui-sref="newSession">Add User to
                                                 Session</button>
                                         </div>
 
@@ -78,13 +80,13 @@
                                                     <td scope="row">{{session.cake * 0.5 + session.coffe * 0.1 |
                                                         currency :"€"}}</td>
                                                     <td scope="row">
-                                                        <a class="btn btn-primary" ui-sref="editSession({id:session.id})">Edit</a>
+                                                        <a class="btn btn-primary" ng-if="myVar == 'isAuthenticated'" ui-sref="editSession({id:session.id})">Edit</a>
                                                     </td>
                                                     <td scope="row">
-                                                        <button class="btn btn-warning" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
+                                                        <button class="btn btn-warning" ng-if="myVar == 'isAuthenticated'" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
                                                     </td>
                                                     <td scope="row">
-                                                        <a class="btn btn-danger" ng-click="deleteSession(session)">Delete</a>
+                                                        <a class="btn btn-danger" ng-show="myVar == 'isAuthenticated'" ng-click="deleteSession(session)">Delete</a>
                                                     </td>
                                                     
                                                 </tr>
@@ -99,7 +101,7 @@
             </div>
         </div>
     </div>
-</div>
+</div></div>
 <!-- <div ng-controller="UserListController">
         <table class="table usertable">  
         <tr>

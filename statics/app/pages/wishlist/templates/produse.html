@@ -1,5 +1,7 @@
 <br>
 <div ng-contoller="ProdusListController">
+    <div ng-controller="userInformations">
+
   <div class="content">
     <div class="container-fluid">
       <div class="row">
@@ -47,8 +49,8 @@
                       <i class="fa fa-thumbs-down"></i>
                   </td>
                   <td>
-                    <a class="btn btn-primary" ui-sref="editProdus({id:produs.id})">Edit</a>
-                    <a class="btn btn-danger" ng-click="deleteProdus(produs)">Delete</a>
+                    <a class="btn btn-primary" ng-if="myVar == 'isAuthenticated'" ui-sref="editProdus({id:produs.id})">Edit</a>
+                    <a class="btn btn-danger" ng-if="myVar == 'isAuthenticated'" ng-click="deleteProdus(produs)">Delete</a>
                   </td>
                 </tr>
                 <!-- <input type="button" value="Export" ng-click="Export()" /> -->
@@ -59,4 +61,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

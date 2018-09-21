@@ -91,9 +91,9 @@
 </script>
 
     <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-resource.min.js"></script>
     <!-- Main -->
     <script src="{% static "app/app.module.js" %}"></script>
     <script src="{% static "app/app.route.js" %}"></script>
@@ -129,7 +129,15 @@
     <script src="{% static "app/components/product-management-row/product-management-row.controllers.js" %}"></script>
     <!-- Session Row -->
     <script src="{% static "app/components/session-row/session-row.controllers.js" %}"></script>
-
+    <!-- Authentication -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+    <script src="{% static "app/components/authentication/app-services/authentication.service.js" %}"></script>
+    <script src="{% static "app/components/authentication/app-services/authentified.js" %}"></script>
+    <script src="{% static "app/components/authentication/home/index.controller.js" %}"></script>
+    <script src="{% static "app/components/authentication/login/index.controller.js" %}"></script>
+    <!-- /Authentication -->
+    
         <!-- Shared pages -->
     <script src="{% static "app/shared/navbar/navbar.component.js" %}"></script>
     <script src="{% static "app/shared/sidebar/sidebar.component.js" %}"></script>
@@ -174,6 +182,6 @@
             });
 
     	});
-	</script> 
+    </script> 
 </body>
 </html>
