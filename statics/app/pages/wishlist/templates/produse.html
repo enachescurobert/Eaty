@@ -40,14 +40,21 @@
                   </td>
                   <td>
                     {{produs.like}}
-                    <button type="button" class="btn btn-sm btn-success btn-number btn-fill" data-type="plus" ng-click="produs.like = produs.like + 1; produs.$update()">
-                      <i class="fa fa-thumbs-up"></i>
+                    <button type="button" class="btn btn-sm btn-success btn-number" data-type="plus" ng-click="produs.like = produs.like + 1; produs.$update()">
+ <span class="glyphicon glyphicon-thumbs-up"></span> Like
+
                     </button>
-                  <td>
+                    </td>
+                    
+                    <td>
                     {{produs.dislike}}
-                    <button type="button" class="btn btn-sm btn-danger btn-number btn-fill" data-type="plus" ng-click="produs.dislike = produs.dislike + 1; produs.$update()">
-                      <i class="fa fa-thumbs-down"></i>
-                  </td>
+                    <button type="button" class="btn btn-sm btn-danger btn-number" data-type="plus" ng-click="produs.dislike = produs.dislike + 1; produs.$update()">
+ <span class="glyphicon glyphicon-thumbs-down"></span> Dislike
+
+                    </button>
+                    </td>
+
+                  
                   <td>
                     <a class="btn btn-primary" ng-if="myVar == 'isAuthenticated'" ui-sref="editProdus({id:produs.id})">Edit</a>
                     <a class="btn btn-danger" ng-if="myVar == 'isAuthenticated'" ng-click="deleteProdus(produs)">Delete</a>
