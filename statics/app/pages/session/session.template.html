@@ -79,10 +79,14 @@
                                                             </button>
                                                         </div>
                                                     </td>
-                                                    <td scope="row">{{session.coffe / 10 | currency :"€"}}</td>
-                                                    <td scope="row">{{session.cake / 2 | currency :"€"}}</td>
+                                                    <!-- <td scope="row" ng-class="{red: (session.coffe * 0.1) != 0}">{{session.coffe / 10 | currency :"€"}}</td>
+                                                    <td scope="row" ng-class="{red: (session.cake * 0.5 ) != 0}">{{session.cake / 2 | currency :"€"}}</td>
                                                     <td scope="row" ng-class="{red: (session.cake * 0.5 + session.coffe * 0.1) != 0}">{{session.cake * 0.5 + session.coffe * 0.1 |
-                                                        currency :"€"}}</td>
+                                                        currency :"€"}}</td> -->
+                                                        <td scope="row">{{session.coffe / 10 | currency :"€"}}</td>
+                                                        <td scope="row">{{session.cake / 2 | currency :"€"}}</td>
+                                                        <td scope="row" ng-class="{red: (session.cake * 0.5 + session.coffe * 0.1) != 0}">{{session.cake * 0.5 + session.coffe * 0.1 |
+                                                            currency :"€"}}</td>
                                                     <td scope="row">
                                                         <a class="btn btn-primary btn-fill" ng-if="myVar == 'isAuthenticated'" ui-sref="editSession({id:session.id})"><i class="glyphicon glyphicon-edit"></i></a>
                                                     </td>
