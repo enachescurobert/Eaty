@@ -17,7 +17,7 @@
                   aria-label="Search">
               </div>
               <div class="col-md-3">
-                <button class="btn btn-success" ui-sref="newProdus">Add New Product</button>
+                <button class="btn btn-success btn-fill" ui-sref="newProdus">Add New Product</button>
               </div>
               <div class="col-md-2">
                 <button class="btn btn-info btn-fill" ng-click="Export()">Export to PDF</button>
@@ -40,24 +40,24 @@
                   </td>
                   <td>
                     {{produs.like}}
-                    <button type="button" class="btn btn-sm btn-success btn-number" data-type="plus" ng-click="produs.like = produs.like + 1; produs.$update()">
+                    <button type="button" class="btn btn-sm btn-primary btn-number btn-fill" data-type="plus" ng-click="produs.like = produs.like + 1; produs.$update()">
  <span class="glyphicon glyphicon-thumbs-up"></span> Like
 
                     </button>
                     </td>
                     
-                    <td>
+                    <!-- <td>
                     {{produs.dislike}}
-                    <button type="button" class="btn btn-sm btn-danger btn-number" data-type="plus" ng-click="produs.dislike = produs.dislike + 1; produs.$update()">
+                    <button type="button" class="btn btn-sm btn-danger btn-number btn-fill" data-type="plus" ng-click="produs.dislike = produs.dislike + 1; produs.$update()">
  <span class="glyphicon glyphicon-thumbs-down"></span> Dislike
 
                     </button>
-                    </td>
+                    </td> -->
 
                   
                   <td>
-                    <a class="btn btn-primary" ng-if="myVar == 'isAuthenticated'" ui-sref="editProdus({id:produs.id})">Edit</a>
-                    <a class="btn btn-danger" ng-if="myVar == 'isAuthenticated'" ng-click="deleteProdus(produs)">Delete</a>
+                    <a class="btn btn-primary" ng-if="myVar == 'isAuthenticated'" ui-sref="editProdus({id:produs.id})"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a class="btn btn-danger" ng-if="myVar == 'isAuthenticated'" ng-click="deleteProdus(produs)"><i class="glyphicon glyphicon-trash"></i></a>
                   </td>
                 </tr>
                 <!-- <input type="button" value="Export" ng-click="Export()" /> -->

@@ -19,11 +19,10 @@
                                         </div>
                                         <div class="col-md-3" style="text-align: center;">
                                             <input class="form-control col-md-3" ng-model="search" type="text"
-                                                placeholder="Search your name to be more EASY" aria-label="Search">
+                                                placeholder="Search" aria-label="Search">
                                         </div>
                                         <div class="col-md-3">
-                                            <button class="btn btn-success" ng-if="myVar == 'isAuthenticated'" ui-sref="newSession">Add User to
-                                                Session</button>
+                                            <button class="btn btn-success btn-fill" ng-if="myVar == 'isAuthenticated'" ui-sref="newSession">Add <i class="glyphicon glyphicon-user"></i></button>
                                         </div>
 
                                         <div class="col-md-2">
@@ -42,12 +41,16 @@
                                                 <th scope="col">X's on Cake</th>
                                                 <th scope="col">Coffe Total(€)</th>
                                                 <th scope="col">Cake Total(€)</th>
-                                                <th scope="col" colspan="4">Total Debt(€)</th>
+                                                <th scope="col">Total Debt(€)</th>
+                                                <th scope="col" colspan="3" style="text-align: center"><button class="btn btn-secondary btn-fill" ng-click="resetSession(); sessions.$update()" ng-if="myVar == 'isAuthenticated'">
+                                                        Reset The Entire Session 
+                                                      </button></th>
                                             </tr>
                                             <!-- </thead> -->
                                             <br>
                                             <tbody>
                                                 <tr ng-repeat="session in sessions | filter: search">
+                                                        
                                                     <!-- <td>{{session.user.username}}</td> -->
                                                     <td scope="row">{{session.user.first_name}}
                                                         {{session.user.last_name}}</td>
@@ -80,18 +83,20 @@
                                                     <td scope="row">{{session.cake * 0.5 + session.coffe * 0.1 |
                                                         currency :"€"}}</td>
                                                     <td scope="row">
-                                                        <a class="btn btn-primary" ng-if="myVar == 'isAuthenticated'" ui-sref="editSession({id:session.id})">Edit</a>
+                                                        <a class="btn btn-primary btn-fill" ng-if="myVar == 'isAuthenticated'" ui-sref="editSession({id:session.id})"><i class="glyphicon glyphicon-edit"></i></a>
                                                     </td>
                                                     <td scope="row">
-                                                        <button class="btn btn-warning" ng-if="myVar == 'isAuthenticated'" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
+                                                        <button class="btn btn-warning btn-fill" ng-if="myVar == 'isAuthenticated'" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
                                                     </td>
                                                     <td scope="row">
-                                                        <a class="btn btn-danger" ng-show="myVar == 'isAuthenticated'" ng-click="deleteSession(session)">Delete</a>
+                                                        <button class="btn btn-danger btn-fill" ng-show="myVar == 'isAuthenticated'" ng-click="deleteSession(session)"> <i class="glyphicon glyphicon-trash"></i></button>
                                                     </td>
                                                     
                                                 </tr>
+                                                
                                             </tbody>
                                         </table>
+
                                     </div>
                                 </div>
                             </div>

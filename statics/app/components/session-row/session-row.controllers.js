@@ -44,6 +44,15 @@ angular.module('sessionControllers', [])
           }
       });
   }
+  $scope.resetSession = function() {
+    angular.forEach($scope.sessions, function(item) {
+      item["cake"] = 0;
+      item["coffe"] = 0;
+      item.$update();
+    })
+    // $scope.$apply();
+  }
+  
   })
   .controller('SessionViewController',
     function ($scope, $stateParams, Session) {
@@ -81,7 +90,7 @@ angular.module('sessionControllers', [])
         });
       };
 
-      $scope.loadSession(); // Load a session which can be edited on UI
+      $scope.loadSession(); // Load a session which can be edited on UI     
     }
   )
   

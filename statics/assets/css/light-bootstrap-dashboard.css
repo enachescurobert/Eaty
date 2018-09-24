@@ -1985,8 +1985,8 @@ fieldset[disabled] .btn-neutral.active {
     bottom: 0;
     /* left:auto;
     right:auto; */
-    width:80%;
-    position: fixed;
+    width:100%;
+    /* position: fixed; */
 
 
 }

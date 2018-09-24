@@ -31,9 +31,9 @@
                 <td>
                   <strong>Email</strong>
                 </td>
-                <td >
+                <!-- <td >
                   <strong>Group ID</strong>
-                </td>
+                </td> -->
                 <td colspan="2"></td>
               </tr>
               <tr ng-repeat="user in users| filter: search">
@@ -42,7 +42,7 @@
                 <td>{{user.last_name}}</td>
                 <td>{{user.email}}</td>
                 <!-- <td>{{user.groups.name}}</td> -->
-                <td>{{user.groups}}</td>
+                <!-- <td>{{user.groups}}</td> -->
                 <td>
                   <a class="btn btn-primary" ui-sref="editUser({id:user.id})">Edit</a>
                   <a class="btn btn-danger" ng-click="deleteUser(user)">Delete</a>
@@ -57,7 +57,7 @@
 </div>
 
 
-<br>
+<!-- <br>
 <div ng-controller="GroupViewController">
   <div ng-controller="GroupEditController">
     <div ng-controller="GroupListController">
@@ -108,4 +108,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
