@@ -45,13 +45,14 @@ angular.module('sessionControllers', [])
       });
   }
   $scope.resetSession = function() {
+    if (popupService.showPopup('Are you sure you want to reset the session for all the users?')) {
     angular.forEach($scope.sessions, function(item) {
       item["cake"] = 0;
       item["coffe"] = 0;
       item.$update();
     })
     // $scope.$apply();
-  }
+  }}
   
   })
   .controller('SessionViewController',
