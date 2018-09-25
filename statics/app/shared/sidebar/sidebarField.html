@@ -14,7 +14,6 @@
                                 Eaty
                             </a>
                         </div>
-                        <div ng-controller="userInformations">
 
                        
                             <ul class="nav">
@@ -32,7 +31,7 @@
                                     </a>
                                 </li>
                                 <li ng-class="{ active: isActive('/productmanagement') }">
-                                    <a href="#productmanagement" class="{{ condition ? 'active' : '' }}" ng-show="myVar == 'isAuthenticated'">
+                                    <a href="#productmanagement" class="{{ condition ? 'active' : '' }}">
                                         <i class="pe-7s-albums"></i>
                                         <p>Product Management</p>
                                     </a>
@@ -45,13 +44,13 @@
                                         <p>Pay</p>
                                     </a>
                                 </li>
-                                <li ng-show="myVar == 'isAuthenticated'" ng-class="{ active: isActive('/intendant') }">
+                                <li ng-class="{ active: isActive('/intendant') }">
                                     <a href="#intendant" class="{{ condition ? 'active' : '' }}">
                                         <i class="pe-7s-users"></i>
                                         <p>Users</p>
                                     </a>
                                 </li>               
                         </ul>
-                    </div></div>
+                    </div>
                 <!-- </div> -->
             <!-- </div>   -->
