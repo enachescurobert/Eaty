@@ -16,9 +16,8 @@
  
         function Login(username, password, callback) {
             $http.post('/api-token-auth/', { username: username, password: password })
-                .success(function (response) {
+                .then(function adevarat(response) {
                     // login successful if there's a token in the response
-                    if (response.token) {
                         // store username and token in local storage to keep user logged in between page refreshes
                         $localStorage.currentUser = { username: username, token: response.token };
  
@@ -26,16 +25,15 @@
                         $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
                         // execute callback with true to indicate successful login
                         callback(true);
-                        
-                        
-                    } else {
-                        // execute callback with false to indicate failed login
-                        callback(false);
-                    }
+
+                    
+                }, function vrajeala(response){
+                callback(false);
+ 
                 })
-                .error(function(response) {
-                    callback(false);
-                })
+                // .error(function(response) {
+                //     callback(false);
+                // })
                 ;
         }
  
