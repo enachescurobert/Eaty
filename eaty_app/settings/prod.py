@@ -20,6 +20,9 @@ from eaty_app.settings.base import *
 
 PROD_PATH = (os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
+DEBUG = False
+
+
 ALLOWED_HOSTS = ['eaty.ovh', 'www.eaty.ovh']
 
 TEMPLATES = [
