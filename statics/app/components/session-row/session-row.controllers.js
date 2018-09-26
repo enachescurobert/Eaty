@@ -37,7 +37,8 @@ angular.module('sessionControllers', [])
               var docDefinition = {
                   content: [{
                       image: data,
-                      width: 500
+                      width: 500,
+
                   }]
               };
               pdfMake.createPdf(docDefinition).download("Session.pdf");
