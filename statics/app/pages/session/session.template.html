@@ -4,6 +4,7 @@
         <div ng-controller="SessionListController">
             <div ng-controller="SessionCreateController">
                 <div ng-controller="userInformations">
+                        <div ng-controller="DownloadTable">
 
                 <div class="content">
                     <div class="container-fluid">
@@ -32,9 +33,11 @@
                                     </div>
 
                                     <br>
-                                    <div class="content table-responsive table-full-width">
-                                        <table class="table table-hover table-striped" id="tblSession" show-filter="true">
-                                            <!-- <thead> -->
+                                    <div class="content table-responsive table-full-width" id="tblSession">
+                                            <!-- <table class="export-table" style="width: 100%; margin-top: 20px"> -->
+                                                <div class="export-table">
+                                        <table class="table table-hover table-striped" show-filter="true">
+                                            <thead>
                                             <tr>
                                                 <th scope="col">Name</th>
                                                 <th scope="col">X's on Coffe<br>Add 1</th>
@@ -46,7 +49,7 @@
                                                         Reset The Entire Session 
                                                       </button></th>
                                             </tr>
-                                            <!-- </thead> -->
+                                            </thead>
                                             <br>
                                             <tbody>
                                                 <tr ng-repeat="session in sessions | filter: search">
@@ -101,7 +104,14 @@
                                                 
                                             </tbody>
                                         </table>
+                                        <hr>
+                                      <button class="btn btn-light btn-fill" data-ng-click="exportAction('csv')"> Export CSV</button>
+                                      <button class="btn btn-light btn-fill" data-ng-click="exportAction('excel')"> Export Excel</button>
+                                      <button class="btn btn-light btn-fill" data-ng-click="exportAction('doc')"> Export Doc</button>
+                                      <button class="btn btn-light btn-fill" data-ng-click="exportAction('pdf')"> Export Pdf</button>
 
+                                    </div>
+                                </div>
                                     </div>
                                 </div>
                             </div>

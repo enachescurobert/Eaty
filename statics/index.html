@@ -47,7 +47,7 @@
             <navbar></navbar>
     
             <div ui-view class="content"></div>
-    
+
             <page-footer></page-footer>
         </div>
     </div>
@@ -82,7 +82,13 @@
 
 <!--  Notifications Plugin    -->
 <script src="{% static "assets/js/bootstrap-notify.js" %}"></script>
-    
+
+<!-- Table export -->
+<script src="{% static "assets/js/jquery.base64.js" %}"></script>
+<script src="{% static "assets/js/sprintf.js" %}"></script>
+<script src="{% static "assets/js/jspdf.js" %}"></script>
+<script src="{% static "assets/js/base64.js" %}"></script>
+<script src="{% static "assets/js/tableExport.js" %}"></script>
 <!-- Main -->
 <script src="{% static "app/app.module.js" %}"></script>
 <script src="{% static "app/app.route.js" %}"></script>
