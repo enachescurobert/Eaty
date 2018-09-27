@@ -28,8 +28,8 @@ THE SOFTWARE.*/
 						ignoreColumn: [],
 						tableName:'yourTableName',
 						type:'csv',
-						pdfFontSize:14,
-						pdfLeftMargin:20,
+						pdfFontSize:12,
+						pdfLeftMargin:10,
 						escape:'true',
 						htmlContent:'false',
 						consoleLog:'false'
