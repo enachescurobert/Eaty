@@ -32,14 +32,7 @@
 
     <!-- ngTable -->
     <link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
-    <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
-    <!-- Main -->
-    <script src="{% static "app/app.module.js" %}"></script>
-    <script src="{% static "app/app.route.js" %}"></script>
-    
+
 </head>
 <body>
     
@@ -54,7 +47,6 @@
             <navbar></navbar>
     
             <div ui-view class="content"></div>
-            <!-- <div id="paypal-button"  style="text-align:center"></div> -->
     
             <page-footer></page-footer>
         </div>
@@ -63,8 +55,37 @@
 <!-- End of componets -->
 
 
-    
 
+<!-- AngularJS -->
+
+<!-- <script src="{% static "assets/js/jquery.3.2.1.min.js" type="text/javascript" %}"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+
+<script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+
+<!-- PDF export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+
+
+<!--   Core JS Files   -->
+<script src="{% static "assets/js/bootstrap.min.js" type="text/javascript" %}"></script>
+<!-- Bootsrap Dashboard-->
+<script src="{% static "assets/js/light-bootstrap-dashboard.js" %}"></script>
+
+<!--  Notifications Plugin    -->
+<script src="{% static "assets/js/bootstrap-notify.js" %}"></script>
+    
+<!-- Main -->
+<script src="{% static "app/app.module.js" %}"></script>
+<script src="{% static "app/app.route.js" %}"></script>
 
 
     <!-- All 5 pages : Session, Wishlist, Product Management, Pay, Users -->
@@ -99,8 +120,6 @@
     <!-- Session Row -->
     <script src="{% static "app/components/session-row/session-row.controllers.js" %}"></script>
     <!-- Authentication -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
     <script src="{% static "app/components/authentication/app-services/authentication.service.js" %}"></script>
     <script src="{% static "app/components/authentication/app-services/authentified.js" %}"></script>
     <script src="{% static "app/components/authentication/home/index.controller.js" %}"></script>
@@ -112,48 +131,16 @@
     <script src="{% static "app/shared/sidebar/sidebar.component.js" %}"></script>
     <script src="{% static "app/shared/page-footer/page-footer.component.js" %}"></script>
 
-        <!--  Charts Plugin -->
-	<!-- <script src="{% static "assets/js/chartist.min.js" %}"></script> -->
-
-        <!--   Core JS Files   -->
-    <script src="{% static "assets/js/jquery.3.2.1.min.js" type="text/javascript" %}"></script>
-    <script src="{% static "assets/js/bootstrap.min.js" type="text/javascript" %}"></script>
-        <!-- Bootsrap Dashboard-->
-    <script src="{% static "assets/js/light-bootstrap-dashboard.js" %}"></script>
-
-    <!--  Notifications Plugin    -->
-    <script src="{% static "assets/js/bootstrap-notify.js" %}"></script>
-
-
-
-    
-    	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-    <!-- <script src="{% static "assets/js/demo.js" %}"></script> -->
-    
-    <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
-
-    <!-- PDF export -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js" ></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="{% static "assets/js/notification.js" %}"></script>
     <script src="{% static "assets/js/paypall.js" %}"></script>
     
     <!-- PayPal Button -->
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
-        <!-- 
-        
-        Bootstarp Style
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-        
-        -->
-        
-        
-
-    
+    <script src="{% static "assets/js/notification.js" %}"></script>
 
 
+
+        
 
 
 
