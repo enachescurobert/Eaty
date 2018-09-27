@@ -46,6 +46,9 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'eaty_app.settings.wsgi.application'
+
+
 
 DATABASES = {
     'default': {
