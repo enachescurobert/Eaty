@@ -26,8 +26,9 @@
                                             <button class="btn btn-success btn-fill" ng-if="myVar == 'isAuthenticated'" ui-sref="newSession">Add <i class="glyphicon glyphicon-user"></i></button>
                                         </div>
 
-                                        <div class="col-md-2">
-                                            <button class="btn btn-info btn-fill" ng-click="Export()">Export to PDF</button>
+                                        <div class="col-md-3">
+
+                                            <!--<button class="btn btn-info btn-fill" ng-click="Export()">Export to PDF</button>-->
                                             <!-- <input type="button" value="Export" ng-click="Export()" /> -->
                                       </div>
                                     </div>
@@ -104,10 +105,10 @@
                                             </tbody>
                                         </table>
                                         <hr>
-                                      <button class="btn btn-light btn-fill" data-ng-click="exportAction('csv')"> Export CSV</button>
-                                      <button class="btn btn-light btn-fill" data-ng-click="exportAction('excel')"> Export Excel</button>
-                                      <button class="btn btn-light btn-fill" data-ng-click="exportAction('doc')"> Export Doc</button>
-                                      <button class="btn btn-light btn-fill" data-ng-click="exportAction('pdf')"> Export Pdf</button>
+                                        <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated'" data-ng-click="exportAction('csv')">Export as CSV</button>
+                                      <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated'" data-ng-click="exportAction('excel')">Export as Excel</button>
+                                      <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated'" data-ng-click="exportAction('doc')">Export as Doc</button>
+                                     <!-- <button class="btn btn-light btn-fill" data-ng-click="exportAction('pdf')"> Export Pdf</button> -->
 
                                     </div>
                                 </div>
