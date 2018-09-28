@@ -6,8 +6,4 @@ angular
   .component('session', {
     templateUrl: 'static/app/pages/session/session.template.html', 
   })
-  
-
-
-
 })();

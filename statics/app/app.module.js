@@ -17,7 +17,9 @@ angular.module('demoApp', [
     'productmanagementControllers', //not used
     // 'productControllers', //not used  
     // 'userControllers' //not used
-    'sessionControllers' //injected in Session component  
+    'sessionControllers', //injected in Session component  
+    'ngMessages', 
+    'ngStorage',
     
 
 

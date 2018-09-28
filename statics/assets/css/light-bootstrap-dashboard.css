@@ -517,7 +517,7 @@ input:focus {
 
 .main-panel > .content {
     padding: 30px 15px;
-    min-height: calc(100% - 123px);
+    min-height: calc(100% - 120px);
 }
 
 .main-panel > .footer {
@@ -1680,12 +1680,12 @@ fieldset[disabled] .btn-neutral.active {
     margin-left: 0;
 }
 
-.navbar .navbar-brand {
+/* .navbar .navbar-brand {
     font-weight: 400;
     margin: 5px 0px;
     padding: 15px 15px;
     font-size: 20px;
-}
+} */
 
 .navbar .navbar-nav > li > a {
     padding: 10px 15px;
@@ -1735,7 +1735,7 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .navbar.fixed {
-    width: calc(100% - $sidebar-width);
+    width: calc(100% - sidebar-width);
     right: 0;
     left: auto;
     border-radius: 0;
@@ -1891,7 +1891,7 @@ fieldset[disabled] .btn-neutral.active {
 
 /*      Navbar with icons            */
 .navbar-icons.navbar .navbar-brand {
-    margin-top: 12px;
+    margin-top: 15px;
     margin-bottom: 12px;
 }
 
@@ -1982,13 +1982,13 @@ fieldset[disabled] .btn-neutral.active {
 .footer {
     background-color: #FFFFFF;
     line-height: 20px;
-    position: absolute;
     bottom: 0;
-    /* left:0; */
-    /* width: calc(100% - $sidebar-width); */
-    left:auto;
-    width:83%;
-    position:fixed;
+    /* left:auto;
+    right:auto; */
+    width:100%;
+    /* position: fixed; */
+
+
 }
 
 .footer nav > ul {

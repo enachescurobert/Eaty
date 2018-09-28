@@ -2,17 +2,32 @@
   'use strict';
 
 angular.module('demoApp')
-       .config(function($stateProvider) {
+       .config(function($stateProvider, $urlRouterProvider) {
        
+        $urlRouterProvider.otherwise("/session");
+
         $stateProvider
+
+      .state('home', {
+          url: '/',
+          templateUrl: 'static/app/components/authentication/home/index.view.html',
+          controller: 'Home.IndexController',
+          controllerAs: 'vm'
+      })
+      .state('login', {
+          url: '/login',
+          templateUrl: 'static/app/components/authentication/login/index.view.html',
+          controller: 'Login.IndexController',
+          controllerAs: 'vm'
+      })
        .state('session',{
-        url:'/session', 
-        component: 'session'
-        })
-        .state('wishlist',{
+          url:'/session', 
+          component: 'session'  
+      })
+      .state('wishlist',{
         url:'/wishlist', 
         templateUrl: 'static/app/pages/wishlist/wishlist.template.html'
-        })
+      })
         .state('productmanagement',{
           url:'/productmanagement', 
           templateUrl: 'static/app/pages/productmanagement/productmanagement.template.html'
@@ -126,12 +141,28 @@ angular.module('demoApp')
         });
         
 
-        }).run(function($state) {
-        $state.go('session'); //make a transition to session state when app starts
+        })
+  //       .run(function($state) {
+  //       $state.go('session'); //make a transition to session state when app starts
 
+  //   }
+  // );
+  .run(function($rootScope, $http, $location, $localStorage, $state) {
+    // keep user logged in after page refresh
+    if ($localStorage.currentUser) {
+        $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.currentUser.token;
     }
-  );
 
+    // redirect to login page if not logged in and trying to access a restricted page
+    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+        var publicPages = ['/login','/session','/wishlist','/wishlist/produse/new','/pay'];
+        var restrictedPage = publicPages.indexOf($location.path()) === -1;
+        if (restrictedPage && !$localStorage.currentUser) {
+            $location.path('/login');
+        }
+    });
+    $state.go('session');
+})
 
 
 })();

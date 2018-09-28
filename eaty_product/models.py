@@ -3,6 +3,9 @@ from django.db import models
 
 class ProductType(models.Model):
     name = models.CharField(max_length=80)
+    like = models.IntegerField(default=0,null=True, blank=True)
+    dislike = models.IntegerField(default=0,null=True, blank=True)
+
     def __str__(self):
         #return "%s is the type of product" % self.type_text
         return '{}'.format(self.name)
