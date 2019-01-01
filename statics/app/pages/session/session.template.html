@@ -23,7 +23,7 @@
                                                 placeholder="Search" aria-label="Search">
                                         </div>
                                         <div class="col-md-3">
-                                            <button class="btn btn-success btn-fill" ng-if="myVar == 'isAuthenticated'" ui-sref="newSession">Add <i class="glyphicon glyphicon-user"></i></button>
+                                            <button class="btn btn-success btn-fill" ng-if="myVar == 'isAdmin'" ui-sref="newSession">Add <i class="glyphicon glyphicon-user"></i></button>
                                         </div>
 
                                         <div class="col-md-3">
@@ -94,7 +94,7 @@
                                                         <a class="btn btn-primary btn-fill" ng-if="myVar == 'isAuthenticated'" ui-sref="editSession({id:session.id})"><i class="glyphicon glyphicon-edit"></i></a>
                                                     </td>
                                                     <td scope="row">
-                                                        <button class="btn btn-warning btn-fill" ng-if="myVar == 'isAuthenticated'" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
+                                                        <button class="btn btn-warning btn-fill" ng-if="myVar == 'isAdmin'" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
                                                     </td>
                                                     <td scope="row">
                                                         <button class="btn btn-danger btn-fill" ng-show="myVar == 'isAuthenticated'" ng-click="deleteSession(session)"> <i class="glyphicon glyphicon-trash"></i></button>

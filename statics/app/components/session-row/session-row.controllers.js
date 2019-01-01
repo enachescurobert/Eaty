@@ -3,9 +3,8 @@ angular.module('sessionControllers', [])
     return $resource('/Purchase/sessions/:id/', {
       id: '@id'
     }, {
-      update: {
-        method: 'PUT'
-      },
+      update: {method: 'PUT'},
+      'get':  {method:'GET', isArray:true},
     }, {
       stripTrailingSlashes: false
     });
@@ -18,7 +17,7 @@ angular.module('sessionControllers', [])
 
   .controller('SessionListController', function ($scope, popupService, $window, Session) {
     // GET : Take everything
-    $scope.sessions = Session.query();
+    $scope.sessions = Session.get();
 
     $scope.deleteSession = function (session) { // Delete a session. Issues a DELETE to /api/sessions/:id
       if (popupService.showPopup('Really delete this?')) {

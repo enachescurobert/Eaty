@@ -135,3 +135,10 @@ def delete_session(request, id):
 
     return render(request, 'app/pages/Django-Session-API/session-delete-confirm.template.html')
 
+def jwt_response_payload_handler(token, user=None, request=None):
+    return {
+        'token': token,
+        'bunny': 'bad bunny baby baby',
+        'user': UserSerializer(user, context={'request': request}).data
+
+    }

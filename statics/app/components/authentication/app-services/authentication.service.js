@@ -20,7 +20,7 @@
                     // login successful if there's a token in the response
                         // store username and token in local storage to keep user logged in between page refreshes
                         $localStorage.currentUser = { username: username, token: response.token };
- 
+
                         // add jwt token to auth header for all requests made by the $http service
                         $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
                         // execute callback with true to indicate successful login
