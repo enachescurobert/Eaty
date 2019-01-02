@@ -59,7 +59,7 @@
               <div class="form-group">
                 <label for="coffe" class="col-xs-2 control-label">Coffe X=</label>
                 <div class="col-xs-10">
-                  <input type="text" ng-model="session.coffe" class="form-control" id="coffe" placeholder="How many X's on Coffe?" />
+                  <input type="number" ng-model="session.coffe" class="form-control" id="coffe" placeholder="How many X's on Coffe?" ng-init="session.coffe='0'"/>
 
                   <!-- <button ng-click="session.coffe = session.coffe + 1" class="btn btn-secondary">
       Increment
@@ -75,7 +75,7 @@
               <div class="form-group">
                 <label for="cake" class="col-xs-2 control-label">Cake X=</label>
                 <div class="col-xs-10">
-                  <input type="text" ng-model="session.cake" class="form-control" id="cake" placeholder="How many X's on Cake?" />
+                  <input type="number" ng-model="session.cake" class="form-control" id="cake" placeholder="How many X's on Cake?" ng-init="session.cake='0'"/>
 
                   <!-- <button ng-click="session.cake = session.cake + 0.5" class="btn btn-secondary">
       Increment

@@ -17,7 +17,7 @@
                   aria-label="Search">
               </div>
               <div class="col-md-3">
-                <button class="btn btn-success btn-fill" ui-sref="newProdus">Add New Product</button>
+                <button class="btn btn-success btn-fill" ng-if="myVar == 'isAdmin' || myVar == 'isAuthenticated'" ui-sref="newProdus">Add New Product</button>
               </div>
               <div class="col-md-2">
                 <button class="btn btn-info btn-fill" ng-click="Export()">Export to PDF</button>

@@ -45,7 +45,7 @@
               <option value="true">true</option>
               <option value="false">false</option>
           </select></div>
-          <div class="form-group">
+          <div ng-if="myVar == 'isAdmin'" class="form-group">
             <label for="is_superuser">Superuser(Can modify data):</label>
             <select ng-model="user.is_superuser" class="form-control" id="is_superuser" >
               <option value="true">true</option>
