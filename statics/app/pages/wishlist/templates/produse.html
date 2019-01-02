@@ -26,6 +26,12 @@
             </div>
             <div class="content table-responsive table-full-width">
               <table  id="tblWishlist" class="table table-hover table-striped"  style="text-align: center">
+                <thead>
+                  <tr>
+                      <th scope="col" style="text-align: center">Name</th>
+                      <th scope="col" style="text-align: center">Likes</th>
+                  </tr>
+                </thead>
                 <!-- <tr>
                   <th style="text-align: center">Product:</th>
                   <th>
@@ -33,6 +39,7 @@
                     <span class="sortorder" ng-show="propertyName === 'like'" ng-class="{reverse: reverse}"></span>
                   </th>
               </tr> -->
+              <tbody>
                 <tr ng-repeat="produs in produse| filter: search | orderBy: '-like'">
                   <!-- ng-table="vm.tableParams" | orderBy: '-like' -->
                   <td data-title="'Product name'" filter="{name : 'text'}" sortable="'name'">
@@ -40,7 +47,7 @@
                   </td>
                   <td>
                     {{produs.like}}
-                    <button type="button" class="btn btn-sm btn-primary btn-number btn-fill" data-type="plus" ng-click="produs.like = produs.like + 1; produs.$update()">
+                    <button type="button" class="btn btn-sm btn-primary btn-number btn-fill" data-type="plus" ng-if="myVar == 'isAuthenticated' || myVar == 'isAdmin'" ng-click="produs.like = produs.like + 1; produs.$update()">
  <span class="glyphicon glyphicon-thumbs-up"></span> Like
 
                     </button>
@@ -56,12 +63,13 @@
 
                   
                   <td>
-                    <a class="btn btn-primary btn-fill" ng-if="myVar == 'isAuthenticated'" ui-sref="editProdus({id:produs.id})"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a class="btn btn-warning btn-fill" ng-if="myVar == 'isAuthenticated'" ng-click="produs.like = 0; produs.$update()">Reset Likes <i class="glyphicon glyphicon-refresh"></i></a>
-                    <a class="btn btn-danger btn-fill" ng-if="myVar == 'isAuthenticated'" ng-click="deleteProdus(produs)"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a class="btn btn-primary btn-fill" ng-if="myVar == 'isAdmin'" ui-sref="editProdus({id:produs.id})"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a class="btn btn-warning btn-fill" ng-if="myVar == 'isAdmin'" ng-click="produs.like = 0; produs.$update()">Reset Likes <i class="glyphicon glyphicon-refresh"></i></a>
+                    <a class="btn btn-danger btn-fill" ng-if="myVar == 'isAdmin'" ng-click="deleteProdus(produs)"><i class="glyphicon glyphicon-trash"></i></a>
                   </td>
                 </tr>
                 <!-- <input type="button" value="Export" ng-click="Export()" /> -->
+              </tbody>
               </table>
             </div>
           </div>

@@ -1,3 +1,4 @@
+<div ng-controller="userInformations">
 <br>
 <div class="content">
   <div class="container-fluid">
@@ -14,7 +15,7 @@
             <input class="form-control col-md-3" ng-model="search" type="text" placeholder="Search product" aria-label="Search">
           </div>
           <div class="col-md-3">
-            <button ui-sref="newProdudus" class="btn btn-success btn-fill">Add New Product</button>
+            <button ui-sref="newProdudus" ng-if="myVar == 'isAdmin'" class="btn btn-success btn-fill">Add New Product</button>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
@@ -47,8 +48,8 @@
                   <!-- <td>{{produdus.quantity * produdus.cross * 0.5}} (€)</td> -->
                   <td ng-init="$parent.total = $parent.total + (produdus.price * produdus.quantity)">{{ produdus.price * produdus.quantity| currency :"€"}}</td>
                   <td>
-                    <a class="btn btn-primary btn-fill" ui-sref="editProdudus({id:produdus.id})"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a class="btn btn-danger btn-fill" ng-click="deleteProdudus(produdus)"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a class="btn btn-primary btn-fill" ng-if="myVar == 'isAdmin'" ui-sref="editProdudus({id:produdus.id})"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a class="btn btn-danger btn-fill" ng-if="myVar == 'isAdmin'" ng-click="deleteProdudus(produdus)"><i class="glyphicon glyphicon-trash"></i></a>
                   </td>
                 </tr>
                 <tr>
@@ -66,4 +67,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

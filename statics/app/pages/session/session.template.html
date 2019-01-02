@@ -46,7 +46,7 @@
                                                 <th scope="col">Coffe Total(€)</th>
                                                 <th scope="col">Cake Total(€)</th>
                                                 <th scope="col">Total Debt(€)</th>
-                                                <th scope="col" colspan="3" style="text-align: center"><button class="btn btn-secondary btn-fill" ng-click="resetSession(); sessions.$update()" ng-if="myVar == 'isAuthenticated'">
+                                                <th scope="col" colspan="3" style="text-align: center"><button class="btn btn-secondary btn-fill" ng-click="resetSession(); sessions.$update()" ng-if="myVar == 'isAdmin'">
                                                         Reset The Entire Session 
                                                       </button></th>
                                             </tr>
@@ -64,7 +64,7 @@
                                                         </div>
                                                         <div class="col-md-6">
 
-                                                            <button type="submit" class="btn btn-info btn-number btn-fill"
+                                                            <button type="submit" ng-if="myVar == 'isAuthenticated' || myVar == 'isAdmin'" class="btn btn-info btn-number btn-fill"
                                                                 data-type="plus" ng-click="session.coffe = session.coffe + 1;session.$update()">
                                                                 <i class="glyphicon glyphicon-plus"></i>
                                                             </button>
@@ -76,7 +76,7 @@
                                                             {{session.cake}}
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <button type="button" class="btn btn-info btn-number  btn-fill"
+                                                            <button type="button" ng-if="myVar == 'isAuthenticated' || myVar == 'isAdmin'" class="btn btn-info btn-number  btn-fill"
                                                                 data-type="plus" ng-click="session.cake = session.cake + 0.5; session.$update()">
                                                                 <i class="glyphicon glyphicon-plus"></i>
                                                             </button>
@@ -91,13 +91,13 @@
                                                         <td scope="row" ng-class="{red: (session.cake * 0.5 + session.coffe * 0.1) != 0}">{{session.cake * 0.5 + session.coffe * 0.1 |
                                                             currency :"€"}}</td>
                                                     <td scope="row">
-                                                        <a class="btn btn-primary btn-fill" ng-if="myVar == 'isAuthenticated'" ui-sref="editSession({id:session.id})"><i class="glyphicon glyphicon-edit"></i></a>
+                                                        <a class="btn btn-primary btn-fill" ng-if="myVar == 'isAdmin'" ui-sref="editSession({id:session.id})"><i class="glyphicon glyphicon-edit"></i></a>
                                                     </td>
                                                     <td scope="row">
                                                         <button class="btn btn-warning btn-fill" ng-if="myVar == 'isAdmin'" ng-click="session.cake = 0; session.coffe = 0; session.$update()">Reset Session</button>
                                                     </td>
                                                     <td scope="row">
-                                                        <button class="btn btn-danger btn-fill" ng-show="myVar == 'isAuthenticated'" ng-click="deleteSession(session)"> <i class="glyphicon glyphicon-trash"></i></button>
+                                                        <button class="btn btn-danger btn-fill" ng-show="myVar == 'isAdmin'" ng-click="deleteSession(session)"> <i class="glyphicon glyphicon-trash"></i></button>
                                                     </td>
                                                     
                                                 </tr>
@@ -105,9 +105,9 @@
                                             </tbody>
                                         </table>
                                         <hr>
-                                        <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated'" data-ng-click="exportAction('csv')">Export as CSV</button>
-                                      <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated'" data-ng-click="exportAction('excel')">Export as Excel</button>
-                                      <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated'" data-ng-click="exportAction('doc')">Export as Doc</button>
+                                        <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated' || myVar == 'isAdmin'" data-ng-click="exportAction('csv')">Export as CSV</button>
+                                      <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated' || myVar == 'isAdmin'" data-ng-click="exportAction('excel')">Export as Excel</button>
+                                      <button class="btn btn-info btn-fill" ng-if="myVar == 'isAuthenticated' || myVar == 'isAdmin'" data-ng-click="exportAction('doc')">Export as Doc</button>
                                      <!-- <button class="btn btn-light btn-fill" data-ng-click="exportAction('pdf')"> Export Pdf</button> -->
 
                                     </div>

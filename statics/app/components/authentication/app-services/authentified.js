@@ -1,16 +1,17 @@
 angular
 .module('demoApp')
-.controller('userInformations', function($scope, $localStorage){
+.controller('userInformations', function($scope, $window, $localStorage){
 
-    if ($localStorage.currentUser && $localStorage.currentUser.username == "robert") {
-    // if ($localStorage.currentUser.user.is_superuser === true) {
+    $scope.is_superuser = $window.localStorage.getItem('is_superuser');
+    // if ($localStorage.currentUser && $localStorage.currentUser.username == "robert") {
+    if ($localStorage.currentUser && $scope.is_superuser == "true") {
         $scope.myVar = 'isAdmin';
-        $scope.utilizator = $localStorage.currentUser.username;
+        $scope.username = $localStorage.currentUser.username;    
     }else if ($localStorage.currentUser){
         
         $scope.myVar = 'isAuthenticated';
-        $scope.utilizator = $localStorage.currentUser.username;
-        
+        $scope.username = $localStorage.currentUser.username;
+ 
     }
 
 
