@@ -286,6 +286,8 @@ THE SOFTWARE.*/
 					excelFile += excel;
 					excelFile += "</body>";
 					excelFile += "</html>";
+					excelFile += "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />";
+
 
 					var fileType='';
 					if (defaults.type == 'excel') {
