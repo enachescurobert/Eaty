@@ -24,6 +24,8 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = ['eaty.ovh', 'www.eaty.ovh']
+# For pythoneverywhere.com change this to :
+#ALLOWED_HOSTS = ['*']
 
 TEMPLATES = [
     {
@@ -58,6 +60,14 @@ DATABASES = {
         'PORT': '5432',
     }
 } 
+
+# For pythoneverywhere.com change this to :
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+#  }
 
 STATIC_ROOT = os.path.join(PROD_PATH, 'statics/')
 

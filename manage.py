@@ -2,6 +2,8 @@
 import os
 import sys
 
+#In production, change "eaty_app.settings.dev" to "eaty_app.settings.prod"
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "eaty_app.settings.dev")
     try:
